@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gmail AI Article</title>
+<style>
+#outercontainer {
+	width: 80%;
+	max-width: 960px;
+	margin: auto;
+}
+#header {
+	background-color: steelblue;
+	color: white;
+	font-size: 42pt;
+	text-align: center;
+//	height: 65px;
+	padding: 0;
+	margin: 0;
+}
+
+#header img {
+	height: 45px;
+	margin: 10px 0px;	
+}
+.navbutton {
+	width: 13%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	margin: 0 1.7%;
+	background-color: lightsteelblue;
+	color: white;
+	float: left;
+	font-size: 10pt;
+	font-weight: bold;	
+}
+#content {
+	width: 80%;
+	text-align: justify;
+	margin-right: 2%;	
+	float:left;
+		columns: 2;
+	-webkit-columns: 2;
+	-moz-columns: 2;
+}
+.article {
+}
+#sidebar {
+	width: 18%;
+	text-align: right;
+	float:right;
+	background-color: lightsteelblue;
+	position: relative;
+}
+#subsidebar {
+	position: absolute;	
+	background-color: lightsteelblue;
+}
+
+.articleimage {
+	width: 100%;
+	300px;
+}
+#image2 {
+width: 100%;	
+}
+#footer {
+	clear:both;
+	text-align: right;
+	font-style: italic;	
+	background-color: lightsteelblue;
+}
+.left {
+	float:left;
+	margin-left: 0;
+	margin-right: 2%;	
+}
+.right {
+	float:right;
+	margin-left: 2%;
+	margin-right: 0;	
+}
+
+@media screen and (max-width:1200px) {
+	#outercontainer {
+    	width: 100%
+    }
+	#content {
+    	width: 100%;
+        float:none;
+	}
+	#sidebar {
+    	width: 100%;
+        float:none;
+		text-align: center;
+    }
+	.articleimage {
+		width: 50%;
+	}
+	#footer {
+    	font-size: 6pt;
+        font-family: verdana, sans-serif;
+    }
+	#header img {
+		width: 50%;	
+		height: auto;
+	}
+
+}
+
+@media screen and (max-width:600px) {
+	.articleimage {
+    	display:none;
+    }
+	#footer {
+		display:none;
+	}
+	#subsidebar{
+		width: 100%;
+	}
+	#header{ 
+		height:auto;
+		background: none;
+		border-bottom: lightsteelblue solid 8px;
+		margin: 0;
+		padding:0;
+	}
+    
+	#header img {
+		width: 100%;
+        margin: 0;
+        padding: 0;	
+	}
+}
+
+</style>
+</head>
+
+<body>
+<div id="outercontainer">
+	<div id="header">
+    <img src="http://iyawebdev.com/itp302/lecture_examples/wired.png"/><br>
+    <a href="#" class="navbutton">Nav Item</a>
+    <a href="#" class="navbutton">Nav Item</a>
+    <a href="#" class="navbutton">Nav Item</a>
+    <a href="#" class="navbutton">Nav Item</a>
+    <a href="#" class="navbutton">Nav Item</a>
+    <a href="#" class="navbutton">Nav Item</a>
+   <br style="clear:both;">
+    </div><!-- end header -->
+
+    <div id="content">
+    <h1>Soon, Gmail’s AI Could Reply to Your Email for You</h1>
+    
+    <p><em>By <strong>Cade Metz</strong>, Business</em></p>
+    
+ 
+ 
+<img src="http://iyawebdev.com/itp302/lecture_examples/GettyImages-493804333-582x665.jpg"  class="articleimage left" id="image1">
+
+<div class="article">
+<p>
+EVER WISHED YOUR phone could automatically reply to your email messages?
+</p>
+<p>
+Well, Google just unveiled technology that’s at least moving in that direction. Using what’s called “deep learning”—a form of artificial intelligence that’s rapidly reinventing a wide range of online services—the company is beefing up its Inbox by Gmail app so that it can analyze the contents of an email and then suggest a few (very brief) responses. The idea is that you can rapidly respond to someone while on the go—without having to manually tap a fresh message into your smartphone keyboard.
+</p>
+<p>
+“The network will tailor both the tone and content of the responses to the email you’re reading,” says Google product management director Alex Gawley. It gives you three of these responses, and you can then choose the one that best suits what you want to say.
+</p>
+<p>
+Dubbed Smart Reply, the system learns to generate appropriate replies by analyzing scads of email conversations from across Google’s Gmail service, the world’s most popular internet-based email system. A deep learning service feeds information into what’s called a neural network—a vast network of machines that approximates the web of neurons in the human brain—and this neural network analyzes the information in order to “learn” a particular task. By analyzing thousands of cat photos, for instance, a neural net can learn to identify a cat. By analyzing a database of spoken words, it can learn to recognize the commands you speak into your smartphone. In this case, the system learns to compose email replies by analyzing real-world email conversations.
+</p>
+<p>
+Experts on deep learning, however, will tell you that such systems have their limitations. “With a finite amounts of data, you can create a rudimentary understanding of the world,” says Andrew Ng, chief scientist at Baidu, the Chinese Internet giant that also sits at the forefront of the deep learning movement, “but humans learn about the world in all sorts of ways [we can’t yet duplicate].” Indeed, Gawley acknowledges that Google’s Smart Reply system doesn’t always get things right. But that’s part of the reason the company provides three potential replies to each email—not just one. Plus, it lets you edit these replies and augment them with your own words.
+</p>
+<p>
+The system uses what’s called a “long short-term-memory,” or LSTM, neural network. Essentially, this is a neural net that exhibits something akin to human memory. It can “remember” the beginning of an email as it’s parsing the end—and that helps it, on some level, understand this natural language. In a research paper published earlier this year, a team of Google researchers showed how this technology could be used to build a “chatbot” that can carry on a decent conversation (in certain situations).
+</p>
+<p>
+Actually, the Smart Reply system uses two neural networks. After the first one analyzes the email at hand—distilling what is being said—a second takes this information and works to generate the potential responses. This network builds these replies one word at a time, much as you would.
+</p>
+<p>
+With Smart Reply, Google is rightly keeping the scope of the application as small as possible. The replies it generates are between three and six words long. But Gawley says that within this small scope, the system proves surprisingly nuanced. In some cases, for instance, it can tell when an email includes a joke and suggest the reply “Ha. Very funny.” If someone asks “Do you have your vacation plans set yet? When you do, can you send them along?,” the potential replies might be: “No plans yet,” “I just sent them to you,” and “I’m working on them.”
+</p>
+<p>
+Other common replies include “Thanks,” “Sounds good,” and “How about tomorrow?” But it’s important to remember that the system isn’t offering a canned catalog of replies. In effect, the AI really is “reading” your email and coming up with what it judges the most appropriate original response in the context of a specific message. According Gawley, the system can generate about 20,000 discreet responses.
+</p>
+<p>
+Sometimes, Gawley says, the neural network generates multiple replies that aren’t that different from one another—such as “How about tomorrow?” and “Wanna get together tomorrow?” and “I suggest we meet tomorrow.” So, the company has built a separate AI system that can remove such duplication. At times, Smart Reply still steps outside the bounds of what you want. After testing the system, Google found that the reply “I love you” turned up far too often. But as with other neural networks, Google is constantly tuning the system after seeing how it performs.
+
+The company will start sharing the system with the general public on Wednesday, and as time goes on, it will only get better. But let’s hope it doesn’t get too good. Help with rapid-fire replies is one thing. But there is something to be said for, you know, actually writing your own email.
+</p>
+<img src="http://iyawebdev.com/itp302/lecture_examples/SmartReply_A_personal_01-582x1035.jpg" class="articleimage right" id="image2"/>
+</div><!-- end article-->
+    </div> <!-- end content -->
+    
+    <div id="sidebar">
+    <h3>Read more from WIRED:</h3>
+	<hr>
+	<div id="subsidebar">
+<p><a href="http://www.wired.com/2015/11/twitter-reacts-to-hearts-replacing-stars/" target="_blank">Twitter Reacts to Hearts Replacing Stars</a></p>
+
+<p><a href="http://www.wired.com/2015/11/amazon-killed-the-bookstore-so-its-opening-a-bookstore/" target="_blank">Amazon Killed the Bookstore, So It's Openng a Bookstore</a></p>
+
+<p><a href="http://www.wired.com/2015/11/signals-snowden-approved-phone-crypto-app-comes-to-android/l" target="_blank">Signal, the Snowden-Approved App, Comes to Android</a></p>
+
+<p><a href="http://www.wired.com/2015/11/hackers-claim-million-dollar-bounty-for-ios-attack/" target="_blank">Hackers Claim Million-Dollar Bounty for iOS Zero Day Attack</a></p>
+
+<p><a href="http://www.wired.com/2015/11/someday-tech-will-end-our-dumb-two-party-system/" target="_blank">Someday, Tech Will End Our Dumb Two Party System</a></p>
+
+	</div><!-- end subsidebar-->
+    </div><!-- end sidebar -->
+
+    <div id="footer">
+    Copyright Wired
+    <div class="sub">
+    
+      <p>Use of this site constitutes acceptance of our <a href="http://www.condenast.com/privacy-policy" onclick="var x='.tl(';s_objectID='http://www.condenast.com/privacy-policy_1';return this.s_oc?this.s_oc(e):true">user agreement</a>  and <a href="http://www.condenast.com/privacy-policy#privacypolicy" onclick="var x='.tl(';s_objectID='http://www.condenast.com/privacy-policy#privacypolicy_1';return this.s_oc?this.s_oc(e):true">privacy policy</a>. <a href="http://www.condenast.com/privacy-policy#privacypolicy-california" onclick="var x='.tl(';s_objectID='http://www.condenast.com/privacy-policy#privacypolicy-california_1';return this.s_oc?this.s_oc(e):true">Your California privacy rights</a>. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written <a href="http://www.condenast.com/reprints-permissions" onclick="var x='.tl(';s_objectID='http://www.condenast.com/reprints-permissions_1';return this.s_oc?this.s_oc(e):true">permission of Condé Nast</a>.</p>
+	</div><!-- end sub -->
+    </div><!-- end footer -->
+</div><!-- end outercontainer -->
+</body>
+</html>

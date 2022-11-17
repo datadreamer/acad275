@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Flexbox</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Flexbox">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .flex-container{
+                display: flex;
+                background-color: #069;
+            }
+            .flex-container > div{
+                background-color: white;
+                color: black;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                width: 40px;
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 6:</h3>
+            <h1>Flexbox</h1>
+            <br/><br/>
+
+            <div class="section">
+                Flexbox is a newer method of placing containers to alleviate the hassle of compensating for padding, margins, and borders. All we have to do to make a div a flexbox element is to set its CSS to <span class="code">display: flex</span>.<br/>
+                <br/>
+
+                <!-- BASICS -->
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                The direction that content flexes can be adjusted by using the <span class="code">flex-direction</span> CSS property.<br/>
+                <br/>
+
+                <div class="flex-container" style="flex-direction: column">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+                
+                <br/>
+                We can also flip the order of elements using CSS without adjusting the order of the elements in the HTML using <span class="code">row-reverse</span> or <span class="code">column-reverse</span>.<br/>
+                <br/>
+
+                <div class="flex-container" style="flex-direction: row-reverse">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+                <br/>
+
+                <div class="flex-container" style="flex-direction: column-reverse">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+            </div>
+            <div class="section">
+
+                <!-- WRAPPING -->
+
+                <h2>Wrapping</h2>
+                <br/>
+                We can change the behavior of how child elements inside a flexbox container wrap around when the container changes its width by adding <span class="code">flex-wrap: wrap;</span> to our CSS.<br/>
+                <br/>
+
+                <div class="flex-container" style="flex-wrap: wrap">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div>   
+                </div>
+
+                <br/>
+                The default behavior is <span class="code">flex-wrap: nowrap</span>, which is going to cause child elements to reduce their width until their content forces neighboring elements to overflow outside of the flexbox container.<br/>
+                <br/>
+
+                <div class="flex-container" style="flex-wrap: nowrap">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div>   
+                </div>
+
+            </div>
+            <div class="section">
+
+                <!-- JUSTIFY CONTENT -->
+
+                <h2>Justify Content</h2>
+                <br/>
+                We can align content within our flexbox by using the <span class="code">justify-content</span> CSS property.<br/>
+                <br/>
+
+                <span class="code">justify-content: flex-start;</span> is the default behavior aligning content to the left.<br/>
+                <br/>
+
+                <div class="flex-container" style="justify-content: flex-start;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">justify-content: center;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="justify-content: center;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">justify-content: flex-end;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="justify-content: flex-end;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">justify-content: space-around;</span> displays the flex items with space before, between, and after.<br/>
+                <br/>
+
+                <div class="flex-container" style="justify-content: space-around;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">justify-content: space-between;</span> displays the flex items with space between.<br/>
+                <br/>
+
+                <div class="flex-container" style="justify-content: space-between;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+            </div>
+
+            <div class="section">
+
+                <!-- ALIGN ITEMS -->
+
+                <h2>Align Items</h2>
+                <br/>
+                We can vertically align the content inside of the flexbox container using the <span class="code">align-items</span> CSS property. The default behavior is <span class="code">align-items: stretch;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:200px;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">align-items: flex-start;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:200px; align-items: flex-start;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">align-items: center;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:200px; align-items: center;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+                <br/>
+                <span class="code">align-items: flex-end;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:200px; align-items: flex-end;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>  
+                </div>
+
+            </div>
+
+            <div class="section">
+
+                <!-- ALIGN CONTENT -->
+
+                <h2>Align Content</h2>
+                <br/>
+                We can control the vertical distribution of rows of items within the flexbox container using the <span class="code">align-content</span> CSS property. The default behavior is for the items to stretch vertically.<br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+                <br/>
+                <span class="code">align-content: center;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap; align-content:center;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+                <br/>
+                <span class="code">align-content: space-between;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap; align-content:space-between;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+                <br/>
+                <span class="code">align-content: space-around;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap; align-content:space-around;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+                <br/>
+                <span class="code">align-content: flex-start;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap; align-content:flex-start;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+                <br/>
+                <span class="code">align-content: flex-end;</span><br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; flex-wrap:wrap; align-content:flex-end;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div> 
+                    <div>5</div> 
+                    <div>6</div> 
+                    <div>7</div> 
+                    <div>8</div> 
+                    <div>9</div> 
+                    <div>10</div> 
+                </div>
+
+            </div>
+
+            <div class="section">
+
+                <!-- PERFECT CENTERING -->
+
+                <h2>Perfect Centering</h2>
+                <br/>
+                It's super easy to perfectly center an element inside of a flexbox container by setting both <span class="code">justify-content</span> and <span class="code">align-items</span> both to center.<br/>
+                <br/>
+
+                <div class="flex-container" style="height:400px; justify-content:center; align-items:center;">
+                    <div>&nbsp;</div>
+                </div>
+
+            </div>
+
+            <div class="section">
+
+                <!-- FLEX ITEM PROPERTIES -->
+
+                <h2>Flex Item Properties</h2>
+                <br/>
+                Any direct child elements inside of a flex container automatically become flex items, which provides them a number of CSS properties to change their behavior.<br/>
+                <br/>
+
+                <span class="code">order</span> is a CSS property that allows us to change the ordering of the flex items without modifying their order in the HTML.<br/>
+                <br/>
+
+                <div class="flex-container">
+                    <div style="order:3">1</div>
+                    <div style="order:4">2</div>
+                    <div style="order:1">3</div>
+                    <div style="order:2">4</div> 
+                </div>
+
+                <br/>
+                <span class="code">flex-grow</span> is a CSS property that specifies how much a flex item will grow relative to the rest of the flex items in that container. Default value is 0.<br/>
+                <br/>
+
+                <div class="flex-container">
+                    <div style="flex-grow:0">1</div>
+                    <div style="flex-grow:0">2</div>
+                    <div style="flex-grow:2">3</div>
+                    <div style="flex-grow:8">4</div> 
+                </div>
+
+                <br/>
+                <span class="code">flex-shrink</span> is a CSS property that specifies how much a flex item will shrink relative to the rest of the flex items in that container. Default value is 1.<br/>
+                <br/>
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-shrink: 0">3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </div>
+
+                <br/>
+                <span class="code">flex-basis</span> is a CSS property that specifies the initial length of a flex item.<br/>
+                <br/>
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-basis: 200px">3</div>
+                    <div>4</div>
+                </div>
+
+                <br/>
+                <span class="code">align-self</span> is a CSS property that allows a flex item to align itself in a different manner than the rest of the items in the flex container.<br/>
+                <br/>
+
+                <div class="flex-container" style="height:200px;align-items:flex-start;">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="align-self:flex-end">3</div>
+                    <div>4</div>
+                </div>
+
+                <br/>
+                <span class="code">flex</span> is a CSS property that can allow you to explicitely set a flex item to a percentage of the width of the flexbox container.<br/>
+                <br/>
+
+                <div class="flex-container">
+                    <div style="flex:25%">1</div>
+                    <div style="flex:25%">2</div>
+                    <div style="flex:25%">3</div>
+                    <div style="flex:25%">4</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">W3Schools: Flexbox</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox_container.asp">W3Schools: Flexbox Container</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox_items.asp">W3Schools: Flex Items</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox_responsive.asp">W3Schools: Responsive Flexbox</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

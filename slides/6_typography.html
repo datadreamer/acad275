@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ACAD 275: Dev I - Typography</title>
+
+		<meta name="description" content="Lecture slides for Iovine-Young Academy.">
+		<meta name="author" content="Aaron Siegel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			section img{
+				width: 90% !important;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- header and footer stays on page and changes when tweaked by <style> inside each <section> -->
+				<header>
+					<a href="http://design.usc.edu" class="left">ACAD 275: Dev I</a>
+					<a href="http://design.usc.edu" class="right">Iovine and Young Academy</a>
+				</header>
+
+				<footer>
+					<span id="leftside" class="left"></span>
+					<span id="rightside" class="right"></span>
+				</footer>
+
+				<section>
+					<div class="titletext">
+						<div class="week">ACAD 275: Dev I</div>
+						<h1>Typography</h1>
+						Aaron Siegel |
+						<script type="text/javascript">
+				        	document.write("<n uers=\"znvygb:nnebafvr@hfp.rqh\" ery=\"absbyybj\">nnebafvr@hfp.rqh</n>".replace(/[a-zA-Z]/g,
+				        	function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+				        </script>
+				        | 9/27/2022
+					</div>
+				</section>
+
+				<style>
+					/* Type History */
+					.history1 footer #leftside:after{content: "Gutenberg Press (c. 1450)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history2 footer #leftside:after{content: "Gutenberg, Johannes - Holy Bible (1454)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history3 footer #leftside:after{content: "Movable Type"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history4 footer #leftside:after{content: "Typesetting"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history5 footer #leftside:after{content: "Typesetting (1910)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history6 footer #leftside:after{content: "Wood Type"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history7 footer #leftside:after{content: "Linotype (c. 1890)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history8 footer #leftside:after{content: "Linotype Diagram"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history9 footer #leftside:after{content: "Linotype Operators of the Chicago Defender (1941)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.history10 footer #leftside:after{content: "Linotype Machines"; background-color:rgba(0,0,0,0.5); padding:10px;}
+				</style>
+
+				<section><h2>Type History</h2></section>
+				<section data-state="history1" data-background-image="images/gutenberg_press.jpg" data-background-size="contain"></section>
+				<section data-state="history2" data-background-image="images/gutenberg_bible.jpg" data-background-size="contain"></section>
+				<section data-state="history3" data-background-image="images/movabletype.jpg" data-background-size="contain"></section>
+				<section data-state="history4" data-background-image="images/typesetting1.jpg" data-background-size="contain"></section>
+				<section data-state="history5" data-background-image="images/typesetting2.png" data-background-size="contain"></section>
+				<section data-state="history6" data-background-image="images/woodtype.jpg" data-background-size="contain"></section>
+				<section data-state="history6" data-background-image="images/woodtype_poster.jpg" data-background-size="contain"></section>
+				<section data-state="history7" data-background-image="images/linotype_engraving.jpg" data-background-size="contain"></section>
+				<section data-state="history8" data-background-image="images/linotype_diagram.png" data-background-size="contain"></section>
+				<section data-state="history9" data-background-image="images/linotype_operators.jpg" data-background-size="contain"></section>
+				<section data-state="history10" data-background-image="images/linotype_machines.jpg" data-background-size="contain"></section>
+
+				<style>
+					/* Type Characteristics */
+					.letter1 footer #leftside:after{content: "Serif. Times New Roman."; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.letter2 footer #leftside:after{content: "Slab Serif. ITC Lubalin."; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.letter3 footer #leftside:after{content: "Sans-serif. Helvetica Neue."; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.letter4 footer #leftside:after{content: "Script. Germanica."; background-color:rgba(0,0,0,0.5); padding:10px;}
+				</style>
+
+				<section><h2>Letter Forms</h2></section>
+				<section data-state="letter1" data-background-image="images/letter_serif.png" data-background-size="contain"></section>
+				<section data-state="letter2" data-background-image="images/letter_slabserif.png" data-background-size="contain"></section>
+				<section data-state="letter3" data-background-image="images/letter_sansserif.png" data-background-size="contain"></section>
+				<section data-state="letter4" data-background-image="images/letter_script.png" data-background-size="contain"></section>
+
+				<section><h2>Type Characteristics</h2></section>
+				<section data-state="type1" data-background-image="images/alignment6.png" data-background-size="contain"></section>
+				<section data-state="type2" data-background-image="images/alignment5.png" data-background-size="contain"></section>
+				<section data-state="type3" data-background-image="images/alignment4.png" data-background-size="contain"></section>
+				<section data-state="type4" data-background-image="images/alignment3.png" data-background-size="contain"></section>
+				<section data-state="type5" data-background-image="images/alignment2.png" data-background-size="contain"></section>
+				<section data-state="type6" data-background-image="images/alignment.png" data-background-size="contain"></section>
+				<section data-state="type7" data-background-image="images/weight.png" data-background-size="contain"></section>
+				<section data-state="type8" data-background-image="images/soyouneedatypeface.png" data-background-size="contain"></section>
+
+				<style>
+					/* Type in Design */
+				</style>
+
+				<section><h2>Type in Design</h2></section>
+				
+
+				<section data-background-image="images/endpage.png"></section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+				width: 1920,
+		    height: 1080,
+		    margin: 0.1,
+		    minScale: 0.2,
+		    maxScale: 2.0,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

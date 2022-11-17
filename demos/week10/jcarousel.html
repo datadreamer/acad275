@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jCarousel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="jCarousel">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <link href="jcarousel.connected-carousels.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script type="text/javascript" src="jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="jcarousel.connected-carousels.js"></script>
+
+        <style>
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 10:</h3>
+            <h1>jCarousel</h1>
+            <br><br>
+
+            <div class="section">
+                jCarousel is a JavaScript library that was built off of jQuery and thus requires jQuery to be included in order for it to work.<br>
+                <br>
+
+                <div class="connected-carousels">
+                    <div class="stage">
+                        <div class="carousel carousel-stage">
+                            <ul>
+                                <li><img src="la1.jpg" width="600" height="400" alt=""></li>
+                                <li><img src="la2.jpg" width="600" height="400" alt=""></li>
+                                <li><img src="la3.jpg" width="600" height="400" alt=""></li>
+                                <li><img src="la4.jpg" width="600" height="400" alt=""></li>
+                                <li><img src="la5.jpg" width="600" height="400" alt=""></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
+                        <a href="#" class="next next-stage"><span>&rsaquo;</span></a>
+                    </div>
+    
+                    <div class="navigation">
+                        <a href="#" class="prev prev-navigation">&lsaquo;</a>
+                        <a href="#" class="next next-navigation">&rsaquo;</a>
+                        <div class="carousel carousel-navigation">
+                            <ul>
+                                <li><img src="la1_thumb.jpg" width="50" height="50" alt=""></li>
+                                <li><img src="la2_thumb.jpg" width="50" height="50" alt=""></li>
+                                <li><img src="la3_thumb.jpg" width="50" height="50" alt=""></li>
+                                <li><img src="la4_thumb.jpg" width="50" height="50" alt=""></li>
+                                <li><img src="la5_thumb.jpg" width="50" height="50" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+            </div>
+        </div>
+
+        <script>
+            (function($) {
+                $(function() {
+                    $('.jcarousel').jcarousel();
+
+                    $('.jcarousel-control-prev')
+                        .on('jcarouselcontrol:active', function() {
+                            $(this).removeClass('inactive');
+                        })
+                        .on('jcarouselcontrol:inactive', function() {
+                            $(this).addClass('inactive');
+                        })
+                        .jcarouselControl({
+                            target: '-=1'
+                        });
+
+                    $('.jcarousel-control-next')
+                        .on('jcarouselcontrol:active', function() {
+                            $(this).removeClass('inactive');
+                        })
+                        .on('jcarouselcontrol:inactive', function() {
+                            $(this).addClass('inactive');
+                        })
+                        .jcarouselControl({
+                            target: '+=1'
+                        });
+
+                    $('.jcarousel-pagination')
+                        .on('jcarouselpagination:active', 'a', function() {
+                            $(this).addClass('active');
+                        })
+                        .on('jcarouselpagination:inactive', 'a', function() {
+                            $(this).removeClass('active');
+                        })
+                        .jcarouselPagination();
+                });
+            })(jQuery);
+        </script>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://sorgalla.com/jcarousel/docs/reference/installation.html">jCarousel</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

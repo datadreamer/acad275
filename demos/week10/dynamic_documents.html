@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dynamic Documents</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Dynamic Documents">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            var n = Math.random()*6;    // gets a random floating point number between 0 and 6.
+            n = Math.floor(n) + 1;      // rounds the number down then adds 1.
+            
+            $(document).ready(function(){
+                $('#modifiedonload').html("This was written to the screen when the document finished loading inside of an existing HTML element.");
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 10:</h3>
+            <h1>Dynamic Documents</h1>
+            <br><br>
+
+            <div class="section">
+                JavaScript is able to write directly to the HTML when the page loads.<br>
+                <br>
+
+                <div class="interactive">
+                    <script>
+                        document.write("This was written to the screen with an inline javascript block.");
+                    </script>
+                </div>
+                <br>
+
+<div class="code codeblock"><pre>
+document.write("This was written to the screen with an inline javascript block.");</pre>
+</div>
+<br>
+
+                <div class="interactive" id="modifiedonload">
+                </div>
+                <br>
+
+<div class="code codeblock"><pre>
+$(document).ready(function(){
+    $('#modifiedonload').html("This was written to the screen when the document
+                            finished loading inside of an existing HTML element.");
+});</pre>
+</div>
+<br>
+
+                <div class="interactive" id="randomdiv">
+                    If the number is less than or equal to 3, this div will be red. If the number is greater than 3, it will be green. The number is 
+                </div>
+                <br>
+
+                <script>
+                    if(n <= 3){
+                        $("#randomdiv").css("background-color", "red");
+                    } else {
+                        $("#randomdiv").css("background-color", "#090");
+                    }
+                    $("#randomdiv").append(n +".");
+                </script>
+
+<div class="code codeblock"><pre>
+var n = Math.random()*6;    // gets a random floating point number between 0 and 6.
+n = Math.floor(n) + 1;      // rounds the number down then adds 1.
+
+if(n <= 3){
+    $("#randomdiv").css("background-color", "red");
+} else {
+    $("#randomdiv").css("background-color", "#090");
+}
+$("#randomdiv").append(n +".");</pre>
+</div>
+<br>
+                
+
+            </div>
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/jsref/dom_obj_document.asp">W3Schools: HTML DOM Documents</a></li>
+                <li><a href="https://www.w3schools.com/jsref/jsref_random.asp">W3Schools: JavaScript Math.random()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

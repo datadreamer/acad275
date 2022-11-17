@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Text Columns</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Text Columns">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .col2{
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2;
+            }
+
+            .col3{
+                columns: 3;
+                -webkit-columns: 3;
+                -moz-columns: 3;
+            }
+
+            .fatgap{
+                columns: 3;
+                -webkit-columns: 3;
+                -moz-columns: 3;
+                column-rule: white 2px solid;
+                column-gap: 50px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 4:</h3>
+            <h1>Text Columns</h1>
+            <br/><br/>
+
+            <div class="section">
+                Columns are useful for breaking up large blocks of text to make them more legible. Below are three paragraphs of text in a div with no columns, showing the default behavior of text inside of an HTML element.<br/>
+                <br/>
+
+                <div style="color:cyan">
+                    <em>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a odio ac risus ultrices bibendum nec sit amet augue. Etiam egestas ullamcorper nisl in ornare. Maecenas non ligula efficitur, tempor est nec, ultricies est. Vivamus scelerisque odio et nulla iaculis, et consequat orci tincidunt. Aliquam erat volutpat. Fusce vitae mauris finibus, congue erat quis, pulvinar dui. Nam vitae dignissim sem.<br/>
+                    <br/>
+                    Donec porta, justo in egestas tincidunt, leo ante lacinia urna, vitae gravida lectus dui at massa. Nunc viverra neque vel erat mollis, et hendrerit tellus vehicula. Donec libero nisi, porta rhoncus molestie id, tempor sodales lorem. Ut eget pharetra velit, non venenatis felis. Aliquam nibh lorem, dapibus vitae nisl ut, mollis imperdiet metus. Etiam vulputate a lorem sit amet pretium. Morbi at ligula sed enim bibendum sollicitudin quis id arcu. Sed id ligula lacus. Aliquam tincidunt justo non urna lacinia vestibulum. Donec tincidunt luctus malesuada. Mauris finibus condimentum enim, eget tristique erat viverra sed. Vivamus rhoncus accumsan malesuada. Proin rutrum dictum urna et ultricies.<br/>
+                    <br/>
+                    Sed convallis est a ex porta porta. Ut iaculis libero nulla, at molestie nulla fringilla nec. Phasellus ex nisi, sagittis in risus at, maximus dapibus lectus. Integer dignissim augue at nisi facilisis, a iaculis mauris sodales. Pellentesque sit amet felis magna. Donec dignissim, felis at luctus maximus, sapien libero vehicula nulla, varius sagittis felis enim vel dui. Fusce sit amet mi ac velit ullamcorper consequat eu at nisl.
+                    </em>
+                </div>
+                <br/>
+            </div>
+
+            <div class="section">
+                Adding a <span class="code">columns</span> property will automatically divide the text evenly within the HTML element. For compatibility reasons, you must also include a <span class="code">-webkit-columns</span> and <span class="code">-moz-columns</span> properties to ensure compatibility across different types of browsers.<br/>
+                <br/>
+
+                <div class="code codeblock">
+<pre>
+.col2{
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+</pre>
+                </div>
+                <br/>
+
+                <div class="col2" style="color:cyan">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a odio ac risus ultrices bibendum nec sit amet augue. Etiam egestas ullamcorper nisl in ornare. Maecenas non ligula efficitur, tempor est nec, ultricies est. Vivamus scelerisque odio et nulla iaculis, et consequat orci tincidunt. Aliquam erat volutpat. Fusce vitae mauris finibus, congue erat quis, pulvinar dui. Nam vitae dignissim sem.<br/>
+                    <br/>
+                    Donec porta, justo in egestas tincidunt, leo ante lacinia urna, vitae gravida lectus dui at massa. Nunc viverra neque vel erat mollis, et hendrerit tellus vehicula. Donec libero nisi, porta rhoncus molestie id, tempor sodales lorem. Ut eget pharetra velit, non venenatis felis. Aliquam nibh lorem, dapibus vitae nisl ut, mollis imperdiet metus. Etiam vulputate a lorem sit amet pretium. Morbi at ligula sed enim bibendum sollicitudin quis id arcu. Sed id ligula lacus. Aliquam tincidunt justo non urna lacinia vestibulum. Donec tincidunt luctus malesuada. Mauris finibus condimentum enim, eget tristique erat viverra sed. Vivamus rhoncus accumsan malesuada. Proin rutrum dictum urna et ultricies.<br/>
+                    <br/>
+                    Sed convallis est a ex porta porta. Ut iaculis libero nulla, at molestie nulla fringilla nec. Phasellus ex nisi, sagittis in risus at, maximus dapibus lectus. Integer dignissim augue at nisi facilisis, a iaculis mauris sodales. Pellentesque sit amet felis magna. Donec dignissim, felis at luctus maximus, sapien libero vehicula nulla, varius sagittis felis enim vel dui. Fusce sit amet mi ac velit ullamcorper consequat eu at nisl.
+                </div>
+            </div>
+            <br/>
+            
+            <div class="section">
+                <div class="code codeblock">
+<pre>
+.col3{
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+</pre>
+                </div>
+                <br/>
+
+                <div class="col3" style="color:cyan">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a odio ac risus ultrices bibendum nec sit amet augue. Etiam egestas ullamcorper nisl in ornare. Maecenas non ligula efficitur, tempor est nec, ultricies est. Vivamus scelerisque odio et nulla iaculis, et consequat orci tincidunt. Aliquam erat volutpat. Fusce vitae mauris finibus, congue erat quis, pulvinar dui. Nam vitae dignissim sem.<br/>
+                    <br/>
+                    Donec porta, justo in egestas tincidunt, leo ante lacinia urna, vitae gravida lectus dui at massa. Nunc viverra neque vel erat mollis, et hendrerit tellus vehicula. Donec libero nisi, porta rhoncus molestie id, tempor sodales lorem. Ut eget pharetra velit, non venenatis felis. Aliquam nibh lorem, dapibus vitae nisl ut, mollis imperdiet metus. Etiam vulputate a lorem sit amet pretium. Morbi at ligula sed enim bibendum sollicitudin quis id arcu. Sed id ligula lacus. Aliquam tincidunt justo non urna lacinia vestibulum. Donec tincidunt luctus malesuada. Mauris finibus condimentum enim, eget tristique erat viverra sed. Vivamus rhoncus accumsan malesuada. Proin rutrum dictum urna et ultricies.<br/>
+                    <br/>
+                    Sed convallis est a ex porta porta. Ut iaculis libero nulla, at molestie nulla fringilla nec. Phasellus ex nisi, sagittis in risus at, maximus dapibus lectus. Integer dignissim augue at nisi facilisis, a iaculis mauris sodales. Pellentesque sit amet felis magna. Donec dignissim, felis at luctus maximus, sapien libero vehicula nulla, varius sagittis felis enim vel dui. Fusce sit amet mi ac velit ullamcorper consequat eu at nisl.
+                </div>
+            </div>
+            <br/>
+
+            <div class="section">
+                Rules can automatically be added between columns and the size of the gap can be adjusted using <span class="code">column-rule</span> and <span class="code">column-gap</span>.<br/>
+                <br/>
+
+                <div class="code codeblock">
+<pre>
+.fatgap{
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    column-rule: white 2px solid;
+    column-gap: 50px;
+}
+</pre>
+                </div>
+                <br/>
+
+                <div class="fatgap" style="color:cyan">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a odio ac risus ultrices bibendum nec sit amet augue. Etiam egestas ullamcorper nisl in ornare. Maecenas non ligula efficitur, tempor est nec, ultricies est. Vivamus scelerisque odio et nulla iaculis, et consequat orci tincidunt. Aliquam erat volutpat. Fusce vitae mauris finibus, congue erat quis, pulvinar dui. Nam vitae dignissim sem.<br/>
+                    <br/>
+                    Donec porta, justo in egestas tincidunt, leo ante lacinia urna, vitae gravida lectus dui at massa. Nunc viverra neque vel erat mollis, et hendrerit tellus vehicula. Donec libero nisi, porta rhoncus molestie id, tempor sodales lorem. Ut eget pharetra velit, non venenatis felis. Aliquam nibh lorem, dapibus vitae nisl ut, mollis imperdiet metus. Etiam vulputate a lorem sit amet pretium. Morbi at ligula sed enim bibendum sollicitudin quis id arcu. Sed id ligula lacus. Aliquam tincidunt justo non urna lacinia vestibulum. Donec tincidunt luctus malesuada. Mauris finibus condimentum enim, eget tristique erat viverra sed. Vivamus rhoncus accumsan malesuada. Proin rutrum dictum urna et ultricies.<br/>
+                    <br/>
+                    Sed convallis est a ex porta porta. Ut iaculis libero nulla, at molestie nulla fringilla nec. Phasellus ex nisi, sagittis in risus at, maximus dapibus lectus. Integer dignissim augue at nisi facilisis, a iaculis mauris sodales. Pellentesque sit amet felis magna. Donec dignissim, felis at luctus maximus, sapien libero vehicula nulla, varius sagittis felis enim vel dui. Fusce sit amet mi ac velit ullamcorper consequat eu at nisl.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_columns.asp">W3C: columns</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_column-rule.asp">W3C: column-rule</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_column-gap.asp">W3C: column-gap</a></li>
+           </ul>
+            
+
+        </div>
+
+    </body>
+</html>

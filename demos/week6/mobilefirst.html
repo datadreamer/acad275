@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Media Queries: Mobile First Layout</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Media Queries: Mobile First Layout">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            #header{
+                width: 100%;
+                height: 80px;
+                background-color: #069;
+            }
+            #title{
+                margin:10px 0 10px 20px;
+                float: left;
+                font-size: 3em;
+            }
+            #nav{
+                width: 50px;
+                float: right;
+                padding: 15px 20px 15px 20px;
+            }
+            #nav:hover hr{
+                border: 3px red solid;
+            }
+            hr{
+                border: 3px white solid;
+            }
+            #content{
+                background-color: #333;
+                padding: 20px;
+                text-align: justify;
+            }
+            #photo{
+                width: 100%;
+            }
+            .half{
+                float: left;
+                width: 100%;
+            }
+            #quote{
+                font-family: 'Adobe Caslon', Georgia, 'Times New Roman', Times, serif;
+                font-size: 2em;
+            }
+            #landscape{
+                background-image: url('../week4/echopark.jpg');
+                background-size: cover;
+                background-position: center;
+                padding: 100px 0 100px 0;
+            }
+            #footer{
+                clear: both;
+                background-color: #666;
+                padding: 10px 0px 10px 20px;
+            }
+
+            @media screen and (min-width:640px) {
+                #content{
+                    column-count: 2;
+                    column-gap: 20px;
+                }
+            }
+
+            @media screen and (min-width:1100px) {
+                #content{
+                    column-count: 3;
+                }
+                .half{
+                    width: 50%;
+                }
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 6:</h3>
+            <h1>Media Queries: Mobile First Layout</h1>
+            <br/><br/>
+
+            <div class="section">
+                One of the key tenets of responsive web design is to approach the construction of your website from a mobile first perspective. This means affording for smaller resolution screens that fit less content, enlarging text to make it more accessible, and changing navigation to afford people with big thumbs to push buttons. Using media queries, the styles and navigation can be adjusted to better accommodate larger displays. This leads into another key tenet of responsive web design, which is progressive enhancement. This is to increase the experience of the website based on device considerations; things like image size, animations, and javascript functionality.<br/>
+                <br/><br/>
+            </div>
+
+            <div class="section">
+
+                <div id="main">
+                    <div id="header">
+                        <h2 id="title">
+                            Aaron Siegel
+                        </h2>
+                        <div id="nav">
+                            <hr/>
+                            <hr/>
+                            <hr/>
+                        </div>
+                    </div>
+
+                    <div id="content">
+
+                        <img src="siegel_1024.jpg" alt="Profile Photo" id="photo"/>
+
+                        <h2>Here is some content.</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere iaculis arcu sed rhoncus. Mauris facilisis felis nunc, ut pellentesque nisi ultrices quis. Nullam imperdiet sagittis urna, id pellentesque risus finibus eget. Nullam tempus sapien enim, in fringilla leo elementum id. Fusce sed sem a enim molestie varius at eget diam. Donec dapibus dui a orci imperdiet, sit amet bibendum nisl volutpat. Fusce mollis ornare nisl. Donec vel sapien nec nisl vehicula elementum. Sed placerat, nulla rhoncus hendrerit laoreet, lacus elit blandit dui, vitae aliquet ante velit a sem. Phasellus augue sem, porta eu turpis ut, malesuada accumsan ipsum.<br/>
+                        <br/>
+                        Vivamus et neque sit amet urna finibus rutrum. Maecenas dapibus malesuada ex, vel pharetra sem bibendum ac. In hac habitasse platea dictumst. Nam nec posuere sem, eu convallis nulla. Cras dignissim neque viverra nibh vulputate aliquam. Vestibulum efficitur congue est, id finibus libero fringilla quis. Nunc blandit accumsan dui, eu rutrum nisl vulputate semper. Maecenas nec tortor aliquet, iaculis est sit amet, vulputate nisl.<br/>
+                        <br/>
+                        Proin dictum arcu vitae erat accumsan aliquam. Fusce rhoncus sit amet felis non volutpat. Donec vehicula eget quam vel efficitur. Nam quam lorem, volutpat non lacus non, gravida ultricies nulla. Nam rhoncus nisl varius nisl elementum dapibus. Quisque malesuada orci sit amet volutpat tincidunt. Etiam convallis neque a suscipit vestibulum. Aliquam elit purus, porta sed condimentum id, auctor quis urna. Pellentesque at metus et ligula varius viverra. Phasellus vulputate rhoncus dolor sed mollis. Curabitur viverra ante nec arcu euismod pellentesque. Praesent porttitor, arcu at posuere malesuada, nunc dui vestibulum nunc, eget dignissim dui magna quis sapien.<br/>
+                        <br/>
+                        Donec maximus, magna nec maximus auctor, risus nisi sollicitudin elit, sit amet cursus augue enim quis enim. In dictum eros sed augue molestie, at maximus sapien sodales. Sed tristique mauris nec neque auctor, sed elementum risus rhoncus. Praesent nibh odio, ornare quis vehicula a, facilisis non nisi. Vestibulum sed semper odio. Nullam commodo neque at sapien pulvinar lobortis. Curabitur id dolor nulla. Fusce non semper dui, at posuere ipsum. Ut imperdiet id arcu a egestas.<br/>
+                        <br/>
+                        In tristique sapien ut orci ornare, et accumsan nisi aliquam. Suspendisse euismod venenatis libero, congue pharetra ligula lobortis in. Vivamus id mattis ipsum. Praesent ut fermentum ligula, a egestas metus. Fusce volutpat in ipsum vitae molestie. Nulla molestie leo eget quam dignissim feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse auctor quam nec diam rhoncus luctus. Aenean pharetra eros id nunc vestibulum, imperdiet laoreet sapien varius. Fusce arcu dui, condimentum non ipsum in, rutrum venenatis nisl. Cras pulvinar ex non lacinia suscipit.<br/>
+                        <br/>
+                    </div>
+
+                    <div style="background-color: #999; float:left; width: 100%">
+                        <div class="half" id="quote">
+                            <div style="margin:20px; text-align:center; padding: 50px 0 50px 0">
+                                <em>
+                                    "Of all the things I've lost, I miss my mind the most."
+                                </em>
+                            </div>
+                        </div>
+                        <div class="half" id="landscape">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div id="footer">
+                        © Aaron Siegel 2022
+                    </div>
+
+                </div>
+
+                <br/><br/>
+            </div>
+            <div class="section">
+
+                <div class="code codeblock">
+<pre>
+#header{
+    width: 100%;
+    height: 80px;
+    background-color: #069;
+}
+#title{
+    margin:10px 0 10px 20px;
+    float: left;
+    font-size: 3em;
+}
+#nav{
+    width: 50px;
+    float: right;
+    padding: 15px 20px 15px 20px;
+}
+#nav:hover hr{
+    border: 3px red solid;
+}
+hr{
+    border: 3px white solid;
+}
+#content{
+    background-color: #333;
+    padding: 20px;
+    text-align: justify;
+}
+#photo{
+    width: 100%;
+}
+.half{
+    float: left;
+    width: 100%;
+}
+#quote{
+    font-family: 'Adobe Caslon', Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+#landscape{
+    background-image: url('../week4/echopark.jpg');
+    background-size: cover;
+    padding: 100px 0 100px 0;
+}
+#footer{
+    clear: both;
+    background-color: #666;
+    padding: 10px 0px 10px 20px;
+}
+
+@media screen and (min-width:640px) {
+    #content{
+        column-count: 2;
+        column-gap: 20px;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    #content{
+        column-count: 3;
+    }
+    .half{
+        width: 50%;
+    }
+}
+</pre>
+                </div>
+                <br/>
+
+            </div>
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css_rwd_intro.asp">Responsive Web Design: Introduction</a></li>
+                <li><a href="https://www.w3schools.com/css/css_rwd_viewport.asp">Responsive Web Design: Viewport</a></li>
+                <li><a href="https://www.w3schools.com/css/css_rwd_grid.asp">Responsive Web Design: Grid View</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

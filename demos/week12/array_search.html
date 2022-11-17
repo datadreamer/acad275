@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Arrays</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Arrays">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 12:</h3>
+            <h1>Array Search</h1>
+            <br><br>
+
+            <div class="section">
+                Arrays can be searched by using a combination of a for loop, if statement, and indexOf() methods to be able to match strings to different elements within the array. This can be used to filter the results that will be output to a page. The demo below uses three parallel arrays of data associated with the top 50 highest grossing films of all time. There is a titles array, years array, and genres array. All three arrays will be checked for the query string to see if they match, and if so, will be printed to the HTML page.<br>
+                <br>
+
+                <div class="interactive">
+                    <input type="text" id="query">
+                    <input type="submit" id="search" value="Search">
+                    <br>
+                    <br>
+                    <div id="films">
+
+                    </div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    // ARRAY OF TOP 50 HIGHEST GROSSING FILM TITLES
+                    var titles = [];
+                    titles.push('Avengers: Endgame');
+                    titles.push('Avatar');
+                    titles.push('Titanic');
+                    titles.push('Star Wars: The Force Awakens');
+                    titles.push('Avengers: Infinity War');
+                    titles.push('Jurassic World');
+                    titles.push('The Lion King');
+                    titles.push('The Avengers');
+                    titles.push('Furious 7');
+                    titles.push('Frozen II');
+                    titles.push('Avengers: Age of Ultron');
+                    titles.push('Black Panther');
+                    titles.push('Harry Potter and the Deathly Hallows – Part 2');
+                    titles.push('Star Wars: The Last Jedi');
+                    titles.push('Jurassic World: Fallen Kingdom');
+                    titles.push('Frozen');
+                    titles.push('Beauty and the Beast');
+                    titles.push('Incredibles 2');
+                    titles.push('The Fate of the Furious');
+                    titles.push('Iron Man 3');
+                    titles.push('Minions');
+                    titles.push('Captain America: Civil War');
+                    titles.push('Aquaman');
+                    titles.push('The Lord of the Rings: The Return of the King');
+                    titles.push('Spider-Man: Far From Home');
+                    titles.push('Captain Marvel');
+                    titles.push('Transformers: Dark of the Moon');
+                    titles.push('Skyfall');
+                    titles.push('Transformers: Age of Extinction');
+                    titles.push('The Dark Knight Rises');
+                    titles.push('Joker');
+                    titles.push('Star Wars: The Rise of Skywalker');
+                    titles.push('Toy Story 4');
+                    titles.push('Toy Story 3');
+                    titles.push('Pirates of the Caribbean: Dead Man\'s Chest');
+                    titles.push('Rogue One: A Star Wars Story');
+                    titles.push('Aladdin');
+                    titles.push('Pirates of the Caribbean: On Stranger Tides');
+                    titles.push('Despicable Me 3');
+                    titles.push('Jurassic Park');
+                    titles.push('Finding Dory');
+                    titles.push('Star Wars: Episode I – The Phantom Menace');
+                    titles.push('Alice in Wonderland');
+                    titles.push('Zootopia');
+                    titles.push('The Hobbit: An Unexpected Journey');
+                    titles.push('Harry Potter and the Philosopher\'s Stone');
+                    titles.push('The Dark Knight');
+                    titles.push('Harry Potter and the Deathly Hallows – Part 1');
+                    titles.push('Despicable Me 2');
+                    titles.push('The Lion King');
+
+                    // ARRAY OF YEARS OF RELEASE OF CORRESPONDING TITLES
+                    var years = [];
+                    years.push('2019');
+                    years.push('2009');
+                    years.push('1997');
+                    years.push('2015');
+                    years.push('2018');
+                    years.push('2015');
+                    years.push('2019');
+                    years.push('2012');
+                    years.push('2015');
+                    years.push('2019');
+                    years.push('2015');
+                    years.push('2018');
+                    years.push('2011');
+                    years.push('2017');
+                    years.push('2018');
+                    years.push('2013');
+                    years.push('2017');
+                    years.push('2018');
+                    years.push('2017');
+                    years.push('2013');
+                    years.push('2015');
+                    years.push('2016');
+                    years.push('2018');
+                    years.push('2003');
+                    years.push('2019');
+                    years.push('2019');
+                    years.push('2011');
+                    years.push('2012');
+                    years.push('2014');
+                    years.push('2012');
+                    years.push('2019');
+                    years.push('2019');
+                    years.push('2019');
+                    years.push('2010');
+                    years.push('2006');
+                    years.push('2016');
+                    years.push('2019');
+                    years.push('2011');
+                    years.push('2017');
+                    years.push('1993');
+                    years.push('2016');
+                    years.push('1999');
+                    years.push('2010');
+                    years.push('2016');
+                    years.push('2012');
+                    years.push('2001');
+                    years.push('2008');
+                    years.push('2010');
+                    years.push('2013');
+                    years.push('1994');
+
+                    // ARRAY OF GENRES OF CORRESPONDING TITLES
+                    var genres = [];
+                    genres.push('Action, Adventure, Drama');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Drama, Romance');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Animation, Adventure, Drama');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Thriller');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Sci-Fi ');
+                    genres.push('Adventure, Drama, Fantasy');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Family, Fantasy, Musical');
+                    genres.push('Animation, Action, Adventure');
+                    genres.push('Action, Adventure, Crime');
+                    genres.push('Action, Adventure, Sci-Fi')
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Action, Adventure, Drama');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure, Thriller');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Action, Adventure');
+                    genres.push('Crime, Drama, Thriller');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Adventure, Family, Fantasy');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Animation, Comedy, Family ');
+                    genres.push('Action, Adventure, Sci-Fi');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Action, Adventure, Fantasy');
+                    genres.push('Adventure, Family, Fantasy');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Adventure, Fantasy');
+                    genres.push('Adventure, Family, Fantasy');
+                    genres.push('Action, Crime, Drama');
+                    genres.push('Adventure, Family, Fantasy');
+                    genres.push('Animation, Adventure, Comedy');
+                    genres.push('Animation, Adventure, Drama');
+
+                    $("#search").click(function(){
+                        var newhtml = "";
+                        var query = $("#query").val();
+
+                        for(var i=0; i<titles.length; i++){
+                            // convert everything to lowercase to be more easily matched.
+                            var t = titles[i].toLowerCase();
+                            var y = years[i].toLowerCase();
+                            var g = genres[i].toLowerCase();
+                            var q = query.toLowerCase();
+
+                            if(t.indexOf(q) != -1 || y.indexOf(q) != -1 || g.indexOf(q) != -1){
+                                // we have a match!
+                                newhtml += titles[i] + ",  " + y + ", " + genres[i] + "<br>";
+                                $("#films").html(newhtml);
+                            }
+                        }
+                    })
+
+                </script>
+
+<div class="code codeblock"><pre>
+// ARRAY OF TOP 50 HIGHEST GROSSING FILM TITLES
+var titles = [];
+titles.push('Avengers: Endgame');
+titles.push('Avatar');
+titles.push('Titanic');
+titles.push('Star Wars: The Force Awakens');
+titles.push('Avengers: Infinity War');
+titles.push('Jurassic World');
+titles.push('The Lion King');
+titles.push('The Avengers');
+titles.push('Furious 7');
+titles.push('Frozen II');
+titles.push('Avengers: Age of Ultron');
+titles.push('Black Panther');
+titles.push('Harry Potter and the Deathly Hallows – Part 2');
+titles.push('Star Wars: The Last Jedi');
+titles.push('Jurassic World: Fallen Kingdom');
+titles.push('Frozen');
+titles.push('Beauty and the Beast');
+titles.push('Incredibles 2');
+titles.push('The Fate of the Furious');
+titles.push('Iron Man 3');
+titles.push('Minions');
+titles.push('Captain America: Civil War');
+titles.push('Aquaman');
+titles.push('The Lord of the Rings: The Return of the King');
+titles.push('Spider-Man: Far From Home');
+titles.push('Captain Marvel');
+titles.push('Transformers: Dark of the Moon');
+titles.push('Skyfall');
+titles.push('Transformers: Age of Extinction');
+titles.push('The Dark Knight Rises');
+titles.push('Joker');
+titles.push('Star Wars: The Rise of Skywalker');
+titles.push('Toy Story 4');
+titles.push('Toy Story 3');
+titles.push('Pirates of the Caribbean: Dead Man\'s Chest');
+titles.push('Rogue One: A Star Wars Story');
+titles.push('Aladdin');
+titles.push('Pirates of the Caribbean: On Stranger Tides');
+titles.push('Despicable Me 3');
+titles.push('Jurassic Park');
+titles.push('Finding Dory');
+titles.push('Star Wars: Episode I – The Phantom Menace');
+titles.push('Alice in Wonderland');
+titles.push('Zootopia');
+titles.push('The Hobbit: An Unexpected Journey');
+titles.push('Harry Potter and the Philosopher\'s Stone');
+titles.push('The Dark Knight');
+titles.push('Harry Potter and the Deathly Hallows – Part 1');
+titles.push('Despicable Me 2');
+titles.push('The Lion King');
+
+// ARRAY OF YEARS OF RELEASE OF CORRESPONDING TITLES
+var years = [];
+years.push('2019');
+years.push('2009');
+years.push('1997');
+years.push('2015');
+years.push('2018');
+years.push('2015');
+years.push('2019');
+years.push('2012');
+years.push('2015');
+years.push('2019');
+years.push('2015');
+years.push('2018');
+years.push('2011');
+years.push('2017');
+years.push('2018');
+years.push('2013');
+years.push('2017');
+years.push('2018');
+years.push('2017');
+years.push('2013');
+years.push('2015');
+years.push('2016');
+years.push('2018');
+years.push('2003');
+years.push('2019');
+years.push('2019');
+years.push('2011');
+years.push('2012');
+years.push('2014');
+years.push('2012');
+years.push('2019');
+years.push('2019');
+years.push('2019');
+years.push('2010');
+years.push('2006');
+years.push('2016');
+years.push('2019');
+years.push('2011');
+years.push('2017');
+years.push('1993');
+years.push('2016');
+years.push('1999');
+years.push('2010');
+years.push('2016');
+years.push('2012');
+years.push('2001');
+years.push('2008');
+years.push('2010');
+years.push('2013');
+years.push('1994');
+
+// ARRAY OF GENRES OF CORRESPONDING TITLES
+var genres = [];
+genres.push('Action, Adventure, Drama');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Drama, Romance');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Animation, Adventure, Drama');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Thriller');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Sci-Fi ');
+genres.push('Adventure, Drama, Fantasy');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Family, Fantasy, Musical');
+genres.push('Animation, Action, Adventure');
+genres.push('Action, Adventure, Crime');
+genres.push('Action, Adventure, Sci-Fi')
+genres.push('Animation, Adventure, Comedy');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Action, Adventure, Drama');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure, Thriller');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Action, Adventure');
+genres.push('Crime, Drama, Thriller');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Adventure, Family, Fantasy');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Animation, Comedy, Family ');
+genres.push('Action, Adventure, Sci-Fi');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Action, Adventure, Fantasy');
+genres.push('Adventure, Family, Fantasy');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Adventure, Fantasy');
+genres.push('Adventure, Family, Fantasy');
+genres.push('Action, Crime, Drama');
+genres.push('Adventure, Family, Fantasy');
+genres.push('Animation, Adventure, Comedy');
+genres.push('Animation, Adventure, Drama');
+
+$("#search").click(function(){
+    var newhtml = "";
+    var query = $("#query").val();
+
+    for(var i=0; i&lt;titles.length; i++){
+        // convert everything to lowercase to be more easily matched.
+        var t = titles[i].toLowerCase();
+        var y = years[i].toLowerCase();
+        var g = genres[i].toLowerCase();
+        var q = query.toLowerCase();
+
+        if(t.indexOf(q) != -1 || y.indexOf(q) != -1 || g.indexOf(q) != -1){
+            // we have a match!
+            newhtml += titles[i] + ",  " + y + ", " + genres[i] + "&lt;br&gt;";
+            $("#films").html(newhtml);
+        }
+    }
+})</pre>
+</div>
+<br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/js/js_arrays.asp">W3Schools: JavaScript Arrays</a></li>
+                <li><a href="https://www.w3schools.com/js/js_array_methods.asp">W3Schools: JavaScript Array Methods</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

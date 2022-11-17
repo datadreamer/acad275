@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Semantic Tags</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Semantic Tags">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            article{
+                background-color: #999;
+            }
+            header{
+                background-color: #069;
+                padding: 10px;
+            }
+            footer{
+                background-color: #096;
+                padding: 10px;
+            }
+            section{
+                padding: 10px;
+                text-align: justify;
+            }
+            aside{
+                width: 300px;
+                padding: 10px;
+                margin-left: 20px;
+                background-color: #333;
+                float: right;
+                font-size: 2em;
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+            }
+            figure{
+                width: 300px;
+                float: left;
+                margin: 0 20px 20px 0;
+            }
+            figure img{
+                width: 300px;
+            }
+            figcaption{
+                background-color: #333;
+                padding: 10px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 5:</h3>
+            <h1>Semantic Tags</h1>
+            <br/><br/>
+
+            <div class="section">
+                Semantic tags were added in HTML5 in order to describe the type of content within a document. This is useful for machine readers for people with vision impairments or for machine learning to have a better understand of the context of a piece of information.<br/>
+                <br/>
+                <ul>
+                    <li><span class="code">&lt;main&gt;</span> tag specifies the main content of a document.</li>
+                    <li><span class="code">&lt;article&gt;</span> tag specifies independent, self-contained content.</li>
+                    <li><span class="code">&lt;header&gt;</span> element represents a container for introductory content or a set of navigational links.</li>
+                    <li><span class="code">&lt;footer&gt;</span> tag defines a footer for a document or section.</li>
+                    <li><span class="code">&lt;nav&gt;</span> tag defines a set of navigation links.</li>
+                    <li><span class="code">&lt;aside&gt;</span> tag defines some content aside from the content it is placed in.</li>
+                    <li><span class="code">&lt;section&gt;</span> tag defines a section in a document.</li>
+                    <li><span class="code">&lt;figure&gt;</span> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.</li>
+                    <li><span class="code">&lt;figcaption&gt;</span> tag defines a caption for a <span class="code">&lt;figure&gt;</span> element.</li>
+                </ul>
+                <br/><br/>
+            </div>
+
+            <div class="section">
+                <main>
+                    <article>
+                        <header>
+                            <h2>This is the title of the article in the header area.</h2>
+                            <p>By Aaron Siegel<br/>
+                            September 18th, 2022</p>
+                        </header>
+
+                        <nav>
+                        </nav>
+
+                        <section>
+                            <h3>First Section</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis elit. Nunc pretium enim eget blandit ultrices. Cras et massa quam. Nunc posuere diam eget euismod cursus. Donec venenatis nisi vitae metus placerat auctor quis non nunc. Sed molestie felis sit amet lectus pretium viverra. Aenean mauris metus, euismod at est nec, dictum tempus felis. Quisque egestas, risus non pellentesque eleifend, elit ipsum dictum ante, eget consequat nibh odio et lacus. Ut eu consectetur nulla, quis rutrum tortor. Nulla ex elit, dignissim eu feugiat ut, pulvinar eget lectus. Nunc at tempus justo. Suspendisse bibendum odio nunc, eget mattis nisi lacinia ut. Proin aliquet lectus sed magna sollicitudin, quis interdum massa dictum. Integer ac fermentum eros.
+                            </p><p>
+                            Nam et erat et ligula vehicula commodo. Sed et diam id lorem fermentum feugiat. Aliquam a lobortis mauris. Suspendisse porta lectus vitae sollicitudin finibus. Duis vulputate congue metus, in tempor dolor fermentum id. Praesent eget mi eget libero euismod gravida. In eleifend arcu ut est eleifend, in auctor velit lacinia. Quisque hendrerit vestibulum justo, at egestas sapien elementum eu. Quisque rutrum, ex vel pellentesque maximus, urna eros cursus eros, at elementum nulla erat ac risus. Donec eu blandit massa. Nulla vestibulum, lectus sit amet luctus suscipit, dui orci blandit augue, id suscipit erat sem sed metus. Vestibulum convallis quis dui vitae consectetur. Praesent feugiat posuere condimentum. Etiam bibendum aliquam iaculis. In vel hendrerit nunc.
+                            </p><p>
+                            Integer ac nisi nisl. Vestibulum blandit eros eu odio finibus, id cursus orci sodales. Vivamus dictum, elit eget efficitur sagittis, ipsum nunc aliquet eros, quis finibus tellus justo sed turpis. Sed volutpat ultricies placerat. Praesent fringilla erat mi, eget ultricies metus pulvinar et. Quisque bibendum iaculis eros, ut posuere augue tristique id. In eu tellus tincidunt, consectetur erat vitae, fermentum justo. Praesent ut mollis arcu. Nunc commodo diam quis pellentesque mattis.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h3>Second Section</h3>
+                            <p>
+                                <aside>
+                                    "This is an aside, kind of like a place where you could put a pull quote."
+                                </aside>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis elit. Nunc pretium enim eget blandit ultrices. Cras et massa quam. Nunc posuere diam eget euismod cursus. Donec venenatis nisi vitae metus placerat auctor quis non nunc. Sed molestie felis sit amet lectus pretium viverra. Aenean mauris metus, euismod at est nec, dictum tempus felis. Quisque egestas, risus non pellentesque eleifend, elit ipsum dictum ante, eget consequat nibh odio et lacus. Ut eu consectetur nulla, quis rutrum tortor. Nulla ex elit, dignissim eu feugiat ut, pulvinar eget lectus. Nunc at tempus justo. Suspendisse bibendum odio nunc, eget mattis nisi lacinia ut. Proin aliquet lectus sed magna sollicitudin, quis interdum massa dictum. Integer ac fermentum eros.
+                            </p><p>
+                            Nam et erat et ligula vehicula commodo. Sed et diam id lorem fermentum feugiat. Aliquam a lobortis mauris. Suspendisse porta lectus vitae sollicitudin finibus. Duis vulputate congue metus, in tempor dolor fermentum id. Praesent eget mi eget libero euismod gravida. In eleifend arcu ut est eleifend, in auctor velit lacinia. Quisque hendrerit vestibulum justo, at egestas sapien elementum eu. Quisque rutrum, ex vel pellentesque maximus, urna eros cursus eros, at elementum nulla erat ac risus. Donec eu blandit massa. Nulla vestibulum, lectus sit amet luctus suscipit, dui orci blandit augue, id suscipit erat sem sed metus. Vestibulum convallis quis dui vitae consectetur. Praesent feugiat posuere condimentum. Etiam bibendum aliquam iaculis. In vel hendrerit nunc.
+                            </p><p>
+                            Integer ac nisi nisl. Vestibulum blandit eros eu odio finibus, id cursus orci sodales. Vivamus dictum, elit eget efficitur sagittis, ipsum nunc aliquet eros, quis finibus tellus justo sed turpis. Sed volutpat ultricies placerat. Praesent fringilla erat mi, eget ultricies metus pulvinar et. Quisque bibendum iaculis eros, ut posuere augue tristique id. In eu tellus tincidunt, consectetur erat vitae, fermentum justo. Praesent ut mollis arcu. Nunc commodo diam quis pellentesque mattis.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h3>Third Section</h3>
+                            <p>
+                                <figure>
+                                    <img src="usc.jpg" alt="USC Logo" id="logo"/>
+                                    <figcaption>This is a caption for the USC logo image inside a figure element.</figcaption>
+                                </figure>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis elit. Nunc pretium enim eget blandit ultrices. Cras et massa quam. Nunc posuere diam eget euismod cursus. Donec venenatis nisi vitae metus placerat auctor quis non nunc. Sed molestie felis sit amet lectus pretium viverra. Aenean mauris metus, euismod at est nec, dictum tempus felis. Quisque egestas, risus non pellentesque eleifend, elit ipsum dictum ante, eget consequat nibh odio et lacus. Ut eu consectetur nulla, quis rutrum tortor. Nulla ex elit, dignissim eu feugiat ut, pulvinar eget lectus. Nunc at tempus justo. Suspendisse bibendum odio nunc, eget mattis nisi lacinia ut. Proin aliquet lectus sed magna sollicitudin, quis interdum massa dictum. Integer ac fermentum eros.
+                            </p><p>
+                            Nam et erat et ligula vehicula commodo. Sed et diam id lorem fermentum feugiat. Aliquam a lobortis mauris. Suspendisse porta lectus vitae sollicitudin finibus. Duis vulputate congue metus, in tempor dolor fermentum id. Praesent eget mi eget libero euismod gravida. In eleifend arcu ut est eleifend, in auctor velit lacinia. Quisque hendrerit vestibulum justo, at egestas sapien elementum eu. Quisque rutrum, ex vel pellentesque maximus, urna eros cursus eros, at elementum nulla erat ac risus. Donec eu blandit massa. Nulla vestibulum, lectus sit amet luctus suscipit, dui orci blandit augue, id suscipit erat sem sed metus. Vestibulum convallis quis dui vitae consectetur. Praesent feugiat posuere condimentum. Etiam bibendum aliquam iaculis. In vel hendrerit nunc.
+                            </p><p>
+                            Integer ac nisi nisl. Vestibulum blandit eros eu odio finibus, id cursus orci sodales. Vivamus dictum, elit eget efficitur sagittis, ipsum nunc aliquet eros, quis finibus tellus justo sed turpis. Sed volutpat ultricies placerat. Praesent fringilla erat mi, eget ultricies metus pulvinar et. Quisque bibendum iaculis eros, ut posuere augue tristique id. In eu tellus tincidunt, consectetur erat vitae, fermentum justo. Praesent ut mollis arcu. Nunc commodo diam quis pellentesque mattis.
+                            </p>
+                        </section>
+                            
+
+                        <footer>
+                            This is the footer. Copyright me.
+                        </footer>
+                    </article>
+                </main>
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+    
+            <ul>
+                <li><a href="https://www.w3schools.com/tags/tag_main.asp">W3C: &lt;main&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_article.asp">W3C: &lt;article&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_header.asp">W3C: &lt;header&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_footer.asp">W3C: &lt;footer&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_nav.asp">W3C: &lt;nav&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_aside.asp">W3C: &lt;aside&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_section.asp">W3C: &lt;section&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_figure.asp">W3C: &lt;figure&gt;</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_figcaption.asp">W3C: &lt;figcaption&gt;</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

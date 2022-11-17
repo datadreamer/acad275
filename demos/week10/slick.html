@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slick</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Slick">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <script src="jquery-3.6.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+
+        <style>
+            .slideshow img{
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 10:</h3>
+            <h1>Slick</h1>
+            <br><br>
+
+            <div class="section">
+                Slick is a JavaScript library that was built off of jQuery and thus requires jQuery to be included in order for it to work. It allows you to easily set up a carousel of any kind of content and it will be responsive to various window sizes.<br>
+                <br>
+
+                <div class="slideshow">
+                    <div><img src="la1.jpg" alt="LA"></div>
+                    <div><img src="la2.jpg" alt="LA"></div>
+                    <div><img src="la3.jpg" alt="LA"></div>
+                    <div><img src="la4.jpg" alt="LA"></div>
+                    <div><img src="la5.jpg" alt="LA"></div>
+                </div>
+                <br>
+
+                Follow the instructions on <a href="https://kenwheeler.github.io/slick/">the official Slick distribution page</a> to see how this can be implemented.
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.slideshow').slick();
+            });
+        </script>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://kenwheeler.github.io/slick/">Slick</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

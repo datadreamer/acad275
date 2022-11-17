@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Events</title>
+        <meta charset="utf-8">
+        <meta name="description" content="jQuery Events">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .flexthing{
+                margin:10px;
+                width:25%;
+            }
+
+            .funkystyles{
+                background-color: blueviolet;
+                color: chartreuse;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 9:</h3>
+            <h1>jQuery Events</h1>
+            <br><br>
+
+            <div class="section">
+                <h3>Event Handlers</h3>
+
+                There are a number of different ways to add events to HTML objects using jQuery. These naturally replace function calls to <span class="code">addEventListener()</span> and hopefully streamline your code a bit more. There are different methods for different kinds of interactions:<br>
+                <br>
+
+                <div style="display:flex">
+                    <div class="interactive flexthing" id="click" style="margin-left:0px">
+                        Click this.
+                    </div>
+
+                    <div class="interactive flexthing" id="hover">
+                        Hover over this.
+                    </div>
+
+                    <div class="interactive flexthing" id="mouseover">
+                        Mouseover this.
+                    </div>
+
+                    <div class="interactive flexthing" id="mouseout" style="margin-right:0px">
+                        Mouseout from this.
+                    </div>
+                </div>
+                <br>
+
+                <script>
+                    $("#click").click(function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#hover").hover(function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#mouseover").mouseover(function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#mouseout").mouseout(function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#click").click(function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#hover").hover(function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#mouseover").mouseover(function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#mouseout").mouseout(function(){
+    $(this).toggleClass("funkystyles");
+});</pre>
+</div>
+<br>
+
+                This same effect can be achieved by using the <span class="code">on()</span> method which behaves very similarly to <span class="code">addEventListener()</span> by taking in an argument to identify what kind of interaction it should respond to.<br>
+                <br>
+
+                <div style="display:flex">
+                    <div class="interactive flexthing" id="onclick" style="margin-left:0px">
+                        Click this.
+                    </div>
+
+                    <div class="interactive flexthing" id="onhover">
+                        Hover over this.
+                    </div>
+
+                    <div class="interactive flexthing" id="onmouseover">
+                        Mouseover this.
+                    </div>
+
+                    <div class="interactive flexthing" id="onmouseout" style="margin-right:0px">
+                        Mouseout from this.
+                    </div>
+                </div>
+                <br>
+
+                <script>
+                    $("#onclick").on("click", function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#onhover").on("mouseenter mouseleave", function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#onmouseover").on("mouseover", function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                    $("#onmouseout").on("mouseout", function(){
+                        $(this).toggleClass("funkystyles");
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#onclick").on("click", function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#onhover").on("mouseenter mouseleave", function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#onmouseover").on("mouseover", function(){
+    $(this).toggleClass("funkystyles");
+});
+$("#onmouseout").on("mouseout", function(){
+    $(this).toggleClass("funkystyles");
+});</pre>
+</div>
+<br>
+
+                We can use the <span class="code">on()</span> method to add multiple different events simultaneously by constructing them inside of a JavaScript object.<br>
+                <br>
+
+                <div class="interactive" id="mult">
+                    This div will respond when your mouse cursor goes over it, leaves it, as well as when you click on it.
+                </div>
+                <br>
+
+                <script>
+                    $("#mult").on({
+                        mouseenter: function(){
+                            $(this).css("background-color", "blueviolet");
+                        },
+                        mouseleave: function(){
+                            $(this).css("background-color", "#f99");
+                        },
+                        click: function(){
+                            $(this).css("background-color", "#090");
+                        }
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#mult").on({
+    mouseenter: function(){
+        $(this).css("background-color", "blueviolet");
+    },
+    mouseleave: function(){
+        $(this).css("background-color", "#f99");
+    },
+    click: function(){
+        $(this).css("background-color", "#090");
+    }
+});</pre>
+</div>
+<br>
+
+            </div>
+
+            <div class="section">
+                <h3>Editing Properties of Objects</h3>
+
+                HTML elements can have their attributes, CSS styles, and their inner HTML modified dynamically. This works a little different than when we use <span class="code">document.querySelector()</span> to get a reference to an HTML element.<br>
+                <br>
+
+                <div style="display:flex">
+                    <div class="interactive flexthing" id="attr" style="margin-left:0px">
+                        Change attribute.<br>
+                        <br>
+                        <img src="../week7/tacos5.jpg" style="width:100%" id="tacos">
+                    </div>
+    
+                    <div class="interactive flexthing" id="css">
+                        Change CSS.
+                    </div>
+    
+                    <div class="interactive flexthing" id="html">
+                        Change HTML.
+                    </div>
+    
+                    <div class="interactive flexthing" id="getattr" style="margin-right:0px" imadethisattrup="This text was stored inside of a custom attribute!">
+                        Get a custom attribute.
+                    </div>
+                </div>
+                <br>
+
+                <script>
+                    $("#attr").on("click", function(){
+                        $("#tacos").attr("src", "../week7/tacos2.jpg");
+                    });
+                    $("#css").on("click", function(){
+                        $(this).css("background-color", "#666");
+                    });
+                    $("#html").on("click", function(){
+                        $(this).html("<em>Let's just take over this div right here...</em>");
+                    });
+                    $("#getattr").on("click", function(){
+                        var content = $(this).attr("imadethisattrup");
+                        $(this).html(content);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#attr").on("click", function(){
+    $("#tacos").attr("src", "../week7/tacos2.jpg");
+});
+$("#css").on("click", function(){
+    $(this).css("background-color", "#666");
+});
+$("#html").on("click", function(){
+    $(this).html("<em>Let's just take over this div right here...</em>");
+});
+$("#getattr").on("click", function(){
+    var content = $(this).attr("imadethisattrup");
+    $(this).html(content);
+});</pre>
+</div>
+<br>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://api.jquery.com/category/events/">Official jQuery Documentation: Events</a></li>
+                <li><a href="https://www.w3schools.com/jquery/jquery_events.asp">W3Schools: jQuery Event Methods</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

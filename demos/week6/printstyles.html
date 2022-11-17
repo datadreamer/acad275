@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Media Queries: Breakpoints</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Media Queries: Breakpoints">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            #content{
+                column-count: 3;
+                color: cyan;
+            }
+
+            @media print {
+                * {
+                    font-family: 'Adobe Caslon', Georgia, 'Times New Roman', Times, serif;
+                    color: black;
+                }
+
+                #content{
+                    column-count: 1;
+                    color: black;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+      <div id="container">
+
+        <h3 class="week">Week 6:</h3>
+        <h1>Media Queries: Print Styles</h1>
+        <br/><br/>
+
+
+        <div class="section">
+            Using media queries can setup different styles based on the content being seen on a screen or being prepared to print on paper.<br/>
+            <br/>
+
+            <div id="content">
+                <h2 style="margin-top: 0px;">Go ahead and print me. I dare you.</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante eu mi suscipit efficitur. Vivamus nec blandit lectus, eget consectetur leo. Aliquam erat volutpat. Etiam molestie ligula ac nibh eleifend, ac dignissim nisi consectetur. Aliquam mattis efficitur mauris eu viverra. Vivamus ullamcorper mattis nunc, id elementum orci tristique quis. Donec tempus ipsum id consectetur volutpat. Donec nisi nisi, posuere sit amet mollis non, aliquam at libero. Sed porta aliquam nulla. Integer tempus felis purus, ut dictum ex rutrum a. Ut dignissim neque libero, eget sagittis leo dignissim vel.<br/>
+                <br/>
+                Proin efficitur venenatis turpis, vel fringilla tellus pulvinar et. Aenean quam arcu, ultrices vel dui in, tristique tempor turpis. Nunc malesuada est quis ipsum eleifend, nec iaculis mauris hendrerit. Integer fermentum dictum ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut tempor accumsan nulla, eu suscipit enim ullamcorper ac. Vestibulum interdum felis vitae neque vehicula sagittis. Duis ultrices arcu eu tellus commodo auctor.<br/>
+                <br/>
+                Praesent ornare justo arcu, sed dignissim magna suscipit sit amet. Aliquam interdum ex sit amet laoreet fermentum. Aliquam nec ante at mi eleifend semper. Etiam a rhoncus neque, eget eleifend lorem. Etiam vulputate leo at volutpat faucibus. Pellentesque pharetra faucibus justo, at ullamcorper ligula sagittis a. Proin sodales est quis sagittis finibus. Ut luctus tempor dui sit amet malesuada.<br/>
+                <br/>
+                Duis vulputate, purus a aliquet vestibulum, ligula ex fringilla sem, sed condimentum diam tortor quis nibh. Aliquam sagittis lectus et vestibulum dignissim. Quisque eget sollicitudin ex. Aenean pretium massa id velit venenatis iaculis. Proin faucibus tristique justo vitae porttitor. Pellentesque scelerisque dui eget nibh viverra scelerisque. Nulla et elementum urna. Suspendisse tincidunt eleifend luctus.<br/>
+                <br/>
+                Curabitur convallis et magna ac dapibus. Suspendisse dignissim sem vel est molestie, sed maximus augue efficitur. Aliquam eget molestie est. Sed lobortis, neque sed mattis vulputate, lorem velit auctor odio, in fermentum nisi nunc sed mauris. Suspendisse convallis, magna a accumsan aliquam, orci erat porta tortor, ut accumsan lacus lorem vitae erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce lorem dui, semper quis sapien ac, ornare rhoncus purus. Cras sit amet felis sem.<br/>
+                <h2>Did you notice what font my content is typeset in?</h2>
+                Pellentesque tristique, justo at elementum finibus, magna libero vulputate lacus, sit amet aliquet ante tortor id diam. Nunc eget ullamcorper est. Praesent vel sodales quam. Ut elementum sem massa, consequat cursus lectus sagittis vel. Praesent ullamcorper efficitur quam, vel blandit odio gravida ut. Mauris posuere ut diam ut bibendum. Mauris eu ipsum at ipsum efficitur vestibulum. Donec et cursus lectus.
+                <br/>
+                Aliquam erat volutpat. Phasellus rhoncus mi in convallis efficitur. Fusce nec rutrum erat. Maecenas aliquet lorem in velit posuere gravida. Quisque tincidunt metus eu nunc elementum, eget semper turpis pretium. Nulla nibh tortor, eleifend id auctor nec, placerat sit amet risus. Maecenas aliquet dolor a libero aliquam, sit amet consequat ipsum aliquam.<br/>
+                <br/>
+                Aenean elementum vel lectus vitae dictum. Maecenas eu massa sit amet nulla dictum porta. Nunc sollicitudin eu ligula sed egestas. Cras tristique purus aliquam ex finibus pharetra. Cras ultricies sollicitudin lorem. Vestibulum nec dolor et erat maximus hendrerit. Vivamus vitae est nec turpis mattis tristique quis nec ex. Vivamus mattis dolor ligula, ut scelerisque ex interdum vel.<br/>
+                <br/>
+                Maecenas molestie, nisl id tristique tempus, odio mi semper metus, eu consequat mauris orci nec mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sed dolor nec elit mollis aliquam eget ac nunc. Vestibulum et ornare metus. Donec in condimentum orci. Nunc tristique, urna ac porttitor aliquam, velit augue laoreet nibh, ut fringilla massa lectus vitae purus. Cras tellus nisl, congue id mi lobortis, faucibus semper sem. Nunc eu blandit nisl, nec varius risus. Nam ac turpis libero.<br/>
+                <br/>
+                Suspendisse sodales ligula ac bibendum elementum. Integer in sem laoreet, ornare velit sed, pharetra ex. Mauris at dui ut urna convallis consectetur pulvinar convallis velit. Morbi posuere dui eget eros hendrerit, in finibus massa commodo. Curabitur sollicitudin sem tellus, id faucibus massa sollicitudin nec. Pellentesque feugiat justo varius, accumsan felis id, consequat magna. Sed vitae tortor cursus, laoreet felis dictum, hendrerit erat. Pellentesque at est sollicitudin, tempor mauris id, venenatis quam. Integer urna purus, laoreet vitae consectetur ultricies, vehicula in augue.<br/>
+            </div>
+            <br/><br/>
+            
+
+          <div class="code codeblock">
+<pre>
+#content{
+    column-count: 3;
+    color: cyan;
+}
+
+@media print {
+    * {
+        font-family: 'Adobe Caslon', Georgia, 'Times New Roman', Times, serif;
+        color: #black;
+    }
+
+    #content{
+        column-count: 1;
+        color: black;
+    }
+}
+</pre>
+          </div>
+          <br/>
+
+        </div>
+      </div>
+
+      
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css3_mediaqueries.asp">CSS3 Media Queries</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

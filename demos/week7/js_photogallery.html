@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Photo Gallery</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Flexbox">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .imgthumb{
+                width: 150px;
+                opacity: 0.5;
+            }
+
+            #mainimg{
+                width:100%;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 7:</h3>
+            <h1>JavaScript Photo Gallery</h1>
+            <br>
+            
+            This photo gallery has been updated to have the code further optimized. Rather than referring to the image explicitely by its filename, it is using the value from the <span class="code">src</span> attribute of the <span class="code">img</span> tag. We can further optimize this by pulling the caption from the <span class="code">alt</span> attribute of the thumbnail image.<br/>
+            <br>
+
+            <div class="section">
+                <div style="display:flex">
+                    <div style="display:flex;flex-direction: column; margin-right:20px">
+                        <img src="tacos1.jpg" class="imgthumb" id="thumb1" alt="Pulled Pork Tacos with Cilantro and White Onions."><br>
+                        <img src="tacos2.jpg" class="imgthumb" id="thumb2" alt="Grilled Chicken Tacos with Pico de Gallo."><br>
+                        <img src="tacos3.jpg" class="imgthumb" id="thumb3" alt="Grilled Chicken Tacos with Fancy Crema and Red Onions."><br>
+                        <img src="tacos4.jpg" class="imgthumb" id="thumb4" alt="You can never have too many limes for your tacos."><br>
+                        <img src="tacos5.jpg" class="imgthumb" id="thumb5" alt="Carne Asada is by far my favorite taco."><br>
+                    </div>
+                    <div style="width:100%">
+                        <img src="tacos2.jpg" id="mainimg" alt="Big image of tacos"><br><br>
+                        <div id="imgcaption">
+                            Grilled Chicken Tacos with Pico de Gallo.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This is the code for the divs above. -->
+                <script>
+                    document.querySelector("#thumb1").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb1").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb1").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = this.src;
+                        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    });
+
+                    document.querySelector("#thumb2").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb2").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb2").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = this.src;
+                        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    });
+
+                    document.querySelector("#thumb3").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb3").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb3").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = this.src;
+                        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    });
+
+                    document.querySelector("#thumb4").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb4").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb4").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = this.src;
+                        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    });
+
+                    document.querySelector("#thumb5").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb5").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb5").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = this.src;
+                        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    });
+
+                    // If you're a savvy student and viewing the source code of the demos, this is how we might
+                    // use querySelectorAll() to reduce the number of lines of code to write.
+                    // let thumbs = document.querySelectorAll(".imgthumb");
+                    // for(let i=0; i<thumbs.length; i++){
+                    //     thumbs[i].addEventListener("mouseover", function(){
+                    //         this.style.opacity = 1;
+                    //     });
+                    //     thumbs[i].addEventListener("mouseout", function(){
+                    //         this.style.opacity = 0.5;
+                    //     });
+                    //     thumbs[i].addEventListener("click", function(){
+                    //         document.querySelector("#mainimg").src = this.src;
+                    //         document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+                    //     });
+                    // }
+                    
+                    
+                </script>
+
+                <br style="clear:both">
+                <br>
+
+                <div class="code codeblock">
+    <pre>
+&lt;script&gt;
+    document.querySelector("#thumb1").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb1").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb1").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = this.src;
+        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+    });
+
+    document.querySelector("#thumb2").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb2").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb2").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = this.src;
+        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+    });
+
+    document.querySelector("#thumb3").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb3").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb3").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = this.src;
+        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+    });
+
+    document.querySelector("#thumb4").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb4").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb4").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = this.src;
+        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+    });
+
+    document.querySelector("#thumb5").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb5").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb5").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = this.src;
+        document.querySelector("#imgcaption").innerHTML = this.getAttribute("alt");
+    });
+&lt;/script&gt;
+    </pre>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselector.asp">W3Schools: querySelector()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp">W3Schools: querySelectorAll()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp">W3Schools: addEventListener()</a></li>
+                <li><a href="https://www.w3schools.com/js/js_this.asp">W3Schools: this</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

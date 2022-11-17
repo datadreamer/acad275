@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ACAD 275: Dev I - Internet and World Wide Web</title>
+
+		<meta name="description" content="Lecture slides for Iovine-Young Academy Product Innovation program.">
+		<meta name="author" content="Aaron Siegel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			section img{
+				width: 90% !important;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- header and footer stays on page and changes when tweaked by <style> inside each <section> -->
+				<header>
+					<a href="http://iovine-young.usc.edu" class="left">ACAD 275: Dev I</a>
+					<a href="http://iovine-young.usc.edu" class="right">Iovine and Young Academy</a>
+				</header>
+
+				<footer>
+					<span id="leftside" class="left"></span>
+					<span id="rightside" class="right"></span>
+				</footer>
+
+
+
+
+				<section>
+					<div class="titletext">
+						<div class="week">ACAD 275: Dev I</div>
+						<h1>The Internet and World Wide Web</h1>
+						Aaron Siegel |
+						<script type="text/javascript">
+				        	document.write("<n uers=\"znvygb:nnebafvr@hfp.rqh\" ery=\"absbyybj\">nnebafvr@hfp.rqh</n>".replace(/[a-zA-Z]/g,
+				        	function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+				        </script>
+				        | 8/23/2022
+					</div>
+				</section>
+
+
+
+
+				<style>
+					/* UI/UX: Web slide styles */
+					/* https://www.vox.com/a/internet-maps */
+					.arpa69 footer #leftside:after{content: "Arpanet (1969)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.arpa70 footer #leftside:after{content: "Arpanet (1970)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.arpa73 footer #leftside:after{content: "Arpanet (1973)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.arpa82 footer #leftside:after{content: "Arpanet (1982)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.arpa84 footer #leftside:after{content: "Arpanet (1984)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.telnet footer #leftside:after{content: "Telnet (1969)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.email footer #leftside:after{content: "Email (1971)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.usenet footer #leftside:after{content: "Usenet (1980)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.usenetmap footer #leftside:after{content: "Usenet Traffic (1993)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.kron4 footer #leftside:after{content: "KRON 4 News, San Francisco (1981)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.bbs footer #leftside:after{content: "Bulletin Board System (1978)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.xanadu footer #leftside:after{content: "Project Xanadu (1960)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.www footer #leftside:after{content: "World Wide Web (1989)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.aol footer #leftside:after{content: "America Online (1991)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.tbl footer #leftside:after{content: "Sir Tim Berners Lee"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.todayshow footer #leftside:after{content: "NBC Today Show (1994)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.letterman footer #leftside:after{content: "The Late Show with David Letterman (1995)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.cnn footer #leftside:after{content: "CNN (1993)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.netscape footer #leftside:after{content: "Netscape Navigator 2.0 (1995)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.ie footer #leftside:after{content: "Microsoft Internet Explorer 1.0 (1995)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.yahoo94 footer #leftside:after{content: "Yahoo (1994)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.cnn footer #leftside:after{content: "CNN (1995)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.nyt footer #leftside:after{content: "The New York Times (1996)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					.google98 footer #leftside:after{content: "Google (1998)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+
+				</style>
+
+
+
+				<!-- Introduction -->
+				<section>
+					<h2>The Internet</h2><br/>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/ip.png"><br/><br/>
+							<h4>Internet Protocol</h4><br/>
+							The syntax used to send data packets over the network.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/server.png"><br/><br/>
+							<h4>Servers</h4><br/>
+							A computer running software to perform services and provide content to clients.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/client.png"><br/><br/>
+							<h4>Clients</h4><br/>
+							Your computer, or other users, accessing services and data over the network.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/router.png"><br/><br/>
+							<h4>Routers</h4><br/>
+							Devices that move data packets between networks to get from sender to recipient.
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>World Wide Web</h2><br/>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/http.jpg"><br/><br/>
+							<h4>HTTP</h4><br/>
+							Hypertext Transfer Protocol is the syntax computers use to communicate requests between a client and a server.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/html.jpg"><br/><br/>
+							<h4>HTML</h4><br/>
+							Hypertext Markup Language is used to structure content for the world wide web.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/webserver.jpg"><br/><br/>
+							<h4>Web Server</h4><br/>
+							Web Servers run software to provide files to client computers requesting a web address.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/browsers.png"><br/><br/>
+							<h4>Web Browser</h4><br/>
+							A software application users run on their computer to load content from web servers.
+						</div>
+					</div>
+				</section>
+
+				<!-- Arpanet -->
+				<section>
+					<h2>History of the Internet</h2>
+				</section>
+				<section data-background-video="video/arpanet.mp4" data-transition="fade" data-state="arpa69"></section>
+				<section data-state="arpa69" data-background-image="images/arpanet_1969.jpg" data-background-size="contain"></section>
+				<section data-state="arpa70" data-background-image="images/arpanet_1970.jpg" data-background-size="contain"></section>
+				<section data-state="arpa73" data-background-image="images/arpanet_1973.jpg" data-background-size="contain"></section>
+				<section data-state="arpa82" data-background-image="images/arpanet_1982.jpg" data-background-size="contain"></section>
+				<section data-state="arpa84" data-background-image="images/arpanet_1984.jpg" data-background-size="contain"></section>
+				<section data-state="telnet" data-background-image="images/telnet.png" data-background-size="contain"></section>
+				<section data-background-video="video/email.mp4" data-transition="fade" data-state="email"></section>
+				<section data-state="usenet" data-background-image="images/usenet.jpg" data-background-size="contain"></section>
+				<section data-state="usenetmap" data-background-image="images/usenet_1993.gif" data-background-size="contain"></section>
+				<section data-background-video="video/enewspapers_1981.mp4" data-transition="fade" data-state="kron4"></section>
+
+				<!-- WWW -->
+				<section data-state="tbl" data-background-image="images/tim_berners_lee.jpg" data-background-size="contain"></section>
+				<section data-background-video="video/www.mp4" data-transition="fade" data-state="www"></section>
+				<section data-background-video="video/aol.mp4" data-transition="fade" data-state="aol"></section>
+				<section data-background-video="video/aol_dialup.mp4" data-transition="fade" data-state="aol"></section>
+				<section data-background-video="video/today_show.mp4" data-transition="fade" data-state="todayshow"></section>
+				<section data-background-video="video/letterman_gates.mp4" data-transition="fade" data-state="letterman"></section>
+				<section data-background-video="video/cnn_www_1993.mp4" data-transition="fade" data-state="cnn"></section>
+				<section data-state="netscape" data-background-image="images/netscape_navigator_2_1995.png" data-background-size="contain"></section>
+				<section data-background-video="video/netscape_1995.mp4" data-transition="fade" data-state="netscape"></section>
+				<section data-state="ie" data-background-image="images/internet_explorer.png" data-background-size="contain"></section>
+
+				<!-- Search -->
+				<section data-state="yahoo94" data-background-image="images/yahoo_1994.png" data-background-size="contain"></section>
+				<section data-state="cnn" data-background-image="images/cnn_1995.png" data-background-size="contain"></section>
+				<section data-state="nyt" data-background-image="images/new_york_times_1996.png" data-background-size="contain"></section>
+				<section data-state="google98" data-background-image="images/google_1998.png" data-background-size="contain"></section>
+
+				<section>
+					<h2>Tools for Web Publishing</h2><br/>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/html.png"><br/><br/>
+							<h4>HTML is for Structure</h4><br/>
+							HTML allows you to define how your content is structured within your page.
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/css.png"><br/><br/>
+							<h4>CSS is for Style</h4><br/>
+							CSS allows you to style the appearance of the content within your page.
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/js.png"><br/><br/>
+							<h4>JavaScript is for Behavior</h4><br/>
+							JavaScript allows you to program the behavior and interactivity of the content within your page.
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/endpage.png"></section>
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+				width: 1920,
+		    height: 1080,
+		    margin: 0.1,
+		    minScale: 0.2,
+		    maxScale: 2.0,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

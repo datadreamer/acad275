@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Conditional Logic</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Conditional Logic">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 8:</h3>
+            <h1>Conditional Logic</h1>
+            <br><br>
+
+            <div class="section">
+                Conditional logic is the way to create branches of decisions in your code to change behavior based on user input or interaction. This is done using <span class="code">if()</span> statements. These statements use conditional operators to test an expression for a true or false state. If the condition of the expression results in true, the code inside of the curly braces directly following the parenthesis will be executed.<br>
+                <br>
+
+                <div class="interactive" id="passtest">
+                    <form id="form1" name="form1" method="post" action="">
+                        <input type="text" name="pass" id="pass">
+                        <input type="button" value="Test Password" id="passbutton">
+                    </form>
+                    <br>
+                    If you get the password correct, this div will turn green.
+                </div>
+                <br>
+
+                <script>
+                    function checkPassword(){
+                        var pass = document.querySelector("#pass").value;
+                        if(pass == "swordfish"){
+                            document.querySelector("#passtest").style.backgroundColor = "green";
+                        }
+                    }
+
+                    document.querySelector("#passbutton").addEventListener("click", checkPassword);
+                </script>
+
+                <div class="code codeblock">
+                    <pre>
+function checkPassword(){
+    var pass = document.querySelector("#pass").value;
+    if(pass == "swordfish"){
+        document.querySelector("#passtest").style.backgroundColor = "green";
+    }
+}
+
+document.querySelector("#passbutton").addEventListener("click", checkPassword);</pre>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <span class="code">if()</span> statements can also have an <span class="code">else</span> component that will execute code when the comparator expression results in false.<br>
+                <br>
+
+                <div class="interactive" id="passtest2">
+                    <form id="form2" name="form2" method="post" action="">
+                        <input type="text" name="pass2" id="pass2">
+                        <input type="button" value="Test Password" id="passbutton2">
+                    </form>
+                    <br>
+                    If you get the password correct, this div will turn green. If it's wrong, it will turn red.
+                </div>
+                <br>
+
+                <script>
+                    function checkPassword2(){
+                        var pass = document.querySelector("#pass2").value;
+                        var div = document.querySelector("#passtest2");
+                        if(pass == "swordfish"){
+                            div.style.backgroundColor = "green";
+                        } else {
+                            div.style.backgroundColor = "red";
+                        }
+                    }
+
+                    document.querySelector("#passbutton2").addEventListener("click", checkPassword2);
+                </script>
+
+                <div class="code codeblock">
+                    <pre>
+function checkPassword2(){
+    var pass = document.querySelector("#pass2").value;
+    var div = document.querySelector("#passtest2");
+    if(pass == "swordfish"){
+        div.style.backgroundColor = "green";
+    } else {
+        div.style.backgroundColor = "red";
+    }
+}
+
+document.querySelector("#passbutton2").addEventListener("click", checkPassword2);</pre>
+                    </div>
+
+            </div>
+
+            <div class="section">
+                We can also use <span class="code">if()</span> statements with <span class="code">else if()</span> components in order to check expressions for multiple conditions, as well as having multiple outcomes when it comes to the code that gets executed. We can also ensure that we are doing an arithmetic comparison by using the <span class="code">parseFloat()</span> function to ensure that the string from the input field will be converted to a Number type variable.<br>
+                <br>
+
+                <div class="interactive" id="agetest">
+                    <form id="form3" name="form3" method="post" action="">
+                        <input type="text" name="age" id="age">
+                        <input type="button" value="Check Age" id="agebutton">
+                    </form>
+                    <br>
+                    If you are under 18, this div will turn red. If you are over 18, this div will turn yellow. If you're exactly 18, this div will turn green. If you enter anything that isn't a number, the div will turn gray.
+                </div>
+                <br>
+
+                <script>
+                    function checkAge(){
+                        var age = parseFloat(document.querySelector("#age").value);
+                        var div = document.querySelector("#agetest")
+                        if(age < 18){
+                            div.style.backgroundColor = "red";
+                        } else if(age == 18){
+                            div.style.backgroundColor = "green";
+                        } else if(age > 18){
+                            div.style.backgroundColor = "yellow";
+                        } else {
+                            div.style.backgroundColor = "gray";
+                        }
+                    }
+
+                    document.querySelector("#agebutton").addEventListener("click", checkAge);
+                </script>
+
+                <div class="code codeblock">
+                    <pre>
+function checkAge(){
+    var age = parseFloat(document.querySelector("#age").value);
+    var div = document.querySelector("#agetest")
+    if(age &lt; 18){
+        div.style.backgroundColor = "red";
+    } else if(age == 18){
+        div.style.backgroundColor = "green";
+    } else if(age &gt; 18){
+        div.style.backgroundColor = "yellow";
+    } else {
+        div.style.backgroundColor = "gray";
+    }
+}
+
+document.querySelector("#agebutton").addEventListener("click", checkAge);</pre>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/jsref/jsref_if.asp">W3Schools: if...else</a></li>
+                <li><a href="https://www.w3schools.com/js/js_if_else.asp">W3Schools: if, else, and else if</a></li>
+                <li><a href="https://www.w3schools.com/js/js_operators.asp">W3Schools: Operators</a></li>
+                <li><a href="https://www.w3schools.com/jsref/jsref_parsefloat.asp">W3Schools: parseFloat()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

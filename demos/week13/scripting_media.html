@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Scripting Media</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Scripting Media">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+
+            .box{
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                color: black;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 13:</h3>
+            <h1>Scripting Media</h1>
+            <br><br>
+
+            <audio id="nwa">
+                <source src="nwa.mp3" type="audio/mp3">
+            </audio>
+
+            <div class="section">
+                We have already explored how to incorporate audio and video files into our HTML, but we can also control the playback and various properties of these media assets using JavaScript.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box1">play</div><br>
+                    <div class="box" id="box2">pause</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    document.querySelector("#box1").addEventListener("click", function(){
+                        document.querySelector("#nwa").play();
+                    });
+                    document.querySelector("#box2").addEventListener("click", function(){
+                        document.querySelector("#nwa").pause();
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+document.querySelector("#box1").addEventListener("click", function(){
+    document.querySelector("#nwa").play();
+});
+
+document.querySelector("#box2").addEventListener("click", function(){
+    document.querySelector("#nwa").pause();
+});</pre>
+</div>
+<br>
+
+                jQuery is slightly different in its approach to controlling media elements.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box3">play</div><br>
+                    <div class="box" id="box4">pause</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#box3").click(function(){
+                            $("#nwa").trigger("play");
+                        });
+                        $("#box4").click(function(){
+                            $("#nwa").trigger("pause");
+                        });
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$(document).ready(function(){
+    $("#box3").click(function(){
+        $("#nwa").trigger("play");
+    });
+    $("#box4").click(function(){
+        $("#nwa").trigger("pause");
+    });
+});</pre>
+</div>
+<br>
+
+                A little additional logic and reading the paused property from the audio HTML element allows us to toggle playing and pausing the audio with a single button. Note that we need to use the vanilla JavaScript <span class="code">document.querySelector()</span> method to access the HTML media element in order to have access to the <span class="code">paused</span> property.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box5">play/pause</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#box5").click(function(){
+                            var obj = document.querySelector("#nwa");
+                            if(obj.paused){
+                                obj.play();
+                            } else {
+                                obj.pause();
+                            }
+                        });
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$(document).ready(function(){
+    $("#box5").click(function(){
+        var obj = document.querySelector("#nwa");
+        if(obj.paused){
+            obj.play();
+        } else {
+            obj.pause();
+        }
+    });
+});</pre>
+</div>
+<br>
+
+                We can control the volume of audio elements. Use one of the buttons above to play the song and adjust the volume using the slider below.<br>
+                <br>
+
+                <div class="interactive">
+                    <input type="range" min="0" max="100" value="100" class="slider" id="volumeslider">
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#volumeslider").on("input change", function(){
+                            var vol = $(this).val() * 0.01;
+                            $("#nwa").prop("volume", vol);
+                        });
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$(document).ready(function(){
+    $("#volumeslider").on("input change", function(){
+        var vol = $(this).val() * 0.01;
+        $("#nwa").prop("volume", vol);
+    });
+});</pre>
+</div>
+<br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://jqueryui.com/">jQuery UI Library</a></li>
+                <li><a href="https://www.w3schools.com/jquery/eff_animate.asp">W3Schools: jQuery animate()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

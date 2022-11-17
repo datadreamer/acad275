@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Animate</title>
+        <meta charset="utf-8">
+        <meta name="description" content="jQuery Animate">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+
+            .box{
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                color: black;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 13:</h3>
+            <h1>jQuery Animate</h1>
+            <br><br>
+
+            <div class="section">
+                jQuery has an <span class="code">animate()</span> method which affords us the ability to transition between CSS states over a given amount of time. Below are two divs, both of which have click events applied which will execute code that will change their width. The first box will use the <span class="code">css()</span> method to immediately change the property, while the second will use the <span class="code">animate()</span> method to specify the property to be changed as well as the duration of time over which it should occur.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box1">click me</div><br>
+                    <div class="box" id="box2">click me</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $("#box1").click(function(){
+                        $(this).css("width", "100%");
+                    });
+                    $("#box2").click(function(){
+                        $(this).animate({"width": "100%"}, 2000);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#box1").click(function(){
+    $(this).css("width", "100%");
+});
+
+$("#box2").click(function(){
+    $(this).animate({"width": "100%"}, 2000);
+});</pre>
+</div>
+<br>
+
+                You might notice that we're using a new syntax structure to provide the CSS property and the value we want to set it to. This is using an object map, which takes in pairs of property names and values. This can be used to modify multiple properties simultaneously.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box3">click me</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $("#box3").click(function(){
+                        $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px"}, 2000);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#box3").click(function(){
+    $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px"}, 2000);
+});</pre>
+</div>
+<br>
+
+                We can chain <span class="code">animate()</span> methods together as well as incorporate other jQuery timing methods such as <span class="code">delay()</span>.<br/>
+                <br/>
+
+                <div class="interactive">
+                    <div class="box" id="box4">click me</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $("#box4").click(function(){
+                        $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px"}, 2000)
+                        .delay(2000)
+                        .animate({"width": "100px", "height": "100px", "lineHeight": "100px"}, 2000);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#box4").click(function(){
+    $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px"}, 2000)
+    .delay(2000)
+    .animate({"width": "100px", "height": "100px", "lineHeight": "100px", 2000});
+});</pre>
+</div>
+<br>
+
+                If we want to animate a color change, we need to add the jQuery UI library, which augments the <span class="code">animate()</span> method.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box5">click me</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $("#box5").click(function(){
+                        $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px", "backgroundColor": "green"}, 2000)
+                        .delay(2000)
+                        .animate({"width": "100px", "height": "100px", "lineHeight": "100px", "backgroundColor": "white"}, 2000);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#box5").click(function(){
+    $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px", "backgroundColor": "green"}, 2000)
+    .delay(2000)
+    .animate({"width": "100px", "height": "100px", "lineHeight": "100px", "backgroundColor": "white"}, 2000);
+});</pre>
+</div>
+<br>
+
+                If we want to have an event occur at the end of the animation, we can provide a callback function which will be executed when <span class="code">animate()</span> is finished.<br>
+                <br>
+
+                <div class="interactive">
+                    <div class="box" id="box6">click me</div>
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    function boxOpen(){
+                        $("#box6").html("I'm big and green!");
+                    }
+
+                    function boxClosed(){
+                        $("#box6").html("click me");
+                    }
+
+                    $("#box6").click(function(){
+                        $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px", "backgroundColor": "green"}, 2000, boxOpen)
+                        .delay(2000)
+                        .animate({"width": "100px", "height": "100px", "lineHeight": "100px", "backgroundColor": "white"}, 2000, boxClosed);
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+function boxOpen(){
+    $("#box6").html("I'm big and green!");
+}
+
+function boxClosed(){
+    $("#box6").html("click me");
+}
+
+$("#box6").click(function(){
+    $(this).animate({"width": "100%", "height": "300px", "lineHeight": "300px", "backgroundColor": "green"}, 2000, boxOpen)
+    .delay(2000)
+    .animate({"width": "100px", "height": "100px", "lineHeight": "100px", "backgroundColor": "white"}, 2000, boxClosed);
+});</pre>
+</div>
+<br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://jqueryui.com/">jQuery UI Library</a></li>
+                <li><a href="https://www.w3schools.com/jquery/eff_animate.asp">W3Schools: jQuery animate()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

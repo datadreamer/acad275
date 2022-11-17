@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Arrays</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Arrays">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+
+        <script type="text/javascript">
+            var n = Math.random()*6;    // gets a random floating point number between 0 and 6.
+            n = Math.floor(n) + 1;      // rounds the number down then adds 1.
+            
+            $(document).ready(function(){
+                $('#modifiedonload').html("This was written to the screen when the document finished loading inside of an existing HTML element.");
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 10:</h3>
+            <h1>Arrays</h1>
+            <br><br>
+
+            <div class="section">
+                <h3>Array Basics</h3>
+
+                Arrays are variables that can hold a list of values. This is very useful if you have a bunch of the same type of something (e.g.: people's names, image file names, color values, booleans, objects, etc). There are a couple different ways that we can declare and define arrays. Here are two ways to create empty arrays:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var arrayName = new Array();
+var arrayName = [];</pre>
+</div>
+<br>
+
+                We can also define a new array with some initial values. Here are some arrays with three initial string values:<br/>
+                <br>
+
+<div class="code codeblock"><pre>
+var arrayName = new Array("first thing", "second thing", "third thing");
+var arrayName = ["first thing", "second thing", "third thing"];</pre>
+</div>
+<br>
+
+                Here are some numeric values:<br/>
+                <br>
+
+<div class="code codeblock"><pre>
+var arrayName = new Array(4, 8, 15, 16, 23, 42);
+var arrayName = [4, 8, 15, 16, 23, 42];</pre>
+</div>
+<br>
+
+                Here are some boolean values:<br/>
+                <br>
+
+<div class="code codeblock"><pre>
+var arrayName = new Array(true, false, true, true, false);
+var arrayName = [true, false, true, true, false];</pre>
+</div>
+<br>
+
+                Writing to arrays is fairly straight forward. All arrays have indexes that are the numeric address where the value is stored in the array. These arrays are always in sequential order, and always begin at 0. We can assign values to these indexes manually by referring directly to the number of the index using the square bracket syntax.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+arrayName[0] = "first thing";
+arrayName[1] = "second thing";
+arrayName[2] = "third thing";</pre>
+</div>
+<br>
+
+                We can read the number of elements being stored in an array by using the length property.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+console.log(arrayName.length);</pre>
+</div>
+<br>
+
+                
+        </div>
+
+        <div class="section">
+            <h3>Parallel Arrays</h3>
+
+            We can store multiple properties that are associated with each other across different arrays. We keep these properties associated by making sure they use the same number index across the different arrays. There's nothing to maintain their alignment other than your manual entry of the values to the arrays.<br>
+            <br>
+
+<div class="code codeblock"><pre>
+var firstName = [];
+var lastName = [];
+var email = [];
+
+firstname[0] = "Aaron";
+lastname[0] = "Siegel";
+email[0] = "aaronsie@usc.edu";
+
+firstname[1] = "Steve";
+lastname[1] = "Child";
+email[1] = "child@usc.edu";
+
+firstname[2] = "Patrick";
+lastname[2] = "Dent";
+email[2] = "dent@usc.edu";</pre>
+</div>
+<br>
+
+        </div>
+
+
+        <div class="section">
+            <h3>Dynamic Page Content Using Arrays</h3>
+
+            We can store a bunch of different properties and dynamically access them from an array. In the example below we will store a an array of image file names and then use the <span class="code">Math.random()</span> function to generate a number within a specific range in order to retrieve an image file name.<br>
+            <br>
+
+            <div class="interactive">
+                <script>
+                    var images = ["la1.jpg", "la2.jpg", "la3.jpg", "la4.jpg"];
+                    var caption = ["Downtown skyline.", "Hollywood reservoir.", "USC campus.", "Memorial colosseum and the California Science Center."];
+                    var num = Math.floor(Math.random()*4);
+                    var imgName = images[num];
+                    var cap = caption[num];
+                    document.write("<img src='" + imgName + "' alt='" + cap + "'><br>" + cap);
+                </script>
+            </div>
+            <br>
+
+<div class="code codeblock"><pre>
+var images = ["la1.jpg", "la2.jpg", "la3.jpg", "la4.jpg"];
+var caption = ["Downtown skyline.", "Hollywood reservoir.", "USC campus.", "Memorial colosseum."];
+var num = Math.floor(Math.random()*4);
+var imgName = images[num];
+var cap = caption[num];
+document.write("&lt;img src='" + imgName + "' alt='" + cap + "'&gt;&lt;br&gt;" + cap);</pre>
+</div>
+<br>
+
+        </div>
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/js/js_arrays.asp">W3Schools: JavaScript Arrays</a></li>
+                <li><a href="https://www.w3schools.com/js/js_array_methods.asp">W3Schools: JavaScript Array Methods</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

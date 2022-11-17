@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Media Queries: Breakpoints</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Media Queries: Breakpoints">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .full{
+                width: 100%;
+                padding: 100px 0 100px 0;
+                background-color: white;
+                color: black;
+                text-align: center;
+            }
+
+            .half{
+                width: 50%;
+                padding: 100px 0 100px 0;
+                text-align: center;
+                float: left;
+            }
+
+            .third{
+                width: 33.33%;
+                padding: 100px 0 100px 0;
+                text-align: center;
+                float: left;
+            }
+
+            .quarter{
+                width: 25%;
+                padding: 100px 0 100px 0;
+                float: left;
+            }
+
+            @media screen and (max-width:1200px) {
+                .quarter{
+                    width: 50%;
+                }
+            }
+
+            @media screen and (max-width:1000px) {
+                .third{
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width:800px) {
+                .quarter{
+                    width: 100%;
+                }
+                .half{
+                    width: 100%;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+      <div id="container">
+
+        <h3 class="week">Week 6:</h3>
+        <h1>Media Queries: Breakpoints</h1>
+        <br/><br/>
+
+
+        <div class="section">
+            Using media queries to establish breakpoints allows the structure of your layout to adapt based on different screen resolutions. The content below changes how it is displayed on the page based on the width of the browser.<br/>
+            <br/>
+
+            <div class="full">
+                100%
+            </div>
+
+            <div class="third" style="background-color:red">
+                33.33%
+            </div>
+            <div class="third" style="background-color:green">
+                33.33%
+            </div>
+            <div class="third" style="background-color:blue">
+                33.33%
+            </div>
+
+            <div class="half" style="background-color:#333">
+                50%
+            </div>
+            <div class="half" style="background-color:#999">
+                50%
+            </div>
+
+            <div class="third" style="padding: 0px">
+                <div class="quarter" style="background-color:cyan">25% inside 33%</div>
+                <div class="quarter" style="background-color:magenta">25% inside 33%</div>
+                <div class="quarter" style="background-color:yellow">25% inside 33%</div>
+                <div class="quarter" style="background-color:black">25% inside 33%</div>
+            </div>
+            <div class="third" style="padding: 0px">
+                <div class="quarter" style="background-color:cyan">25% inside 33%</div>
+                <div class="quarter" style="background-color:magenta">25% inside 33%</div>
+                <div class="quarter" style="background-color:yellow">25% inside 33%</div>
+                <div class="quarter" style="background-color:black">25% inside 33%</div>
+            </div>
+            <div class="third" style="padding: 0px">
+                <div class="quarter" style="background-color:cyan">25% inside 33%</div>
+                <div class="quarter" style="background-color:magenta">25% inside 33%</div>
+                <div class="quarter" style="background-color:yellow">25% inside 33%</div>
+                <div class="quarter" style="background-color:black">25% inside 33%</div>
+            </div>
+        </div>
+
+        <br class="clear"/>
+        <br/><br/>
+  
+        <div class="section">
+          <div class="code codeblock">
+<pre>
+.full{
+    width: 100%;
+    padding: 100px 0 100px 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.half{
+    width: 50%;
+    padding: 100px 0 100px 0;
+    text-align: center;
+    float: left;
+}
+
+.third{
+    width: 33.33%;
+    padding: 100px 0 100px 0;
+    text-align: center;
+    float: left;
+}
+
+.quarter{
+    width: 25%;
+    padding: 100px 0 100px 0;
+    float: left;
+}
+
+@media screen and (max-width:1200px) {
+    .quarter{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .third{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .quarter{
+        width: 100%;
+    }
+    .half{
+        width: 100%;
+    }
+}
+</pre>
+          </div>
+          <br/>
+
+        </div>
+      </div>
+
+      
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css3_mediaqueries.asp">CSS3 Media Queries</a></li>
+                <li><a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">Responsive Web Design: Media Queries</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

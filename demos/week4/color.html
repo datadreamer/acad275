@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Color</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Color">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+            
+            .box{
+                float:left;
+                width: 6.25%;
+                height: 50px;
+                background-color: #fff;
+                color: #fff;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 4:</h3>
+            <h1>Color</h1>
+            <br/><br/>
+
+            <div class="section">
+                <h2>Mathematics of Color</h2>
+
+                <strong>BITS:</strong> All information in computer systems are stored, transmitted, and processed as electrical signals, either on or off. The on or off state of an electrical signal is known as a bit, and is represented as a 1 for on and a 0 for off.<br/>
+                <br/>
+                <strong>BYTE:</strong> When multiple bits are put into a sequence, they are mathematically combined in order to form a byte. A common byte length is 8-bit. An 8-bit byte is 2 to the 8th power, which has 256 unique combinations. The 8-bit byte below has the value of 73.<br/>
+                <br/><br/>
+                <img src="binary.png" style="width:100%" alt="Binary code 01001001"/>
+            </div>
+
+            <div class="section">
+                <h2>Hexadecimal Notation</h2>
+
+                Hexadecimal notation uses base 16 mathematical notation, so each digit is between 0 - 9 and then A - F, totally 16 possible character states. When two base 16 digits are combined to create a number, there are 256 possible unique combinations. Hexadecimal colors are constructed using red, green, and blue color channels, each utilizing two base-16 digits. The order is #RRGGBB. Black is <span class="code">#000000</span>, white is <span class="code">#ffffff</span>. If the second digit for a channel is set to F, for example <span class="code">#9F0000</span>, then the notation can be shortened to a single digit per channel, such as <span class="code">#900</span>. Three 8-bit color channels combined is 2 to the 24th power, or 16,777,216 different colors.<br/>
+                <br/>
+                <span class="code">background-color: #ff0000;</span><br/>
+                <span class="code">color: #ff0000;</span><br/>
+                <br/>
+
+                <div class="box" style="background-color: #000;"></div>
+                <div class="box" style="background-color: #100;"></div>
+                <div class="box" style="background-color: #200;"></div>
+                <div class="box" style="background-color: #300;"></div>
+                <div class="box" style="background-color: #400;"></div>
+                <div class="box" style="background-color: #500;"></div>
+                <div class="box" style="background-color: #600;"></div>
+                <div class="box" style="background-color: #700;"></div>
+                <div class="box" style="background-color: #800;"></div>
+                <div class="box" style="background-color: #900;"></div>
+                <div class="box" style="background-color: #a00;"></div>
+                <div class="box" style="background-color: #b00;"></div>
+                <div class="box" style="background-color: #c00;"></div>
+                <div class="box" style="background-color: #d00;"></div>
+                <div class="box" style="background-color: #e00;"></div>
+                <div class="box" style="background-color: #f00;"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: #000;"></div>
+                <div class="box" style="background-color: #010;"></div>
+                <div class="box" style="background-color: #020;"></div>
+                <div class="box" style="background-color: #030;"></div>
+                <div class="box" style="background-color: #040;"></div>
+                <div class="box" style="background-color: #050;"></div>
+                <div class="box" style="background-color: #060;"></div>
+                <div class="box" style="background-color: #070;"></div>
+                <div class="box" style="background-color: #080;"></div>
+                <div class="box" style="background-color: #090;"></div>
+                <div class="box" style="background-color: #0a0;"></div>
+                <div class="box" style="background-color: #0b0;"></div>
+                <div class="box" style="background-color: #0c0;"></div>
+                <div class="box" style="background-color: #0d0;"></div>
+                <div class="box" style="background-color: #0e0;"></div>
+                <div class="box" style="background-color: #0f0;"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: #000;"></div>
+                <div class="box" style="background-color: #001;"></div>
+                <div class="box" style="background-color: #002;"></div>
+                <div class="box" style="background-color: #003;"></div>
+                <div class="box" style="background-color: #004;"></div>
+                <div class="box" style="background-color: #005;"></div>
+                <div class="box" style="background-color: #006;"></div>
+                <div class="box" style="background-color: #007;"></div>
+                <div class="box" style="background-color: #008;"></div>
+                <div class="box" style="background-color: #009;"></div>
+                <div class="box" style="background-color: #00a;"></div>
+                <div class="box" style="background-color: #00b;"></div>
+                <div class="box" style="background-color: #00c;"></div>
+                <div class="box" style="background-color: #00d;"></div>
+                <div class="box" style="background-color: #00e;"></div>
+                <div class="box" style="background-color: #00f;"></div>
+                <br class="clear"/>
+            </div>
+
+            <div class="section">
+                <h2>Red/Green/Blue (RGB) Decimal Notation</h2>
+
+                RGB decimal notation utilizes a numeric system between 0 and 255 to determine the amount of saturation from each color channel.<br/>
+                <br/>
+                <span class="code">background-color: rgb(255,0,0);</span><br/>
+                <span class="code">color: rgb(255,0,0);</span><br/>
+                <br/>
+
+                <div class="box" style="background-color: rgb(0,0,0);"></div>
+                <div class="box" style="background-color: rgb(17,0,0);"></div>
+                <div class="box" style="background-color: rgb(34,0,0);"></div>
+                <div class="box" style="background-color: rgb(51,0,0);"></div>
+                <div class="box" style="background-color: rgb(68,0,0);"></div>
+                <div class="box" style="background-color: rgb(85,0,0);"></div>
+                <div class="box" style="background-color: rgb(102,0,0);"></div>
+                <div class="box" style="background-color: rgb(119,0,0);"></div>
+                <div class="box" style="background-color: rgb(136,0,0);"></div>
+                <div class="box" style="background-color: rgb(153,0,0);"></div>
+                <div class="box" style="background-color: rgb(170,0,0);"></div>
+                <div class="box" style="background-color: rgb(187,0,0);"></div>
+                <div class="box" style="background-color: rgb(204,0,0);"></div>
+                <div class="box" style="background-color: rgb(221,0,0);"></div>
+                <div class="box" style="background-color: rgb(238,0,0);"></div>
+                <div class="box" style="background-color: rgb(255,0,0);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: rgb(0,0,0);"></div>
+                <div class="box" style="background-color: rgb(0,17,0);"></div>
+                <div class="box" style="background-color: rgb(0,34,0);"></div>
+                <div class="box" style="background-color: rgb(0,51,0);"></div>
+                <div class="box" style="background-color: rgb(0,68,0);"></div>
+                <div class="box" style="background-color: rgb(0,85,0);"></div>
+                <div class="box" style="background-color: rgb(0,102,0);"></div>
+                <div class="box" style="background-color: rgb(0,119,0);"></div>
+                <div class="box" style="background-color: rgb(0,136,0);"></div>
+                <div class="box" style="background-color: rgb(0,153,0);"></div>
+                <div class="box" style="background-color: rgb(0,170,0);"></div>
+                <div class="box" style="background-color: rgb(0,187,0);"></div>
+                <div class="box" style="background-color: rgb(0,204,0);"></div>
+                <div class="box" style="background-color: rgb(0,221,0);"></div>
+                <div class="box" style="background-color: rgb(0,238,0);"></div>
+                <div class="box" style="background-color: rgb(0,255,0);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: rgb(0,0,0);"></div>
+                <div class="box" style="background-color: rgb(0,0,17);"></div>
+                <div class="box" style="background-color: rgb(0,0,34);"></div>
+                <div class="box" style="background-color: rgb(0,0,51);"></div>
+                <div class="box" style="background-color: rgb(0,0,68);"></div>
+                <div class="box" style="background-color: rgb(0,0,85);"></div>
+                <div class="box" style="background-color: rgb(0,0,102);"></div>
+                <div class="box" style="background-color: rgb(0,0,119);"></div>
+                <div class="box" style="background-color: rgb(0,0,136);"></div>
+                <div class="box" style="background-color: rgb(0,0,153);"></div>
+                <div class="box" style="background-color: rgb(0,0,170);"></div>
+                <div class="box" style="background-color: rgb(0,0,187);"></div>
+                <div class="box" style="background-color: rgb(0,0,204);"></div>
+                <div class="box" style="background-color: rgb(0,0,221);"></div>
+                <div class="box" style="background-color: rgb(0,0,238);"></div>
+                <div class="box" style="background-color: rgb(0,0,255);"></div>
+                <br class="clear"/>
+            </div>
+
+                
+
+            <div class="section">
+                <h2>RGB with Transparency</h2>
+
+                An additional color channel called "alpha" is used to control transparency of a color. Unlike the color channels, this channel uses a value between 0 and 1, representing 0% opaque (fully transparent) and 100% opaque (no transparency).<br/>
+                <br/>
+                <span class="code">background-color: rgba(255,0,0,0.5);</span><br/>
+                <span class="code">color: rgba(255,0,0,0.5);</span><br/>
+                <br/>
+            
+                <div class="box" style="background-color: rgba(255,0,0,0);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.06640625);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.1328125);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.19921875);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.265625);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.33203125);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.3984375);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.46484375);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.53125);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.59765625);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.6640625);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.73046875);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.796875);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.86328125);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,0.9296875);"></div>
+                <div class="box" style="background-color: rgba(255,0,0,1);"></div>
+                <br class="clear"/>
+                <br/>
+            
+                <div class="box" style="background-color: rgba(0,255,0,0);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.06640625);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.1328125);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.19921875);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.265625);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.33203125);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.3984375);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.46484375);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.53125);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.59765625);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.6640625);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.73046875);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.796875);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.86328125);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,0.9296875);"></div>
+                <div class="box" style="background-color: rgba(0,255,0,1);"></div>
+                <br class="clear"/>
+                <br/>
+            
+                <div class="box" style="background-color: rgba(0,0,255,0);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.06640625);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.1328125);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.19921875);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.265625);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.33203125);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.3984375);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.46484375);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.53125);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.59765625);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.6640625);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.73046875);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.796875);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.86328125);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,0.9296875);"></div>
+                <div class="box" style="background-color: rgba(0,0,255,1);"></div>
+                <br class="clear"/>
+            </div>
+
+            <div class="section">
+                <h2>Hue/Saturation/Lightness (HSL) Decimal Notation</h2>
+
+                Hue/Saturation/Lightness (HSL) is a different way of describing color from Red/Green/Blue (RGB). Instead of the individual channels being primary colors of a color model, the hue channel determines what the "color" will be, while the saturation channel determines how vibrant that color is, and the lightness channel determines how bright that color is.<br/>
+                <br/>
+                Hue is established as a value between 0 and 360, representing the degrees of a circle, aka the color wheel. Saturation and lightness are determined between 0 and 100, based on percentage. Saturation 0 would be grayscale, while saturation 100 would be full color. Lightness, however, is a bit different, where 0 is completely black, 100 is completely white, and 50 is the full brightness of the hue. You also must include the percentage sign for the saturation and lightness channel.<br/>
+                <br/>
+                <span class="code">background-color: hsl(0,100,50);</span><br/>
+                <span class="code">color: hsl(0,100,50);</span><br/>
+                <br/>
+
+                <div class="box" style="background-color: hsl(0,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(22.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(45,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(67.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(90,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(112.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(135,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(157.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(180,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(202.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(225,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(247.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(270,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(292.5,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(315,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(337.5,100%,50%);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsl(0,0%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,6.25%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,12.5%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,18.75%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,25%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,31.25%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,37.5%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,43.75%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,50%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,56.25%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,62.5%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,68.75%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,75%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,81.25%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,87.5%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,93.75%,50%);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsl(0,100%,0%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,6.25%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,12.5%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,18.75%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,25%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,31.25%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,37.5%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,43.75%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,50%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,56.25%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,62.5%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,68.75%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,75%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,81.25%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,87.5%);"></div>
+                <div class="box" style="background-color: hsl(0,100%,93.75%);"></div>
+                <br class="clear"/>
+                <br/>
+
+            </div>
+
+            <div class="section">
+                <h2>HSL with Transparency</h2>
+
+                Adding the addition of transparency allows the use of HSL with the additional 8-bit channel of alpha.<br/>
+                <br/>
+                <span class="code">background-color: hsla(0,100,50,0.5);</span><br/>
+                <span class="code">color: hsla(0,100,50,0.5);</span><br/>
+                <br/>
+
+                <div class="box" style="background-color: hsla(0,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(22.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(45,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(67.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(90,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(112.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(135,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(157.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(180,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(202.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(225,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(247.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(270,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(292.5,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(315,100%,50%,1);"></div>
+                <div class="box" style="background-color: hsla(337.5,100%,50%,1);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsla(0,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(22.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(45,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(67.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(90,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(112.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(135,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(157.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(180,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(202.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(225,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(247.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(270,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(292.5,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(315,100%,50%,0.8);"></div>
+                <div class="box" style="background-color: hsla(337.5,100%,50%,0.8);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsla(0,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(22.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(45,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(67.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(90,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(112.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(135,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(157.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(180,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(202.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(225,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(247.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(270,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(292.5,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(315,100%,50%,0.6);"></div>
+                <div class="box" style="background-color: hsla(337.5,100%,50%,0.6);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsla(0,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(22.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(45,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(67.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(90,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(112.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(135,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(157.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(180,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(202.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(225,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(247.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(270,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(292.5,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(315,100%,50%,0.4);"></div>
+                <div class="box" style="background-color: hsla(337.5,100%,50%,0.4);"></div>
+                <br class="clear"/>
+                <br/>
+
+                <div class="box" style="background-color: hsla(0,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(22.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(45,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(67.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(90,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(112.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(135,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(157.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(180,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(202.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(225,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(247.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(270,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(292.5,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(315,100%,50%,0.2);"></div>
+                <div class="box" style="background-color: hsla(337.5,100%,50%,0.2);"></div>
+                <br class="clear"/>
+                <br/>
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Binary_code">Wikipedia: Binary Code</a></li>
+                <li><a href="https://www.w3schools.com/colors/default.asp">W3C Colors Tutorial</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_hexadecimal.asp">W3C Hexadecimal Color</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_rgb.asp">W3C RGB Color</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_hsl.asp">W3C HSL Color</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_picker.asp">W3C HTML Color Picker</a></li>
+                <li><a href="https://color.adobe.com/create/color-wheel">Adobe Color</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Positioning</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Positioning">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 4:</h3>
+            <h1>Positioning with CSS</h1>
+            <br/><br/>
+
+            <h2>position: relative;</h2>
+
+            Normal <span class="code">float:left;</span> behavior puts all of the divs side by side from left to right. They are all aligned at the top.<br/><br/>
+
+            <div class="colorbox" style="background-color: red;"></div>
+            <div class="colorbox" style="background-color: green;"></div>
+            <div class="colorbox" style="background-color: blue;"></div>
+
+            <br class="clear"/>
+            <br/>
+
+            Adding <span class="code">position:relative; left:30px; top:30px;</span> to the green div offsets its normal position 30px from its left edge and 30px from its top edge.<br/><br/> 
+
+            <div class="colorbox" style="background-color: red;"></div>
+            <div class="colorbox" style="background-color: green; position:relative; left:30px; top:30px;"></div>
+            <div class="colorbox" style="background-color: blue;"></div>
+
+            <br class="clear"/>
+            <br/><br/><br/><br/><br/>
+
+            <h2>position: absolute;</h2>
+            
+            Adding <span class="code">position:absolute; left:200px;</span> to the cyan div below forces it 200px away from the edge of the body (in this case, the left edge of the inner browser window). Anything that comes after it in the code will not wrap around it, but rather go underneath it.
+            <br/><br/>
+
+            <div class="colorbox" style="background-color: cyan; position:absolute; left:200px"></div>
+
+            <br class="clear"/>
+            <br/><br/><br/><br/><br/><br/>
+
+            However, if the div that contains it has been set to <span class="code">position:relative;</span> it will behave using the offset relative to the parent container as seen below.<br/><br/>
+
+            <div style="position: relative;">
+                <div class="colorbox" style="background-color: cyan; position:absolute; left:200px"></div>
+            </div>
+
+            <br class="clear"/>
+            <br/><br/><br/><br/>
+
+            <div id="fixeddiv">
+                <h2>position: fixed;</h2>
+                <br/>
+                Creating a div that has been set to <span class="code">position:absolute; left:0px; bottom:0px;</span> it will snap the div to the bottom left corner of the browser, essentially attaching it and allowing it to stay in place while the rest of the page scrolls.
+            </div>
+
+        </div>
+
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    </body>
+</html>

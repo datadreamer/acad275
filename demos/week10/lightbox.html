@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lightbox</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Lightbox">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <link href="dist/css/lightbox.min.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script src="dist/js/lightbox.min.js"></script>
+
+        <style>
+            .thumbbox{
+                display: flex;
+                justify-content: space-between;
+            }
+            .thumb{
+                width: 95%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 10:</h3>
+            <h1>Lightbox</h1>
+            <br><br>
+
+            <div class="section">
+                Lightbox is a JavaScript library that was built off of jQuery and thus requires jQuery to be included in order for it to work. It allows you to very easily display photos in an elegant and animated fashion without writing a lot of code. Lightbox will automatically load and properly size larger images to be displayed on your page. You can create groups of images as galleries, allowing you to click to the next or previous image, as well as include captions. Lightbox comes with standard CSS styles and images, but all of that can be modified and customized to fit the design of your page.<br>
+                <br>
+
+                <div class="interactive thumbbox">
+                    <a href="la1.jpg" data-lightbox="la" data-title="Downtown skyline.">
+                        <img src="la1_thumb.jpg" class="thumb" alt="thumb1">
+                    </a>
+                    <a href="la2.jpg" data-lightbox="la" data-title="Hollywood reservoir.">
+                        <img src="la2_thumb.jpg" class="thumb" alt="thumb2">
+                    </a>
+                    <a href="la3.jpg" data-lightbox="la" data-title="USC campus.">
+                        <img src="la3_thumb.jpg" class="thumb" alt="thumb3">
+                    </a>
+                    <a href="la4.jpg" data-lightbox="la" data-title="Memorial Colosseum and the California Science Center.">
+                        <img src="la4_thumb.jpg" class="thumb" alt="thumb4">
+                    </a>
+                    <a href="la5.jpg" data-lightbox="la" data-title="Remnants from cargo train thefts.">
+                        <img src="la5_thumb.jpg" class="thumb" alt="thumb5">
+                    </a>
+                </div>
+                <br/>
+
+                Follow the instructions on <a href="https://lokeshdhakar.com/projects/lightbox2/">the official Lightbox distribution page</a> to see how this can be implemented.
+
+            </div>
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

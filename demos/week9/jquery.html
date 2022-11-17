@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Basics</title>
+        <meta charset="utf-8">
+        <meta name="description" content="jQuery Basics">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .flexthing{
+                margin:10px;
+            }
+
+            .funkystyles{
+                background-color: blueviolet;
+                font-family:'Times New Roman', Times, serif;
+                color:chartreuse;
+                font-size: 32px;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 9:</h3>
+            <h1>jQuery Basics</h1>
+            <br><br>
+
+            <div class="section">
+                jQuery is a JavaScript library that was designed to make manipulation of DOM elements easier. It simplifies the syntax and amount of code required to perform a variety of tasks. It's also the basis for a myriad of other libraries that have been built on top of its functionalities.<br>
+                <br>
+
+                <h3>Selecting HTML Objects with jQuery</h3>
+
+                <div class="code codeblock">
+                    $("#elementid")<br>
+                    $(".classname")<br>
+                    $("tagname")<br>
+                    $(this)
+                </div>
+                <br>
+
+                <h3>addClass() / removeClass()</h3>
+
+                <div style="display:flex">
+                    <div class="interactive flexthing" id="addclass" style="margin-left:0px">
+                        Click this to add styles to the middle div.
+                    </div>
+
+                    <div class="interactive flexthing" id="changeclass">The appearance of this div will change when adding and removing a CSS class.</div>
+
+                    <div class="interactive flexthing" id="removeclass" style="margin-right:0px">
+                        Click this to remove styles from the middle div.
+                    </div>
+                </div>
+                <br>
+
+                <script>
+                    $("#addclass").click(function(){
+                        $("#changeclass").addClass("funkystyles");
+                    });
+                    $("#removeclass").click(function(){
+                        $("#changeclass").removeClass("funkystyles");
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$("#addclass").click(function(){
+    $("#changeclass").addClass("funkystyles");
+});
+$("#removeclass").click(function(){
+    $("#changeclass").removeClass("funkystyles");
+});</pre>
+</div>
+<br>
+
+            <h3>toggleClass()</h3>
+
+            <div class="interactive" id="toggleclass">
+                Click this div to toggle the CSS styles on and off.
+            </div>
+            <br>
+
+            <script>
+                $("#toggleclass").click(function(){
+                    $(this).toggleClass("funkystyles");
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#toggleclass").click(function(){
+    $(this).toggleClass("funkystyles");
+});</pre>
+</div>
+<br>
+
+            <h3>append()</h3>
+
+            <div class="interactive" id="append">
+                Click this div to add more content at the end of its current content.
+            </div>
+            <br>
+
+            <script>
+                $("#append").click(function(){
+                    $(this).append("Here's some more stuff for ya! ");
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#append").click(function(){
+    $(this).append("Here's some more stuff for ya! ");
+});</pre>
+</div>
+<br>
+
+            <h3>prepend()</h3>
+
+            <div class="interactive" id="prepend">
+                Click this div to add more content above its current content.
+            </div>
+            <br>
+
+            <script>
+                $("#prepend").click(function(){
+                    $(this).prepend("Here's some more stuff for ya! ");
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#prepend").click(function(){
+    $(this).prepend("Here's some more stuff for ya! ");
+});</pre>
+</div>
+<br>
+
+            <h3>fadeIn() / fadeOut()</h3>
+
+            <div style="display:flex">
+                <div class="interactive flexthing" id="fadein" style="margin-left:0px">
+                    Click this to fade in the center div.
+                </div>
+
+                <div class="interactive flexthing" id="fadeinout" style="display:none">Now you see me.</div>
+
+                <div class="interactive flexthing" id="fadeout" style="margin-right:0px">
+                    Click this to fade out the center div.
+                </div>
+            </div>
+            <br>
+
+            <script>
+                $("#fadein").click(function(){
+                    $("#fadeinout").fadeIn(2000);
+                });
+                $("#fadeout").click(function(){
+                    $("#fadeinout").fadeOut(2000);
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#fadein").click(function(){
+    $("#fadeinout").fadeIn(2000);
+});
+$("#fadeout").click(function(){
+    $("#fadeinout").fadeOut(2000);
+});</pre>
+</div>
+<br>
+
+            <h3>fadeToggle()</h3>
+
+            <div style="display:flex">
+                <div class="interactive flexthing" id="fadetogglebutton" style="margin-left:0px; width:45%">
+                    Click this to fade in the div on the right.
+                </div>
+
+                <div class="interactive flexthing" id="fadetoggle" style="display:none; width:45%">Now you see me.</div>
+            </div>
+            <br>
+
+            <script>
+                $("#fadetogglebutton").click(function(){
+                    $("#fadetoggle").fadeToggle(2000);
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#fadetogglebutton").click(function(){
+    $("#fadetoggle").fadeToggle(2000);
+});</pre>
+</div>
+<br>
+
+            <h3>slideDown() / slideUp()</h3>
+
+            <div style="display:flex">
+                <div class="interactive flexthing" id="slidedown" style="margin-left:0px">
+                    Click this to slide down the center div.
+                </div>
+
+                <div class="interactive flexthing" id="slideupdown" style="display:none">Now you see me.</div>
+
+                <div class="interactive flexthing" id="slideup" style="margin-right:0px">
+                    Click this to slide up the center div.
+                </div>
+            </div>
+            <br>
+
+            <script>
+                $("#slidedown").click(function(){
+                    $("#slideupdown").slideDown(2000);
+                });
+                $("#slideup").click(function(){
+                    $("#slideupdown").slideUp(2000);
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#slidedown").click(function(){
+    $("#slideupdown").slideDown(2000);
+});
+$("#slideup").click(function(){
+    $("#slideupdown").slideUp(2000);
+});</pre>
+</div>
+<br>
+
+            <h3>slideToggle()</h3>
+
+            <div style="display:flex">
+                <div class="interactive flexthing" id="slidetogglebutton" style="margin-left:0px; width:45%">
+                    Click this to slide the div on the right up and down.
+                </div>
+
+                <div class="interactive flexthing" id="slidetoggle" style="display:none; width:45%">Now you see me.</div>
+            </div>
+            <br>
+
+            <script>
+                $("#slidetogglebutton").click(function(){
+                    $("#slidetoggle").slideToggle(2000);
+                });
+            </script>
+
+<div class="code codeblock"><pre>
+$("#slidetogglebutton").click(function(){
+    $("#slidetoggle").slideToggle(2000);
+});</pre>
+</div>
+<br>
+
+            </div>
+        </div>
+
+
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://api.jquery.com/">Official jQuery Documentation</a></li>
+                <li><a href="https://api.jquery.com/category/manipulation/">Official jQuery Documentation: Manipulation</a></li>
+                <li><a href="https://www.w3schools.com/jquery/default.asp">W3Schools: jQuery Tutorial</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

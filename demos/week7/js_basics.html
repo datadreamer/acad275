@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Basics</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Flexbox">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .imgthumb{
+                width: 150px;
+                opacity: 0.5;
+            }
+
+            #mainimg{
+                width:100%;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 7:</h3>
+            <h1>JavaScript Basics</h1>
+            <br><br>
+
+            <div class="section">
+                JavaScript is used to add behavior and interactivity to your webpages.<br>
+                <br>
+
+                <h2>Mouse Interaction</h2>
+                <br>
+
+                Each object has four mouse interaction states that can be used to trigger code using an event listener: mouseover, mouseout, mousemove, and click. In order to add an event handler, we need to first select the appropriate object to add it to. This is done using querySelector().<br>
+                <br>
+
+                <!-- CLICK -->
+
+                <div class="interactive" id="changebg">Click this to change the background color.</div>
+                <br>
+                <div class="interactive" id="changecolor">Click this to change the text color.</div>
+                <br>
+
+                <!-- This is the code for the divs above. -->
+                <script>
+                    document.querySelector("#changebg").addEventListener("click", function(){
+                        this.style.backgroundColor = 'green';
+                    });
+                    document.querySelector("#changecolor").addEventListener("click", function(){
+                        this.style.color = 'red';
+                    });
+                </script>
+
+                <div class="code codeblock">
+                <pre>
+&lt;script&gt;
+    document.querySelector("#changebg").addEventListener("click", function(){
+        this.style.backgroundColor = 'green';
+    });
+    document.querySelector("#changecolor").addEventListener("click", function(){
+        this.style.color = 'red';
+    });
+&lt;/script&gt;
+                </pre>
+                </div>
+                <br>
+
+
+                <!-- MOUSEOVER/MOUSEOUT -->
+                <div class="interactive" id="hover">Move your mouse over this to change the text.</div>
+                <br>
+
+                <!-- This is the code for the div above. -->
+                <script>
+                    document.querySelector("#hover").addEventListener("mouseover", function(){
+                        this.innerHTML = "Okay, now move it out to change it back.";
+                    });
+                    document.querySelector("#hover").addEventListener("mouseout", function(){
+                        this.innerHTML = "Move your mouse over this to change the text.";
+                    });
+                </script>
+
+                <div class="code codeblock">
+    <pre>
+&lt;script&gt;
+    document.querySelector("#hover").addEventListener("mouseover", function(){
+        this.innerHTML = "Okay, now move it out to change it back.";
+    });
+    document.querySelector("#hover").addEventListener("mouseout", function(){
+        this.innerHTML = "Move your mouse over this to change the text.";
+    });
+&lt;/script&gt;
+    </pre>
+                </div>
+                <br>
+
+                <!-- MOUSEMOVE -->
+                <div class="interactive" id="mousemove" style="height: 40px">
+                    Open the console and move your mouse over this, and watch the number on the right increase.
+                    <div id="movecount" style="font-size: 32px; float:right;">0</div>
+                </div>
+                <br>
+
+                <!-- This is the code for the div above. -->
+                <script>
+                    var moves = 0;
+                    document.querySelector("#mousemove").addEventListener("mousemove", function(){
+                        moves++;
+                        document.querySelector("#movecount").innerHTML = moves;
+                    });
+                </script>
+
+                <div class="code codeblock">
+    <pre>
+&lt;script&gt;
+    var moves = 0;
+    document.querySelector("#mousemove").addEventListener("mousemove", function(){
+        moves++;
+        document.querySelector("#movecount").innerHTML = moves;
+    });
+&lt;/script&gt;
+    </pre>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="section">
+                <h2>Swapping Images</h2>
+
+                <div style="width:20%; float:left">
+                    <img src="tacos1.jpg" class="imgthumb" id="thumb1" alt="Street Tacos #1"><br><br>
+                    <img src="tacos2.jpg" class="imgthumb" id="thumb2" alt="Street Tacos #2"><br><br>
+                    <img src="tacos3.jpg" class="imgthumb" id="thumb3" alt="Street Tacos #3"><br><br>
+                    <img src="tacos4.jpg" class="imgthumb" id="thumb4" alt="Street Tacos #4"><br><br>
+                    <img src="tacos5.jpg" class="imgthumb" id="thumb5" alt="Street Tacos #5"><br><br>
+                </div>
+                <div style="width:80%; float:left">
+                    <img src="tacos2.jpg" id="mainimg" alt="Big image of tacos"><br><br>
+                    <div id="imgcaption">
+                        Grilled Chicken Tacos with Pico de Gallo.
+                    </div>
+                </div>
+
+                <!-- This is the code for the divs above. -->
+                <script>
+                    document.querySelector("#thumb1").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb1").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb1").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = "tacos1.jpg";
+                        document.querySelector("#imgcaption").innerHTML = "Pulled Pork Tacos with Cilantro and White Onions.";
+                    });
+
+                    document.querySelector("#thumb2").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb2").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb2").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = "tacos2.jpg";
+                        document.querySelector("#imgcaption").innerHTML = "Grilled Chicken Tacos with Pico de Gallo.";
+                    });
+
+                    document.querySelector("#thumb3").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb3").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb3").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = "tacos3.jpg";
+                        document.querySelector("#imgcaption").innerHTML = "Grilled Chicken Tacos with Fancy Crema and Red Onions.";
+                    });
+
+                    document.querySelector("#thumb4").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb4").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb4").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = "tacos4.jpg";
+                        document.querySelector("#imgcaption").innerHTML = "You can never have too many limes for your tacos.";
+                    });
+
+                    document.querySelector("#thumb5").addEventListener("mouseover", function(){
+                        this.style.opacity = 1;
+                    });
+                    document.querySelector("#thumb5").addEventListener("mouseout", function(){
+                        this.style.opacity = 0.5;
+                    });
+                    document.querySelector("#thumb5").addEventListener("click", function(){
+                        document.querySelector("#mainimg").src = "tacos5.jpg";
+                        document.querySelector("#imgcaption").innerHTML = "Carne Asada is by far my favorite taco.";
+                    });
+
+
+                    // If you're a savvy student and viewing the source code of the demos, this is how we might
+                    // use querySelectorAll() to reduce the number of lines of code to write.
+                    // let thumbs = document.querySelectorAll(".imgthumb");
+                    // for(let i=0; i<thumbs.length; i++){
+                    //     thumbs[i].addEventListener("mouseover", function(){
+                    //         this.style.opacity = 1;
+                    //     });
+                    //     thumbs[i].addEventListener("mouseout", function(){
+                    //         this.style.opacity = 0.5;
+                    //     });
+                    //     thumbs[i].addEventListener("click", function(){
+                    //         document.querySelector("#mainimg").src = this.src;
+                    //     });
+                    // }
+                    
+                    
+                </script>
+
+                <br style="clear:both">
+                <br>
+
+                <div class="code codeblock">
+    <pre>
+&lt;script&gt;
+    document.querySelector("#thumb1").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb1").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb1").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = "tacos1.jpg";
+        document.querySelector("#imgcaption").innerHTML = "Pulled Pork Tacos with Cilantro and White Onions.";
+    });
+
+    document.querySelector("#thumb2").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb2").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb2").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = "tacos2.jpg";
+        document.querySelector("#imgcaption").innerHTML = "Grilled Chicken Tacos with Pico de Gallo.";
+    });
+
+    document.querySelector("#thumb3").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb3").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb3").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = "tacos3.jpg";
+        document.querySelector("#imgcaption").innerHTML = "Grilled Chicken Tacos with Fancy Crema and Red Onions.";
+    });
+
+    document.querySelector("#thumb4").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb4").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb4").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = "tacos4.jpg";
+        document.querySelector("#imgcaption").innerHTML = "You can never have too many limes for your tacos.";
+    });
+
+    document.querySelector("#thumb5").addEventListener("mouseover", function(){
+        this.style.opacity = 1;
+    });
+    document.querySelector("#thumb5").addEventListener("mouseout", function(){
+        this.style.opacity = 0.5;
+    });
+    document.querySelector("#thumb5").addEventListener("click", function(){
+        document.querySelector("#mainimg").src = "tacos5.jpg";
+        document.querySelector("#imgcaption").innerHTML = "Carne Asada is by far my favorite taco.";
+    });
+&lt;/script&gt;
+    </pre>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselector.asp">W3Schools: querySelector()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp">W3Schools: querySelectorAll()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp">W3Schools: addEventListener()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

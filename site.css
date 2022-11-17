@@ -1,0 +1,73 @@
+body{
+    margin: 0px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#container{
+    margin: 10%;
+}
+
+.col{
+    float: left;
+    width: 47.5%;
+    margin-bottom: 20px;
+    margin-right: 5%;
+}
+
+h1{
+    font-size: 4em;
+    margin: 0 0 20px 0;
+}
+
+ul{
+    padding-left: 20px;
+    margin: 0px;
+}
+
+a{
+    color: #fff;
+}
+
+a:visited{
+    color: #aaa;
+}
+
+a:hover{
+    color: #fc0;
+}
+
+.clear{
+    clear:both;
+}
+.code{
+    font-family:'Courier New', Courier, monospace;
+    background-color: #333;
+    color:#fc0;
+}
+.codeblock{
+    padding: 10px;
+}
+.section{
+    margin-bottom: 100px;
+}
+.resources{
+    background-color: #333;
+    padding:20px 10% 20px 10%;
+    margin:0px;
+}
+.week{
+    margin:0px;
+    text-transform:uppercase;
+}
+.weekbar{
+    background-color: #333;
+    padding: 10px;
+    clear: both;
+}
+
+pre{
+    margin: 0px;
+    font-size: 1.2em;
+}

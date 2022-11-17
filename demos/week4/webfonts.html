@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web Fonts</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Web Fonts">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+            @font-face {
+                font-family: "Drip";
+                src: url('adrip1.ttf');
+            }
+            .graf{
+                font-family:Drip;
+                font-size: 5em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 4:</h3>
+            <h1>Web Fonts</h1>
+            <br/><br/>
+
+            <div class="section">
+                <h2>Embedding Fonts</h2>
+                The default behavior of trying to find fonts is to declare the name of the font you would like your HTML page to display, from which the browser will read that request and check the system on which the browser runs to see if those fonts exist. If the font exist, it gets displayed on the page. If not, it uses a different font, potentially unknown to the designer. Embedding a web font allows you to uplaod a font file to your web server and refer to it to be loaded on client systems and displayed the way you designed, regardless of what fonts they may have installed.<br/>
+                <br/>
+                <a href="https://en.wikipedia.org/wiki/TrueType"><strong>TTF:</strong> Truetype Font</a><br/>
+                <a href="https://en.wikipedia.org/wiki/OpenType"><strong>OTF:</strong> Open Type Font</a><br/>
+                <a href="https://en.wikipedia.org/wiki/Web_Open_Font_Format"><strong>WOFF:</strong> Web Open Font Format</a><br/>
+                <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics"><strong>SVG:</strong> Scalable Vector Graphics</a><br/>
+            </div>
+
+            <div class="section graf">
+                abcdefghijklmnopqrstuvwxyz<br/>
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                0123456789!@#$%^&^*()-=[];',.<br/>
+            </div>
+
+            <div class="section">
+                <span class="code">
+                        @font-face {<br/>
+                        &nbsp;&nbsp;font-family: "Drip";<br/>
+                        &nbsp;&nbsp;src: url('adrip1.ttf');<br/>
+                        }<br/>
+                        .graf{<br/>
+                        &nbsp;&nbsp;font-family:Drip;<br/>
+                        &nbsp;&nbsp;font-size: 5em;<br/>
+                        }
+                </span><br/>
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">W3C: @font-face</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_font_font-family.asp">W3C: font-family</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_font_font-size.asp">W3C: font-size</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_font_weight.asp">W3C: font-weight</a></li>
+           </ul>
+            
+
+        </div>
+
+    </body>
+</html>
