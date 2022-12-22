@@ -10,10 +10,25 @@ body{
 }
 
 .col{
-    float: left;
-    width: 47.5%;
+    flex-grow: 1;
+    flex-basis: 0;
     margin-bottom: 20px;
-    margin-right: 5%;
+}
+
+.demo{
+    color: #fc0;
+}
+
+.lab{
+    color: #ff7700;
+}
+
+.assignment{
+    color:#990000;
+}
+
+.presentation{
+    color:#990099;
 }
 
 h1{
@@ -35,7 +50,11 @@ a:visited{
 }
 
 a:hover{
-    color: #fc0;
+    color: #fff;
+}
+
+b{
+    display:none;
 }
 
 .clear{
@@ -50,7 +69,8 @@ a:hover{
     padding: 10px;
 }
 .section{
-    margin-bottom: 100px;
+    display: flex;
+    /* margin-bottom: 100px; */
 }
 .resources{
     background-color: #333;
@@ -70,4 +90,20 @@ a:hover{
 pre{
     margin: 0px;
     font-size: 1.2em;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    b{
+        display: inline;
+    }
+
+    #labels{
+        display: none;
+    }
+
+    .section{
+        flex-direction: column;
+    }
 }
