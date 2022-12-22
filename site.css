@@ -53,10 +53,6 @@ a:hover{
     color: #fff;
 }
 
-b{
-    display:none;
-}
-
 .clear{
     clear:both;
 }
@@ -70,12 +66,21 @@ b{
 }
 .section{
     display: flex;
-    /* margin-bottom: 100px; */
+    gap: 10px;
 }
 .resources{
     background-color: #333;
     padding:20px 10% 20px 10%;
     margin:0px;
+}
+.student{
+    font-size: 10pt;
+}
+.student img{
+    width: 100%;
+}
+#students{
+    flex-wrap: wrap;
 }
 .week{
     margin:0px;
@@ -95,15 +100,13 @@ pre{
 
 
 @media screen and (max-width: 1000px) {
-    b{
-        display: inline;
-    }
-
-    #labels{
-        display: none;
-    }
-
     .section{
         flex-direction: column;
+    }
+    #students{
+        flex-direction: row;
+    }
+    .student{
+        flex-basis: 18%;
     }
 }
