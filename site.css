@@ -68,6 +68,9 @@ a:hover{
     padding: 10px;
 }
 .section{
+    
+}
+.flexbox{
     display: flex;
     gap: 10px;
 }
@@ -103,7 +106,7 @@ pre{
 
 
 @media screen and (max-width: 1000px) {
-    .section{
+    .flexbox{
         flex-direction: column;
     }
     #students{
