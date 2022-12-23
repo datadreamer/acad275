@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Rigid Layout
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Rigid Layout">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            #header{
+                background-color:aqua;
+                width:820px;
+                height:100px;
+                padding: 5px;
+            }
+            #leftside{
+                background-color: darkgray;
+                width: 100px;
+                height: 500px;
+                float: left;
+                padding: 5px;
+            }
+            #content{
+                background-color:gainsboro;
+                width: 600px;
+                height: 500px;
+                float: left;
+                padding: 5px;
+            }
+            #rightside{
+                background-color: darkgray;
+                width: 100px;
+                height: 500px;
+                float: left;
+                padding: 5px;
+            }
+            #footer{
+                background-color:darkturquoise;
+                width: 820px;
+                height: 100px;
+                clear: both;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="header">
+            This is my rigid website!
+        </div>
+        <div id="leftside">
+            The left side might hold links or navigation items.
+        </div>
+        <div id="content">
+            This rigid layout is the way people would build websites back in the 1990s, before we had CSS or any concept of responsive design techniques. It's very simple, and will always look exactly the same, but the downside is that the dimensions are not flexible, meaning that it won't adapt nicely to different browser or screen dimensions.<br>
+            <br>
+            View the page source to see how this works.
+        </div>
+        <div id="rightside">
+            The right side might hold additional information.
+        </div>
+        <div id="footer">
+            Bottom contains copyright and other stuff.
+        </div>
+
+
+    </body>
+</html>

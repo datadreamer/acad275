@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Fluid Layout
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Fluid Layout">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body{
+                margin: 0px;
+            }
+            #header{
+                background-color:aqua;
+                width: 98%;
+                height: 100px;
+                padding: 1%;
+            }
+            #leftside{
+                background-color: darkgray;
+                width: 8%;
+                height: 500px;
+                float: left;
+                padding: 1%;
+            }
+            #content{
+                background-color:gainsboro;
+                width: 78%;
+                height: 500px;
+                float: left;
+                padding: 1%;
+            }
+            #rightside{
+                background-color: darkgray;
+                width: 8%;
+                height: 500px;
+                float: left;
+                padding: 1%;
+            }
+            #footer{
+                background-color:darkturquoise;
+                width: 98%;
+                height: 100px;
+                clear: both;
+                padding: 1%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="header">
+            This is my fluid website!
+        </div>
+        <div id="leftside">
+            The left side might hold links or navigation items.
+        </div>
+        <div id="content">
+            This fluid layout is a more contemporary way of arranging content on a screen. This uses percentage values, so it will always be adjusting to the width of the browser/screen, making it more accessible for mobile users.<br>
+            <br>
+            Try resizing the browser to see how the page layout adjusts to accomodate the new width. View the page source to see how this works.
+        </div>
+        <div id="rightside">
+            The right side might hold additional information.
+        </div>
+        <div id="footer">
+            Bottom contains copyright and other stuff.
+        </div>
+
+
+    </body>
+</html>
