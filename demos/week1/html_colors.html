@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Colors</title>
+        <meta charset="utf-8">
+        <meta name="description" content="HTML Colors">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .colorbox{
+                padding: 10px;
+                font-size: 1.5em;
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 1: <span class="demo">Demo</span></h3>
+            <h1>HTML Colors</h1>
+            <br/><br/>
+
+            <h2>Color Names</h2>
+
+            The easiest way to address a color option in HTML is by its reserved color name. This is things as simple as "black" and "white", but can also be as complex as "DodgerBlue". There are 140 reserved color names.<br>
+            <br>
+
+            <div class="flexbox">
+                <div class="col colorbox" style="background-color:red">This is "red"!</div>
+                <div class="col colorbox" style="background-color:green">This is "green"!</div>
+                <div class="col colorbox" style="background-color:blue">This is "blue"!</div>
+            </div>
+
+            In order to apply color to our HTML elements, we need to do a little bit of basic Cascading Style Sheets (CSS) in order to apply color to either the foreground (text) or the background of an element. We do this with a process called "inline styles" where we use the <span class="code">style</span> attribute of the HTML tag to apply CSS directly to it.<br>
+            <br>
+
+            <p style="color:red">This paragraph block has red text.</p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;p style="color:red"&gt;
+    This paragraph block has red text.
+&lt;/p&gt;</pre>
+            </div>
+
+            <p style="background-color:red">This paragraph block has a red background.</p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;p style="background-color:red"&gt;
+    This paragraph block has a red background.
+&lt;/p&gt;</pre>
+            </div>
+
+            <br>
+            We can also set the text color and the background color at the same time, as long as we separate them with a semi-colon (;) character.<br>
+            <br>
+
+            <p style="color:black;background-color:aqua">This paragraph block has black text and an aqua background.</p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;p style="color:black;background-color:aqua"&gt;
+    This paragraph block has black text and an aqua background.
+&lt;/p&gt;</pre>
+            </div>
+
+
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/html/html_colors.asp">W3Schools: HTML Colors</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_names.asp">W3Schools: Full List of Color Names</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
