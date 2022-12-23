@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Basics</title>
+        <meta charset="utf-8">
+        <meta name="description" content="CSS Basics">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 2: <span class="demo">Demo</span></h3>
+            <h1>CSS Basics</h1>
+            <br/><br/>
+
+            <h2>CSS Syntax</h2>
+
+            CSS syntax is quite a bit different from HTML, but they can exist within the same document. We can use CSS a couple different ways with our HTML: inline directly on an HTML element, in a pair of <span class="code">&lt;style&gt;</span> tags, or as an external stylesheet. CSS always begins by selecting a specific tag, ID, or class of HTML elements in order to specify what should have styles applied. The styles themselves are always declared as property:value pairs that are separated with a colon (:) character.<br>
+            <br>
+
+            <p style="background-color:green">
+                This element is using inline styles.
+            </p>
+
+            <div class="codeblock code">
+            <pre>
+&lt;p style="background-color:green"&gt;
+    This element is using inline styles.
+&lt;/p&gt;</pre>
+            </div>
+
+            <style>
+                p{
+                    background-color:red;
+                }
+            </style>
+
+            <p>
+                This element is using a pair of style tags.
+            </p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;style&gt;
+    p{
+        background-color:red;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;
+    This element is using a pair of style tags.
+&lt;/p&gt;</pre>
+            </div>
+
+            <br>
+            Take note that the second paragraph block with the red background does not have a "style" property on its tag, but it is instead utilizing styles that have been declared within a pair of <span class="code">&lt;style&gt;</span> tags. This is what is known as a "stylesheet", as we can put many different style definitions in between those tags, and we can make multiple references to different types of HTML elements.<br>
+            <br>
+            We can do the same thing with an external stylesheet, which is a .css file which we can link to our HTML document. The benefit of using an external stylesheet is that we can declare all of our styles in one file, and then use the same stylesheet file across as many webpage documents as we would like, thus allowing our styles across our entire website to be consistent. We'll cover external stylesheets a bit later on in the course.<br>
+            <br>
+
+            <h2>CSS Selection</h2>
+
+            There are three ways to select HTML elements using CSS in order to apply styles to them; by HTML tag, by ID, or by class. The two examples above are using the tag selection technique by specifying that we want to modify all of the <span class="code">&lt;p&gt;</span> tags to have a red background. We place a pair of curly braces after the name of the tag we are modifying, and in between those curly braces are property:value pairs to specify our desired styles.<br>
+            <br>
+            <i>Note: There is a hierarchy to how styles get applied, so while I am specifying inside of a pair of <span class="code">&lt;style&gt;</span> tags that I want all of the <span class="code">&lt;p&gt;</span> elements to have red backgrounds, I am overwriting that on the <span class="code">&lt;p&gt;</span> element at the top by using inline-styles to declare the background color to be green. This effectively overwrites the previously declared style.</i><br>
+            <br>
+            If we want to modify a single element, but not do it using the inline method, we must be able to identify it by its ID property, which is an attribute that needs to be added to the HTML tag:<br>
+            <br>
+
+            <style>
+                #mytag{
+                    background-color: blue;
+                }
+            </style>
+
+            <p id="mytag">
+                This element has an ID and its background is blue!
+            </p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;style&gt;
+    #mytag{
+        background-color:blue;
+    }
+&lt;/style&gt;
+
+&lt;p id="mytag"&gt;
+    This element has an ID and its background is blue!
+&lt;/p&gt;</pre>
+            </div>
+
+            <br>
+            The difference between selecting a tag by name and selecting a unique HTML element by its ID is using the pound sign (#) before the name of the ID in your CSS style declaration. This is how the browser will understand that you are modifying a single HTML element instead of all instances of a given tag type.<br>
+            <br>
+            We can also select a group of HTML elements based on a class property. Let's make two different groups of paragraph elements with different class names.<br>
+            <br>
+
+            <style>
+                .groupA{
+                    background-color:goldenrod;
+                }
+                .groupB{
+                    background-color: deeppink;
+                }
+            </style>
+
+            <p class="groupA">I am in groupA, and I am goldenrod!</p>
+            <p class="groupA">I am in groupA, and I am goldenrod!</p>
+            <p class="groupA">I am in groupA, and I am goldenrod!</p>
+            <p class="groupB">I am in groupB, and I am deeppink!</p>
+            <p class="groupB">I am in groupB, and I am deeppink!</p>
+            <p class="groupB">I am in groupB, and I am deeppink!</p>
+
+            <div class="codeblock code">
+                <pre>
+&lt;style&gt;
+    .groupA{
+        background-color: goldenrod;
+    }
+    .groupB{
+        background-color: deeppink;
+    }
+&lt;/style&gt;
+
+&lt;p class="groupA"&gt;
+    I am in groupA, and I am goldenrod!
+&lt;/p&gt;
+&lt;p class="groupA"&gt;
+    I am in groupA, and I am goldenrod!
+&lt;/p&gt;
+&lt;p class="groupA"&gt;
+    I am in groupA, and I am goldenrod!
+&lt;/p&gt;
+&lt;p class="groupB"&gt;
+    I am in groupB, and I am deeppink!
+&lt;/p&gt;
+&lt;p class="groupB"&gt;
+    I am in groupB, and I am deeppink!
+&lt;/p&gt;
+&lt;p class="groupB"&gt;
+    I am in groupB, and I am deeppink!
+&lt;/p&gt;</pre>
+            </div>
+            <br>
+
+
+            <h2>Basic CSS Properties</h2>
+
+            This is a very short list of some commonly used CSS properties, but is in no way exhaustive. To see all CSS properties available, visit the <a href="https://www.w3schools.com/cssref/index.php">W3Schools: CSS Properties Reference</a>.<br>
+            <br>
+
+            <ul>
+                <li><span class="code">background-color</span>: sets the color of the background of an element.</li>
+                <li><span class="code">border</span>: sets the border around an element.</li>
+                <li><span class="code">color</span>: sets the text color in an element.</li>
+                <li><span class="code">float</span>: floats an element left or right.</li>
+                <li><span class="code">font-family</span>: sets the font face.</li>
+                <li><span class="code">font-size</span>: sets the font size.</li>
+                <li><span class="code">height</span>: sets the height of an element.</li>
+                <li><span class="code">line-height</span>: sets the line-height for a paragraph.</li>
+                <li><span class="code">margin</span>: sets the spacing around an element.</li>
+                <li><span class="code">opacity</span>: sets the opacity of an element.</li>
+                <li><span class="code">padding</span>: sets the spacing inside an element.</li>
+                <li><span class="code">position</span>: sets the position type of an element.</li>
+                <li><span class="code">text-align</span>: aligns text left, right, or center.</li>
+                <li><span class="code">width</span>: sets the width of an element.</li>
+            </ul>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/index.php">W3Schools: CSS Properties Reference</a></li>
+                <li><a href="https://www.w3schools.com/colors/colors_names.asp">W3Schools: Full List of Color Names</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
