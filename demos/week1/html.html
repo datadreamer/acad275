@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Basics</title>
+        <meta charset="utf-8">
+        <meta name="description" content="HTML Basics">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 1: <span class="demo">Demo</span></h3>
+            <h1>HTML Basics</h1>
+            <br/><br/>
+
+            <h2>HTML Syntax</h2>
+
+            Hypertext Markup Language (HTML) is how we describe the structure of a web page. All of HTML is comprised of pairs of tags, with each tag name having a certain functionality to change the display or arrangement of content on the page. All HTML tags are written inside of less-than and greater-than symbols, like <span class="code">&lt;html&gt;</span> or <span class="code">&lt;body&gt;</span>. All HTML files should end with the .html file extension so that your computer and the server knows how to interpret them. Below is the typical structure of a basic HTML page.<br>
+            <br>
+
+            <div class="codeblock code">
+                <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;
+            This is the page title!
+        &lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        This is visible content in the browser!
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+
+            <br>
+            Breaking down the example above, the first thing we should note is that all of these tags are in pairs. This is most often the case with HTML tags, that there is an "open" tag that begins the HTML element and that there is an "closing" tag that ends the HTML element. There are some HTML elements that do not need or use a closing tag, which we'll look at shortly.<br>
+            <br>
+            The second thing we should note is that HTML is hierarchical. Each time we have a pair of open/closing tags, we are creating an HTML element. However, we can have more open/closing HTML elements inside of it. This creates nested HTML elements, which is an important feature for how we create layouts in our web pages.<br>
+            <br>
+            All HTML pages should begin with <span class="code">&lt;html&gt;</span> and end with <span class="code">&lt;/html&gt;</span>. In between these two tags should be where all of the rest of our HTML code is contained. There are two other pairs of important HTML tags that have been added as direct child elements inside of our <span class="code">&lt;html&gt;</span> tag pair, and that is <span class="code">&lt;head&gt;</span> and <span class="code">&lt;body&gt;</span>.<br>
+            <br>
+            In between the <span class="code">&lt;head&gt;</span> tag pair is where we put tags that have to do with invisible qualities of our website. This can be stuff like the <span class="code">&lt;title&gt;</span> that shows up at the top of the browser when the page loads. It can also hold <span class="code">&lt;meta&gt;</span>, <span class="code">&lt;link&gt;</span>, and <span class="code">&lt;script&gt;</span> tags which we will be covering later on in the course. The important thing to remember is that nothing inside of the <span class="code">&lt;head&gt;</span> tags will be visible inside of the browser viewport.<br>
+            <br>
+            The <span class="code">&lt;body&gt;</span> tag pair is what defines the HTML elements that will be visible content inside of the browser viewport. Inside of that we can have a variety of different types of tags (this is an abbreviated list and not all HTML tags).<br>
+            <br>
+
+            <h2>HTML Elements</h2>
+
+            <ul>
+                <li><span class="code">&lt;a&gt;</span>: defines a hyperlink.</li>
+                <li><span class="code">&lt;b&gt;</span>: defines bold text.</li>
+                <li><span class="code">&lt;br&gt;</span>: defines a single line break.</li>
+                <li><span class="code">&lt;div&gt;</span>: defines a block section in a document.</li>
+                <li><span class="code">&lt;em&gt;</span>: defines emphasized text.</li>
+                <li><span class="code">&lt;h1&gt;</span> - <span class="code">&lt;h6&gt;</span>: defines HTML headings.</li>
+                <li><span class="code">&lt;i&gt;</span>: defines italic text.</li>
+                <li><span class="code">&lt;img&gt;</span>: defines an image element.</li>
+                <li><span class="code">&lt;li&gt;</span>: defines a list item.</li>
+                <li><span class="code">&lt;ol&gt;</span>: defines an ordered list.</li>
+                <li><span class="code">&lt;p&gt;</span>: defines a paragraph element.</li>
+                <li><span class="code">&lt;span&gt;</span>: defines an inline section in a document.</li>
+                <li><span class="code">&lt;ul&gt;</span>: defines an unordered list.</li>
+            </ul>
+            <br>
+
+            <h2>HTML5 Syntax</h2>
+
+            The currently used version of HTML is HTML5, which a few additional tags to help define attributes of the document. This is the most appropriate and contemporary way to structure the "skeleton" of a web page.<br>
+            <br>
+
+            <div class="codeblock code">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;
+            This is the page title!
+        &lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="description" content="HTML Basics"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        This is visible content in the browser!
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+
+            <br>
+            The <span class="code">&lt;!DOCTYPE HTML&gt;</span> tag has been added to officially define the document type. We also added a <span class="code">lang="en"</span> attribute to the <span class="code">&lt;html&gt;</span> tag to define the language of the page is in English. Then three <span class="code">&lt;meta&gt;</span> tags have been added:
+            <ul>
+                <li>One to define the character set being used, which is UTF-8 in this case.</li>
+                <li>The second defines the description of the content on the page.</li>
+                <li>The third defines how the browser viewport is handled, and in this case it is set to accommodate mobile browsers when necessary.</li>
+            </ul>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/HTML">Wikipedia: Hypertext Markup Language</a></li>
+                <li><a href="https://www.w3schools.com/tags/default.asp">W3Schools: HTML Element Reference</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
