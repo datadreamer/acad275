@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element Sizing</title>
+        <meta charset="utf-8">
+        <meta name="description" content="HTML Element Sizing">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 2: <span class="demo">Demo</span></h3>
+            <h1>HTML Element Sizing</h1>
+            <br/><br/>
+
+            All HTML elements are made up of four sizing components: its interior width and height, its padding, its border, and its margins. This is what is known as the CSS box model. All of these values ultimately add up to create the true size that the HTML element will take up in the document.<br>
+            <br>
+            <ul>
+                <li><span class="code">width</span> and <span class="code">height</span>: these are set as pixel values, percentages, or vw/vh values (we'll learn more about those later in the course).</li>
+                <li><span class="code">padding</span>: this is the spacing that gets added inside of an element, so the background color will appear to fill more space than the interior content if the padding is more than a pixel. This can also be specified in pixels, percentages, and vw/vh.</li>
+                <li><span class="code">border</span>: this is the area directly around the HTML element which can be colored and styled, and in order to be visible must have a width. The width can be specified in pixels, percentage, or vw/vh.</li>
+                <li><span class="code">margin</span>: this is the spacing around the outside of the HTML element, effectively pushing other content away from its edges depending on the value specified in pixels, percentages, or vw/vh.</li>
+            </ul>
+            <br>
+
+            Inspect the HTML element below using the developer tools in your browser (in Chrome or Firefox, right-click on the element and choose "Inspect").<br>
+            <br>
+
+            <div style="width:400px;height:100px;padding:20px;border:gold dashed 10px;margin:30px;background-color:red">
+                Check this DIV out.
+            </div>
+            <br>
+
+            <div class="codeblock code">
+                <pre>
+width:400px;
+height:100px;
+padding:20px;
+border:gold dashed 10px;
+margin:30px;
+background-color:red;</pre>
+            </div>
+            <br>
+
+            If you scroll down to the bottom of the CSS properties, you should see a diagram of the HTML element's box model similar to the image below.<br>
+            <br>
+            <img src="sizing.png" alt="HTML box model"><br>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_float.php">W3Schools: CSS Float Property</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
