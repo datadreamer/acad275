@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Float</title>
+        <meta charset="utf-8">
+        <meta name="description" content="CSS Float">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 2: <span class="demo">Demo</span></h3>
+            <h1>CSS Float</h1>
+            <br/><br/>
+
+            The <span class="code">float</span> property is very commonly used in laying out content in a web page. This property allows content to float to one side or the other around a given HTML element. This will change the alignment and positioning of other HTML elements as well as text content. The default behavior for block elements like <span class="code">div</span> is to stack vertically, like the example below:<br>
+            <br>
+
+            <style>
+                .box{
+                    width: 200px;
+                    padding: 20px;
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+            </style>
+
+            <div class="box" style="background-color:red">Box</div>
+            <div class="box" style="background-color:green">Box</div>
+            <div class="box" style="background-color:blue">Box</div>
+
+            <h5>CSS:</h5>
+
+            <div class="codeblock code">
+                <pre>
+.box{
+    width: 200px;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}</pre>
+            </div>
+
+            <h5>HTML:</h5>
+
+            <div class="codeblock code">
+            <pre>
+&lt;div class="box" style="background-color:red"&gt;Box&lt;/div&gt;
+&lt;div class="box" style="background-color:green"&gt;Box&lt;/div&gt;
+&lt;div class="box" style="background-color:blue"&gt;Box&lt;/div&gt;
+</pre>
+            </div>
+
+            <br>
+            Adding a <span class="code">float:left</span> to the class will allow each of the divs to float next to each other, the top most being the left most, and as they continue they will stack towards the right.<br>
+            <br>
+
+            <style>
+                .box2{
+                    width: 200px;
+                    padding: 20px;
+                    font-size: 1.5em;
+                    text-align: center;
+                    float: left;
+                }
+            </style>
+
+            <div class="box2" style="background-color:red">Float Box</div>
+            <div class="box2" style="background-color:green">Float Box</div>
+            <div class="box2" style="background-color:blue">Float Box</div>
+
+            <br style="clear:both">
+            <h5>CSS:</h5>
+
+            <div class="codeblock code">
+                <pre>
+.box2{
+    width: 200px;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    float: left;
+}</pre>
+            </div>
+
+            <h5>HTML:</h5>
+
+            <div class="codeblock code">
+            <pre>
+&lt;div class="box2" style="background-color:red"&gt;Float Box&lt;/div&gt;
+&lt;div class="box2" style="background-color:green"&gt;Float Box&lt;/div&gt;
+&lt;div class="box2" style="background-color:blue"&gt;Float Box&lt;/div&gt;
+</pre>
+            </div>
+
+            <br>
+            <div class="box2" style="background-color:red;margin-right:20px">This box can float left of the paragraph of text that comes after it in the HTML.</div>
+            Any text that comes directly after an element that has been set to <span class="code">float:left</span> is going to show up on the right side of it, aligned with the top of the element. In order to make material show up underneath HTML elements that have been set to float, you need to create an HTML element with a style of <span class="code">clear:both</span>, which is a CSS property that causes any HTML elements following floating elements to ignore the float behavior.<br>
+            <br style="clear:both"><br>
+            Here's some text that has been included after a <span class="code">clear:both</span> style has been applied.<br>
+            <br>
+            
+            <div class="box2" style="background-color:red;margin-right:20px">This div is floating left.</div> 
+            <div class="box2" style="background-color:blue;margin-left:20px;float:right">This div is floating right.</div>
+            
+            You can have HTML elements that are set to <span class="code">float:left</span> or <span class="code">float:right</span> and the text content that follows them will end up showing up in between like we see here. If the text content is long enough, it will wrap underneath the floating elements using the alignment set in CSS (default being left aligned).<br>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_float.php">W3Schools: CSS Float Property</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
