@@ -1,0 +1,55 @@
+Main box: 
+   rounded corners
+   pink background color
+   760px width
+
+Top header:
+   rounded corners
+   background color  #E50509
+   Cnet image in background on right
+   text in header OVERLAP with logo
+   Text color #0A1DEB
+
+Stat box: 
+   red border
+   red text
+
+Photo: 200px width
+
+Pullquote:
+   red text
+   70% width
+   16pt text
+   italic
+   lines above and below 5px
+
+
+Article text
+
+The status quo upgrade
+
+The Good
+The iPhone 8 offers wireless charging, lightning-fast performance and small but solid upgrades to its camera, screen and speakers. Its starting storage size is a roomy 64GB, double that of the iPhone 7.
+
+The Bad
+This phone has the same pedestrian design, missing headphone jack and battery life as the iPhone 7 -- and no dual camera either. The iPhone 8 costs a bit more than baseline new iPhones in years past, and comes only in black, silver and a new shade of gold.
+
+
+
+Apple's seductive sports car of a phone is the totally redesigned, edgy, giant-screened iPhone X.
+
+So what does that make the 8?
+
+The iPhone 8 is last year's design with this year's technology. It feels familiar. It's a safe pick. It's a "let's not spend a thousand dollars on an iPhone" iPhone. It's a "Touch ID and a home button matter more to me than a leap of faith into the world of Face ID" iPhone.
+		
+Make no mistake: The iPhone 8 is essentially the "iPhone 7S." Apple saved the cool features and radical new design for the iPhone X, which costs 43 percent more. 
+		
+The iPhone 8's best feature is its processor, a fast new six-core A11 Bionic chip, similar to the processor in the iPhone X and 8 Plus. Thanks to an all-new image sensor, photo quality has improved in low light, as has video quality. The iPhone 8 adds an improved iPad-style True Tone screen, and the speakers sound nice and loud. All the new iPhones include wireless charging now, thanks to a glass back.
+	
+So, yeah: That iPhone X may look great in the showroom window. But ultimately, you're driving off the lot with the practical four-door crossover. It's more affordable. It gets perfectly decent gas mileage. But it still has the same nice high-end navigation package, entertainment system and fuel-injected engine as that sweet low-slung coupe. Not too shabby.
+
+That's the iPhone 8. The baseline 2017 iPhone remains a top-tier smartphone -- a seriously good phone. Just don't expect it to turn heads.
+
+
+
+This isn't 2017's most exciting iPhone. But the iPhone 8 shines even in the shadow of the iPhone X.
