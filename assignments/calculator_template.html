@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Calculator Template
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Calculator Template">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <style>
+            #calc{
+                width: 500px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans;
+                margin: auto;
+            }
+            #display{
+                margin-left: 10px;
+                width: 452px;
+                font-size: 2em;
+            }
+            .button{
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+                padding: 25px;
+                text-align: center;
+                background-color: #999;
+            }
+        </style>
+    
+    </head>
+    <body>
+        
+        <div id="calc">
+            <div>
+                <form action="">
+                    <input type="text" id="display" name="display">
+                </form>
+            </div>
+            <div class="button" id="one">1</div>
+            <div class="button" id="two">2</div>
+            <div class="button" id="three">3</div>
+            <div class="button" id="add">+</div>
+
+            <div class="button" id="four" style="clear:both">4</div>
+            <div class="button" id="five">5</div>
+            <div class="button" id="six">6</div>
+            <div class="button" id="sub">-</div>
+
+            <div class="button" id="seven" style="clear:both">7</div>
+            <div class="button" id="eight">8</div>
+            <div class="button" id="nine">9</div>
+            <div class="button" id="mult">x</div>
+
+            <div class="button" id="clear" style="clear:both">C</div>
+            <div class="button" id="zero">0</div>
+            <div class="button" id="equal">=</div>
+            <div class="button" id="div">/</div>
+        </div>
+
+        <script>
+
+            var firstNumber = 0;
+            var secondNumber = 0;
+            var mathFunction = "";
+
+            function buildNumber(num){
+                // add the number to the display field.
+                document.querySelector("#display").value += num;
+            }
+
+            function reset(){
+                // clear all variables and the display field.
+            }
+
+            function saveMathOperation(mathop){
+                // save the first number.
+                // save the math operation.
+                // reset the display field.
+            }
+
+            function performCalculation(){
+                // check if there is a first number.
+                // check if there is a math function.
+                // check the math operation to perform the proper calculation.
+                // display the result in the display field.
+            }
+
+            document.querySelector("#one").addEventListener("click", function(){
+                buildNumber("1");
+            });
+
+        </script>
+
+    </body>
+</html>
