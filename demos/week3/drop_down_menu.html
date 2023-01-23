@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Drop-Down Menu Example
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="HTML Basics">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            #menu * {
+                padding: 0px;
+                margin: 0px;
+            }
+            #menu li{
+                position: relative;
+                float: left;
+                list-style: none;
+            }
+            #menu li a{
+                width: 100px;
+                height: 30px;
+                display: block;
+                text-decoration: none;
+                background-color:darkred;
+                color:gold;
+                text-align: center;
+                line-height: 30px;
+            }
+            #menu li a:hover{
+                background-color: crimson;
+            }
+            #menu ul ul{
+                position: absolute;
+                top: 30px;
+                visibility: hidden;
+            }
+            #menu ul li:hover ul{
+                visibility: visible;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div id="menu">
+            <ul>
+                <li><a href="#">Webdev</a>
+                    <ul>
+                        <li><a href="#">ACAD 275</a></li>
+                        <li><a href="#">ACAD 276</a></li>
+                        <li><a href="#">ACAD 280</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">W3Schools</a>
+                    <ul>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Zen Garden</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
