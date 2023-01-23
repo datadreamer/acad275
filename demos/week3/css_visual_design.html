@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Visual Design</title>
+        <meta charset="utf-8">
+        <meta name="description" content="CSS Visual Design">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 3: <span class="demo">Demo</span></h3>
+            <h1>CSS Visual Design</h1>
+            <br/><br/>
+
+            <h2>CSS Selectors Review</h2>
+
+            <b>Tag:</b><br>
+            We can use CSS to style specific types of tags by their tag name. This will apply the styles to every tag of that type used in the page.<br><br>
+            <span class="code">p{ color:red; }</span><br><br>
+
+            <b>ID:</b><br>
+            When we apply an ID attribute to an HTML tag, we can address it individually through CSS. This allows us to isolate the application of styles to individual HTML elements. We use the pound symbol to specify that we are styling a specific ID.<br><br>
+            <span class="code">#myelement{ color:red; }</span><br><br>
+
+            <b>Class:</b><br>
+            Adding a class attribute to HTML tags allows them to be part of a family of HTML elements that will be using the same styles from CSS. They don't even need to be the same type of HTML element to use the same CSS class. We use the dot syntax to specify that we are styling a class.<br><br>
+            <span class="code">.myclass{ color:red; }</span><br><br>
+
+            <h2>Compound Selection</h2>
+
+            Compound selection provides us the ability to apply styles to only the children of tags that follow a specific structure. Maybe we want to change the color of links, but only the links that exist within unordered lists.<br><br>
+            <span class="code">ul li a{ color:red; }</span><br><br>
+
+            Following the structure of how the tags are ordered, we can see a hierarchy being established. The above CSS code specifies that anchor (a) tags will be colored red, but they must be a child element of an li element, and those must be child elements of ul elements (meaning we could have an ordered list in the page and those links would not be affected).<br><br>
+
+            We can be even more specific saying that we want the tags to follow each other as direct child elements, not just a descendent somewhere down the chain of hierarchy. Using the greater than symbol allows us to specify direct children:<br><br>
+            <span class="code">ul > li > a{ color:red; }</span><br><br>
+
+            <h2>Pseudo-Classes</h2>
+
+            We can use special names related to the behavior or context of an HTML element in order to change the styles specifically for that moment. For instance, we can change the background color of a div when the cursor hovers over it.<br><br>
+            <span class="code">#myelement:hover{ background-color:red; }</span><br><br>
+
+            Or we can change the color of all of our links when the URL they are directed towards has already been visited by the user:<br><br>
+            <span class="code">a:visited{ color:red; }</span><br><br>
+
+            <h2>External Stylesheets</h2>
+
+            So far we have seen how we can apply styles within a block of <span class="code">&lt;style&gt;</span> tags, as well as how we can apply styles directly inline with an HTML element by using the style attribute. The preferred technique of applying styles is by using an external stylesheet. This is a separate file with the file extension .css that will house all of our CSS code and we can link to that file from our HTML pages. The benefit of this is that we can have a single file with all of our styles that we can apply to multiple pages, ensuring consistency of styles across pages, and affording you as the developer the ability to update a single piece of code in one location and have it propagate to many different pages. The following line of code goes in between the <span class="code">&lt;head&gt;</span> tags at the top of your HTML document.<br><br>
+            <span class="code">&lt;link href="styles.css" rel="stylesheet" type="text/css"&gt;</span><br><br>
+
+            <h2>Graphic CSS Properties</h2>
+
+            <b>opacity:</b><br>
+            We have control over the transparency of our HTML elements by adjusting the opacity property. This will not only affect the HTML element, but all of the child elements it contains. The value must be between 0 and 1.<br><br>
+            
+            <div style="width:100px;height:100px;background-color:aqua;opacity:0.5;"></div><br>
+            
+            <span class="code">#myelement{ opacity:0.5; }</span><br><br>
+
+            <b>border-radius:</b><br>
+            We've explored the basics of border styles by adjusting their stroke type, weight, and color, but we also have the opportunity to adjust the border-radius around various HTML elements.<br><br>
+           
+            <div style="width:100px;height:100px;background-color:aqua;border-radius: 10px;"></div><br>
+           
+            <span class="code">#myelement{ border-radius: 10px; }</span><br><br>
+
+            <div style="width:100px;height:100px;background-color:aqua;border-radius: 15px 50px 30px 5px;"></div><br>
+
+            <span class="code">#myelement{ border-radius: 15px 50px 30px 5px; }</span><br><br>
+
+            <b>box-shadow:</b><br>
+            Box shadow is a way of adding a drop-shadow behind an HTML element. It uses the rectangular dimensions of the HTML element to determine where the shadow should be applied.<br><br>
+
+            <div style="width:100px; padding:30px; background-color:white;"><div style="width:100px;height:100px;background-color: aqua;box-shadow:5px 10px 10px grey;"></div></div><br>
+
+            <span class="code">#myelement{ box-shadow:5px 10px 10px grey; }</span><br><br>
+
+            <b>text-shadow:</b><br>
+            Text shadow is similar to box shadow, but rather than use the rectangular dimensions of the HTML element, it instead follows the paths of text content within the HTML element to determine the shape and positioning of the shadow.<br><br>
+
+            <div style="width:100px; padding:30px; background-color:white; color:black; text-shadow:5px 5px 5px red;"><h2>Text Shadow</h2></div><br>
+
+            <span class="code">#myelement{ text-shadow:5px 5px 5px red; }</span><br><br>
+
+            <b>display:</b><br>
+            The display property changes the behavior of HTML elements and how they fill the page, as well as how they interact with other content on the page. Many HTML elements like <span class="code">div</span>, <span class="code">p</span> elements, <span class="code">h1</span> - <span class="code">h6</span> elements are all known as "block" elements, because their display property is by default set to "block". This will take up the entire width of the container the element is within.<br><br>
+            There are other elements such as <span class="code">a</span> tags or <span class="code">img</span> tags that are "inline" elements, which means they flow inline with text content on the page.<br><br>
+            It's also possible to set <span class="code">display: none</span> in order to completely disable an HTML element from being incorporated in the page. This doesn't just make the element invisible, but effectively "removes" it from being included with other HTML elements on the page.<br><br>
+
+            <b>visibility:</b><br>
+            The visibility property allows us to toggle on and off the visibility of an HTML element. The difference between <span class="code">display: none</span> and <span class="code">visibility: hidden</span> is that the HTML element will still take up space when visibility has been set to hidden.<br><br>
+
+            <b>position:</b><br>
+            The position property affords us the ability to change the behavior of how an HTML element interacts with other content on the page. By default, the position of HTML elements is set to "relative", which means that it is going to be arranged according to the elements that came before it.<br><br>
+            We can also use <span class="code">position: absolute</span> to specify an exact location on the page where we would like the element to be placed. This is done by using the <span class="code">left, top, right, and bottom</span> properties.<br><br>
+            There's also the option to set <span class="code">position: fixed</span> which attaches the HTML element to the browser, which prevents it from scrolling with the rest of the body of the HTML document. More of this to come in week 4.<br><br>
+
+            <b>z-index:</b><br>
+            The z-index is the property of an HTML element that determines the order it is drawn to the screen, whether it is overlapping elements or will be overlapped by other elements. The z-index is normally set automatically based on the order the elements are added to the HTML document, but the z-index can be manually adjusted to force items to be on-top or underneath others.<br><br>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">MDN: CSS Selectors</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_opacity.php">W3Schools: opacity</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_border-radius.php">W3Schools: border-radius</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_box-shadow.php">W3Schools: box-shadow</a></li>
+                <li><a href="https://www.w3schools.com/cssref/css3_pr_text-shadow.php">W3Schools: text-shadow</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_display.php">W3Schools: display</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_visibility.php">W3Schools: visibility</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_position.php">W3Schools: position</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_pos_z-index.php">W3Schools: z-index</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
