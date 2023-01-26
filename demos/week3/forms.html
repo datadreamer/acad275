@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Forms</title>
+        <meta charset="utf-8">
+        <meta name="description" content="HTML Forms">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 3: <span class="demo">Demo</span></h3>
+            <h1>HTML Forms</h1>
+            <br/><br/>
+
+            HTML forms allow you to collect information from users for activities such as surveys, e-commerce applications, or web-apps requiring data from the user. Forms can be made of a variety of different input types for different purposes.<br>
+            <br>
+
+            <div class="section">
+
+                <h2>Basic Form Tags</h2>
+
+                In order to create a form of any kind, we need to use the <span class="code">&lt;form&gt;</span> tags to create a form element that will act as the container for all of the input fields we want to add.<br>
+                <br>
+
+                <div class="code codeblock">
+                    &lt;form action="process.php" method="post"&gt;
+                    &lt;/form&gt;
+                </div>
+                <br>
+                
+                The two attributes of the form tag are "action" and "method". The "action" attribute is for providing a server-side script that the user input will be sent to so it can be processed on the server. This is outside of the scope of the material in this course (but is exactly what is covered in ACAD 276: Dev II if you are interested), but we will be using form input through JavaScript later on in the semester. The "method" attribute has to do with the technique used to send the data to the server, which can be either "get" or "post". Again, outside of the scope of this course, so we won't dwell on their differences.<br>
+                <br>
+
+                To actually create a field to allow the user to input some data, we need to use the <span class="code">&lt;input&gt;</span> tag. The <span class="code">&lt;input&gt;</span> tag is the most basic tag to include in forms but also incredibly versatile.<br>
+                <br>
+
+                <label for="username">Username:</label>
+                <input type="text" name="username"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="username">Username:&lt;/label&gt;
+&lt;input type="text" name="username"&gt;</pre>
+                </div>
+                <br>
+
+                The two important attributes the input tag needs are "type" and "name". The "type" attribute allows us to specify the type of input that is expected. Valid input types include button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, radio, range, reset, search, submit, tel, text, time, url, and week.<br>
+                <br>
+
+                <h3>"button"</h3>
+                <input type="button" value="Click me!"><br>
+                <br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="button" value="Click me!"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"checkbox"</h3>
+                <input type="checkbox" name="vehicle1" value="Bike">
+                <label for="vehicle1">I have a bike</label><br>
+                <input type="checkbox" name="vehicle2" value="Car">
+                <label for="vehicle2">I have a car</label><br>
+                <input type="checkbox" name="vehicle3" value="Boat">
+                <label for="vehicle3">I have a boat</label><br>
+                <br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="checkbox" name="vehicle1" value="Bike"&gt;
+&lt;label for="vehicle1"&gt;I have a bike&lt;/label&gt;&lt;br&gt;
+&lt;input type="checkbox" name="vehicle2" value="Car"&gt;
+&lt;label for="vehicle2"&gt;I have a car&lt;/label&gt;&lt;br&gt;
+&lt;input type="checkbox" name="vehicle3" value="Boat"&gt;
+&lt;label for="vehicle3"&gt;I have a boat&lt;/label&gt;&lt;br&gt;</pre>
+                    </div>
+                <br>
+
+                <h3>"color"</h3>
+                <label for="favcolor">Select your favorite color:</label>
+                <input type="color" name="favcolor"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="favcolor">Select your favorite color:&lt;/label&gt;
+&lt;input type="color" name="favcolor"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"date"</h3>
+                <label for="birthday">Birthday:</label>
+                <input type="date" name="birthday"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="birthday">Birthday:&lt;/label&gt;
+&lt;input type="date" name="birthday"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"datetime-local"</h3>
+                <label for="birthdaytime">Birthday:</label>
+                <input type="datetime-local" name="birthdaytime"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="birthdaytime">Birthday:&lt;/label&gt;
+&lt;input type="datetime-local" name="birthdaytime"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"email"</h3>
+                <label for="email">Email:</label>
+                <input type="email" name="email"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="email">Email:&lt;/label&gt;
+&lt;input type="email" name="email"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"file"</h3>
+                <label for="myfile">Upload a file:</label>
+                <input type="file" name="myfile"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="myfile">Upload a file:&lt;/label&gt;
+&lt;input type="file" name="myfile"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"hidden"</h3>
+                There's a hidden input element here that you can't see.
+                <input type="hidden" name="hiddeninput" value="hello world!"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="hidden" name="hiddeninput" value="hello world!"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"image"</h3>
+                <input type="image" src="submit.png" alt="Submit" width="150" height="50"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="image" src="submit.png" alt="Submit" width="150" height="50"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"month"</h3>
+                <label for="bdaymonth">Birthday (month and year):</label>
+                <input type="month" id="bdaymonth" name="bdaymonth"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="bdaymonth">Birthday (month and year):&lt;/label&gt;
+&lt;input type="month" id="bdaymonth" name="bdaymonth"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"number"</h3>
+                <label for="quantity">Quantity (between 1 and 5):</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="quantity">Quantity (between 1 and 5):&lt;/label&gt;
+&lt;input type="number" id="quantity" name="quantity" min="1" max="5"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"password"</h3>
+                <label for="pwd">Password:</label>
+                <input type="password" name="pwd"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="pwd"&gt;Password:&lt;/label&gt;
+&lt;input type="password" name="pwd"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"radio"</h3>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="radio" id="html" name="fav_language" value="HTML"&gt;
+&lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;
+&lt;input type="radio" id="css" name="fav_language" value="CSS"&gt;
+&lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;
+&lt;input type="radio" id="javascript" name="fav_language" value="JavaScript"&gt;
+&lt;label for="javascript"&gt;JavaScript&lt;/label&gt;&lt;/pre&gt;
+                </div>
+                <br>
+
+                <h3>"range"</h3>
+                <label for="vol">Volume (between 0 and 50):</label>
+                <input type="range" id="vol" name="vol" min="0" max="50"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="vol"&gt;Volume (between 0 and 50):&lt;/label&gt;
+&lt;input type="range" id="vol" name="vol" min="0" max="50"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"reset"</h3>
+                <input type="reset"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="reset"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"search"</h3>
+                <label for="gsearch">Search Google:</label>
+                <input type="search" name="gsearch"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="gsearch"&gt;Search Google:&lt;/label&gt;
+&lt;input type="search" name="gsearch"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"submit"</h3>
+                <input type="submit"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="submit"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"tel"</h3>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+&lt;input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"time"</h3>
+                <label for="appt">Select a time:</label>
+                <input type="time" name="appt"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="appt"&gt;Select a time:&lt;/label&gt;
+&lt;input type="time" name="appt"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"url"</h3>
+                <label for="homepage">Add your homepage:</label>
+                <input type="url" name="homepage"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="homepage"&gt;Add your homepage:&lt;/label&gt;
+&lt;input type="url" name="homepage"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"week"</h3>
+                <label for="week">Select a week:</label>
+                <input type="week" name="week"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="week"&gt;Select a week:&lt;/label&gt;
+&lt;input type="week" name="week"&gt;</pre>
+                </div>
+                <br><br>
+
+            </div>
+
+            <div class="section">
+
+                <h2>Form Elements that are not Input</h2>
+
+                <h3>"textarea"</h3>
+                <textarea name="story"></textarea><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;textarea name="story"&gt;&lt;/textarea&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"select" and "option"</h3>
+                <select name='favcolor'>
+                    <option value='red'>Red</option>
+                    <option value='green' selected='1'>Green</option>
+                    <option value='yellow'>Yellow</option>
+                </select><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;select name='favcolor'&gt;
+    &lt;option value='red'&gt;Red&lt;/option&gt;
+    &lt;option value='green' selected='1'&gt;Green&lt;/option&gt;
+    &lt;option value='yellow'&gt;Yellow&lt;/option&gt;
+&lt;/select></pre>
+                </div>
+                <br>
+
+                <h3>"output"</h3>
+                The output element is intended to show immediate output from input fields. Adjust the range slider below to see numeric values appear to the right of it.<br><br>
+                <form>
+                    <input type="range" name="vol" min="0" max="50" onchange="slidedata.value=this.value">
+                    <output name="slidedata" for="vol"></output>
+                </form><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="range" name="vol" min="0" max="50" onchange="slidedata.value=this.value"&gt;
+&lt;output name="slidedata" for="vol"&gt;&lt;/output&gt;</pre>
+                </div>
+                <br>
+
+                <h3>"datalist"</h3>
+                <input list="browsers">
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input list="browsers"&gt;
+&lt;datalist id="browsers"&gt;
+    &lt;option value="Internet Explorer"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Opera"&gt;
+    &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</pre>
+                </div>
+                <br>
+
+            </div>
+
+            <div class="section">
+
+                <h2>Form Object Attributes</h2>
+
+                <h3>placeholder</h3>
+                The placeholder property allows for a default value to be used in the input field.<br><br>
+
+                <input type="text" name="email" placeholder="user@domain.com"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="text" name="email" placeholder="user@domain.com"&gt;</pre>
+                </div>
+
+                <h3>required</h3>
+                A required property will ensure that an input field is actually filled out before it can be submitted. The contemporary application of the required attribute is to simply add the word "required" as an attribute to the tag with no corresponding value.<br><br>
+
+                <input type="text" name="email" required><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="text" name="email" required&gt;</pre>
+                </div>
+
+                <h3>title</h3>
+                The title property is typically displayed as a "tool tip" when a user hovers over an object.<br><br>
+
+                <input type="text" name="email" title="Enter a valid email address."><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="text" name="email" title="Enter a valid email address."&gt;</pre>
+                </div>
+
+                <h3>pattern</h3>
+                The pattern property uses regular expressions to determine an alphanumeric pattern that the content needs to match in order to be submitted.<br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+&lt;input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"&gt;</pre>
+                </div>
+                <br>
+
+                <h3>autofocus</h3>
+                Autofocus is a useful property for automatically highlighting an input field upon a page loading. This alleviates the step requiring a user to click into an input field before they can start typing. Consider the interaction when you visit Google and the search field already has a cursor in it.<br><br>
+
+                <input type="text" name="search" autofocus placeholder="Enter search here"><br><br>
+
+                <div class="code codeblock">
+                    <pre>
+&lt;input type="text" name="search" autofocus placeholder="Enter search here"&gt;</pre>
+                </div>
+                <br>
+
+            </div>
+
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/html/html_forms.asp">W3Schools: HTML Forms</a></li>
+                <li><a href="https://www.w3schools.com/html/html_forms_attributes.asp">W3Schools: HTML Form Attributes</a></li>
+                <li><a href="https://www.w3schools.com/html/html_form_elements.asp">W3Schools: HTML Form Elements</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_form.asp">W3Schools: HTML form tag</a></li>
+                <li><a href="https://www.w3schools.com/tags/tag_input.asp">W3Schools: HTML tag input</a></li>
+                <li><a href="https://www.w3schools.com/html/html_form_input_types.asp">W3Schools: HTML Input Types</a></li>
+                <li><a href="https://www.w3schools.com/html/html_form_attributes.asp">W3Schools: HTML Input Attributes</a></li>
+            </ul>
+            
+
+        </div>
+
+    </body>
+</html>
