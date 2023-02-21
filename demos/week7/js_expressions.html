@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Expressions</title>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript Expressions">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .imgthumb{
+                width: 150px;
+                opacity: 0.5;
+            }
+
+            #mainimg{
+                width:100%;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 7: <span class="demo">DEMO</span></h3>
+            <h1>JavaScript Expressions</h1>
+            <br><br>
+
+            <div class="section">
+                JavaScript is a high-level scripting language, which means that it is far removed from the low-level operations of memory management and garbage collection, and it's a scripting language because the code you write is never compiled into a binary results, but rather run in real-time by the web browser. We use JavaScript to write and execute routines we call functions. The language is also object-oriented, in which objects have predefined methods and properties that we can use while coding. It's also important to remember that all of the JavaScript code we write is <b>case sensitive</b>, so watch out for those typos.<br>
+                <br>
+
+                <h2>Simple Object Properties, Methods, and Functions</h2>
+                <br>
+
+                We have already begun to explore some of the simple object properties, methods, and functions that are built into JavaScript.<br>
+                <br>
+
+                <ul>
+                    <li><b class="code">alert()</b>: We can use the alert() function to display a message in a pop-up fashion. This is very annoying from a user experience perspective, and should be avoided in virtually every situations.</li>
+                    <li><b class="code">prompt()</b>: This is the equivalent of alert(), but it asks the user for some input. This is pretty outdated, and if you want input from the user, you should probably just use a form.</li>
+                    <li><b class="code">console.log()</b>: This is the preferred technique to test output in your webpage, as it won't disrupt the user experience or the loading of page elements, and it will display nicely inside of the developer tools panel.</li>
+                    <li><b class="code">document.querySelector()</b>: We use this method to get a reference to an object (an HTML element in our page) so that we can modify it.</li>
+                    <li><b class="code">document.querySelector().addEventListener()</b>: We chain these two methods together in order to first get an object reference and then apply a new event listener to that object.</li>
+                </ul>
+                <br>
+
+                <h2>JavaScript Locations</h2>
+                <br>
+
+                <ul>
+                    <li><b>Inside the <span class="code">&lt;head&gt;</span> tags</b>: Ensures that your JavaScript is fully loaded before the HTML elements in the body are.</li>
+                    <li><b>Inside the <span class="code">&lt;body&gt;</span> tag</b>: Will load and execute after the HTML elements above it have been loaded, but before the HTML elements after it have been loaded.</li>
+                    <li><b>Inside of event listeners</b>: Executes code upon some user interaction triggering an event or a timed event that can occur once or on repeated regular intervals.</li>
+                    <li><b>Inside of a separate .js file</b>: Just like how we can keep CSS in a file separate from our HTML, we can do the same with our JavaScript. But more on that later.</li>
+                </ul>
+                <br>
+
+                <h2>Fundamental JavaScript Concepts</h2>
+                <br>
+
+                <ul>
+                    <li><b>Comments</b>: Just like how you can enter comments in HTML using the <span class="code">&lt;-- --&gt;</span> syntax, we can add comments or comment out code in JavaScript by either placing <span class="code">//</span> before a line, or wrapping your comment/code with <span class="code">/* */</span> which means it will not be executed as JavaScript.</li>
+                    <li><b>Variables</b>: Variables are containers that can store information like text or numbers, even objects from pages, as well as delayed code within functions. Variables are generally created with the <span class="code">var</span>, <span class="code">let</span>, or <span class="code">const</span> command. We can read and write to variables in order to save and retrieve different kinds of information. Data types in JavaScript include Strings, Numbers, Booleans, Nulls, Objects, Functions, and Arrays.</li>
+                    <li><b>Functions</b>: Functions contain a set of JavaScript instructions which can be called at a later time. This is the best way to be able to reuse code. Functions can be passed input data in the form of arguments, and functions can return output data in the form of a return.</li>
+                </ul>
+                <br>
+
+                <h2>Programming Fundamentals</h2>
+
+                <h3>Variables</h3>
+
+                <ul>
+                    <li>Data storage vessels that can hold numbers, strings, booleans, object references, arrays, etc.</li>
+                    <li>Initially format or initialize variables with "var" - but ONLY the first time. So you can var favnumber or var favnumber = 34.</li>
+                    <li>Use = operator to set values. Use quotes to specify string values (rather than numeric values).</li>
+                    <li>Variable names must begin with a letter, but can contain numbers in their names. A variable name also CANNOT contain spaces OR hyphens in them. So favcolor, text2 and my2go are valid variable names, but 2go , fav color (with a space) , and my-name are not valid variable names.</li> 
+                    <li>Variables created/set with numbers are considered to hold numeric data. Data stored in variables with quotes are considered to hold string data.
+                        <ul>
+                            <li>var temp2='2'; temp2 = temp2 + 2; document.write (temp2);</li>
+                            <li>var temp2=2; temp2 = temp2 + 2; document.write (temp2);</li>
+                        </ul>
+                    </li>
+                    <li>Best practice is to use descriptive variable names for clarity in your programming. Fname, lname, email and address are better variable name choices than f, l, em and a.</li>
+                    <li>Example #1: Below shows three DIFFERENT ways of building and then outputting a variable... all three are equally valid:</li>
+
+                    <br>
+                    <div class="code codeblock">
+                      <pre>
+&lt;script&gt;
+
+var myname = ""
+myname = myname + "My name is ";
+myname = myname + "James";
+myname = myname + " ";
+myname = myname + "Bond";
+console.log(myname);
+
+var myname = " My name is James Bond";
+console.log(myname);
+
+var myname = " My name is " + "James" + " " + "Bond";
+console.log(myname);
+
+&lt;/script&gt;</pre></div><br>
+          
+                    <li>Example #2: In a page first a prompt assigns user-specified data to a variable, then displays that variable.</li>
+
+                    <br>
+                    <div class="code codeblock">
+                    <pre>
+&lt;script&gt;
+var variable1 = prompt('Please enter value for variable varA');
+console.log('Variable variable1 is now set to ' + variable1);
+&lt;/script&gt;</pre>
+                    </div>
+            
+                  </ul>
+
+                <br>
+                <h3>Expressions</h3>
+
+                <ul>
+                    <li>An expression can be strings, variables, numbers and combinations of them.</li>
+                    <li>Operators define how expressions interact and are evaluated:
+                        <ul>
+                          <li>= (equal) sign assigns values to variables or object properties.</li>
+                          <li>+ (plus) and - (minus) perform calculations on expressions.</li>
+                          <li>&lt; and &gt; compare expressions.</li>
+                        </ul>
+                    </li>
+                    <li>Evaluating an expression means returning its value. You can evaluate the value of a variable, an object, a string, or combinations of them.</li>
+                </ul>
+
+                <br>
+                <h3>Arithmetic Operators</h3>
+
+                <ul>
+                    <li>When arithmetic operators are used with expressions the result are value judgments of those strings:
+                        <ul>
+                            <li>variable1 + variable2</li>
+                            <li>variable1 + "phrase or string"</li>
+                            <li>"1 + 1" = 1 + 1</li>
+                            <li>var num = 1 + 1</li>
+                        </ul>
+                    </li>
+                    <li><b>+</b> means to add or join expressions</li>
+                    <li><b>-</b> means to subtract expressions</li>
+                </ul>
+
+                <br>
+                <h3>Comparison Operators</h3>
+
+                <ul>
+                    <li>When comparison operators are used with expressions the expressions are evaluated and a true or false answer results:
+                        <ul>
+                          <li>var large = 12;</li>
+                          <li>var small = 2;</li>
+                          <li>alert(large &lt; small);</li>
+                      </ul>
+                    </li>
+                    <li><b>==</b> evaluates if the expressions are equal</li>
+                    <li><b>!=</b> evaluates if the expressions are not equal</li>
+                    <li><b>></b> evaluates greater than</li>
+                    <li><b>>=</b> evaluates greater than or equal to</li>
+                    <li><b>&lt;</b> evaluates less than</li>
+                    <li><b>&lt;=</b> evaluates less than or equal to</li>
+                </ul>
+
+                <br>
+                <h3>Functions & Methods</h3>
+
+                <ul>
+                    <li>Methods and functions are called by their name followed by the parentheses. When you call (activate) a function OR a method you MUST include parentheses for arguments, even if you don't have any information to pass along. For instance, alert() or alert('Test message').</li>
+                    <li>Methods are pre-written routines (or "mini programs") already stored in Javascript.</li>
+                    <li>Some methods are just one name, such as alert, whereas methods are called with a parent object preceding it, such as window.close() ... i.e. close() is not a method, but window.close() is. </li>
+                    <li>The "arguments" of a method or function are pieces of data (none, one or more) that you pass along to the routine. For instance, when you call the alert method you need to tell the program WHAT to display in the alert. So you pass the "message" as the sole argument in an alert call. The window.close() method does not have any argumetns (nothing else you need to tell it about closing a window), so the parentheses are always empty when you call that method. But regardless of whether a method (or function) has any arguments, you must always provide or represent that format through parentheses.</li>
+                    <li>Functions are routines that YOU write. You must define them in a script block BEFORE you call them.</li>
+                    <li>When you plan out a function, you must determine how many pieces of information the function you are writing will need to know/receive. When defining a function, you can write it to expect no arguments, one argument, two arguments, etc.</li>
+                    <li>Below is an example of a function called scaleit that takes any image and scales it to 100x100. The first function scales down a specific image on the page (the id of a specific image is hard-coded into the script):</li>
+                    <br>
+
+                        <div class="code codeblock">
+<pre>function scaleit(){
+    theobj = document.querySelector('#theimage'); // store the object theimage into a variable
+    theobj.style.width = "100px"; 	// access the width and height style properties of the 
+    theobj.style.height = "100px";	// object (stored in the variable) and set new values (100px)
+}
+</pre></div><br>
+      
+      <li>This next function is written to receive one piece of information (the name of the image):</li>
+      <br>
+
+<div class="code codeblock">
+<pre>function scaleit(imageid){
+    theobj = document.querySelector(imageid);
+
+    /* 
+    Reminder: querySelector() accepts a full css selector. 
+    So that would be "#thepic" NOT "thepic" 
+    Or else you would need to ADD the # to the front such as 
+    "#" + imageid
+    */
+
+    theobj.style.width = 100px;
+    theobj.style.height = 100px;
+}
+</pre></div><br>
+
+      <li>Below is another version that receives THREE pieces of information: the name of the image, the desired width and the desired height:</li>
+      <br>
+
+      <div class="code codeblock">
+<pre>function scaleit(imageid, w, h){
+    theobj = document.querySelector(imageid);
+    theobj.style.width = w;
+    theobj.style.height = h;
+}
+</pre></div>
+      </ul>
+
+
+
+
+<!-- 
+                
+
+                <div class="interactive" id="changebg">Click this to change the background color.</div>
+                <br>
+                <div class="interactive" id="changecolor">Click this to change the text color.</div>
+                <br>
+
+                <script>
+                    document.querySelector("#changebg").addEventListener("click", function(){
+                        this.style.backgroundColor = 'green';
+                    });
+                    document.querySelector("#changecolor").addEventListener("click", function(){
+                        this.style.color = 'red';
+                    });
+                </script>
+
+                <div class="code codeblock">
+                <pre>
+&lt;script&gt;
+    document.querySelector("#changebg").addEventListener("click", function(){
+        this.style.backgroundColor = 'green';
+    });
+    document.querySelector("#changecolor").addEventListener("click", function(){
+        this.style.color = 'red';
+    });
+&lt;/script&gt;
+                </pre>
+                </div>
+                <br> -->
+
+
+            </div>
+
+        </div>
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselector.asp">W3Schools: querySelector()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp">W3Schools: querySelectorAll()</a></li>
+                <li><a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp">W3Schools: addEventListener()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
