@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ACAD 275: Dev I - Web Experiences</title>
+
+		<meta name="description" content="Lecture slides for Iovine-Young Academy.">
+		<meta name="author" content="Aaron Siegel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			section img{
+				width: 90% !important;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- header and footer stays on page and changes when tweaked by <style> inside each <section> -->
+				<header>
+					<a href="http://iovine-young.usc.edu" class="left">ACAD 275: Dev I</a>
+					<a href="http://iovine-young.usc.edu" class="right">Iovine and Young Academy</a>
+				</header>
+
+				<footer>
+					<span id="leftside" class="left"></span>
+					<span id="rightside" class="right"></span>
+				</footer>
+
+
+
+
+				<section>
+					<div class="titletext">
+						<div class="week">ACAD 275: Dev I</div>
+						<h1>Web Experiences</h1>
+						Aaron Siegel |
+						<script type="text/javascript">
+				        	document.write("<n uers=\"znvygb:nnebafvr@hfp.rqh\" ery=\"absbyybj\">nnebafvr@hfp.rqh</n>".replace(/[a-zA-Z]/g,
+				        	function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+				        </script>
+				        | 2/21/2023<br>
+						<br>
+						<span style="color:#666">(use your left and right arrow keys to navigate slides)</span>
+					</div>
+				</section>
+
+
+
+
+				<style>
+					.arpa69 footer #leftside:after{content: "Arpanet (1969)"; background-color:rgba(0,0,0,0.5); padding:10px;}
+					
+				</style>
+
+
+
+
+				<section>
+					<h2>Interactivity</h2><br/>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>Web Publishing</h4><br/>
+							Basic production of web pages using HTML and CSS.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>Web Development</h4><br/>
+							Interactivity, database calls, dynamic pages, everything beyond publishing.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>Server-side Web Development</h4><br/>
+							Code that runs on the server using a server-side scripting language like PHP.
+						</div>
+					</div>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>Client-side Web Development</h4><br/>
+							Code that runs directly in the browser on the user's computer. This can only be done with JavaScript.
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Frontend Technologies</h2><br/>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/html.png"><br/><br/>
+							<h4>HTML is for Structure</h4><br/>
+							HTML allows you to define how your content is structured within your page.
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/css.png"><br/><br/>
+							<h4>CSS is for Appearance</h4><br/>
+							CSS allows you to style the appearance of the content within your page.
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/js.png"><br/><br/>
+							<h4>JavaScript is for Behavior</h4><br/>
+							JavaScript allows you to program the behavior and interactivity of the content within your page.
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/html.png"><br/><br/>
+						</div>
+					</div>
+					<div class="threequarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>HTML: Hypertext Markup Language</h4><br>
+							<ul>
+								<li>Creates objects on a webpage.</li>
+								<li>Attributes of HTML objects are properties of that object.</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/css.png"><br/><br/>
+						</div>
+					</div>
+					<div class="threequarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>CSS: Cascading Style Sheets</h4><br>
+							<ul>
+								<li>Does not create objects, only refers to ones that can exist.</li>
+								<li>Written in stylesheets or inline with HTML elements.</li>
+								<li>Pseudo-classes afford a limited amount of interactivity through CSS.</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="quarter">
+						<div style="text-align:left; padding:20px;">
+							<img src="images/js.png"><br/><br/>
+						</div>
+					</div>
+					<div class="threequarter">
+						<div style="text-align:left; padding:20px;">
+							<h4>JavaScript</h4><br>
+							<ul>
+								<li>Redefine objects and their properties.</li>
+								<li>JavaScript libraries are packages of code that people can use to build more complex things in easier ways.</li>
+								<li>Frameworks are more complex combinations of technology that make production of more complex applications easier for the developer.</li>
+								<li>JavaScript allows pages to be dynamic after they are loaded.</li>
+								<li>JavaScript can provide logic and process data asynchronously.</li>
+								<li>Acts a bridge between (1) the user and the page, (2) the page and the server, and (3) the HTML and CSS.</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<h4>JavaScript Functionality</h4><br>
+							<ul>
+								<li>Manipulate Objects.</li>
+								<li>Create Objects.</li>
+								<li>Store data in variables and arrays.</li>
+								<li>Calculate (perform mathematical operations).</li>
+								<li>Logical branches (conditional statements, comparators, operators).</li>
+								<li>Event based execution of code.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<h4>JavaScript Common Usage</h4><br>
+							<ul>
+								<li>Validate data in forms.</li>
+								<li>Respond to user interaction with objects on a page.</li>
+								<li>Change content or stylesheets.</li>
+								<li>Load data from a server.</li>
+								<li>Create dynamic menus.</li>
+								<li>Animate elements.</li>
+								<li>SAAS products.</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="third">
+						<div style="text-align:left; padding:20px;">
+							<h4>JavaScript Examples</h4><br>
+							<ul>
+								<li>Image swapping and pre-caching.</li>
+								<li>Interactive UIs.</li>
+								<li>Storing/Retrieving Data.</li>
+								<li>Form Validation.</li>
+								<li>Interactive Data.</li>
+								<li>Dynamic HTML.</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="half">
+						<div style="text-align:left; padding:20px;">
+							<h4>When Does JavaScript Work?</h4><br>
+							<ul>
+								<li>On page load.</li>
+								<li>After an established interval.</li>
+								<li>Upon user interaction (mouse rollover, click, etc).</li>
+								<li>When the user completes a requirement.</li>
+								<li>When a process is complete (an event is triggered).</li>
+								<li>If a bad condition is met (an error has occurred).</li>
+							</ul>
+						</div>
+					</div>
+					<div class="half">
+						<div style="text-align:left; padding:20px;">
+							<h4>Fundamental JavaScript Concepts</h4><br>
+							<ul>
+								<li>All HTML tags are objects.</li>
+								<li>All objects can have properties (attributes).</li>
+								<li>Alter objects and their properties.</li>
+								<li>Event based code.</li>
+								<li>Add/bind events to objects.</li>
+								<li>Functions (arguments, returns).</li>						
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>What has JavaScript enabled?</h1>
+				</section>
+
+
+				<section data-background-image="images/netflix.jpg"></section>
+				<section data-background-image="images/hulu.jpg"></section>
+				<section data-background-image="images/discord.png"></section>
+				<section data-background-image="images/networkeffect.jpg"></section>
+
+				<section data-background-image="images/endpage.png"></section>
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+				width: 1920,
+		    height: 1080,
+		    margin: 0.1,
+		    minScale: 0.2,
+		    maxScale: 2.0,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

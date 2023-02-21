@@ -361,6 +361,11 @@ body {
   width: 25%;
 }
 
+.threequarter{
+  float: left;
+  width: 75%;
+}
+
 .quarterspaced{
   float: left;
   width: 23%;
