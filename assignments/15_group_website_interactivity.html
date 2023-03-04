@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Assignment #15 - Group Website: Interactivity</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Group Website: Interactivity">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../site.css" rel="stylesheet" type="text/css">
+        <script src="../jquery-3.6.3.min.js"></script>
+
+        <style>
+            .expand{
+                color:#0cf;
+            }
+            .examples{
+                display: none;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 15: <span class="assignment">Assignment #15</span></h3>
+            <h1>Group Website: Interactivity</h1>
+            <h3>DUE: Tuesday, 5/4 @ 5pm</h3>
+            <br><br>
+
+            There are numerous scripting requirements that you will need to implement within the final submission of your group website:<br>
+            <br>
+
+            <ol>
+                <li><b>Interactive Photo Gallery (10%):</b> You must implement an intermediate difficulty gallery or slideshow plug-in into your site (not just Lightbox or Lightbox2). You MUST make sure the color scheme/design of the gallery matches your site's overall color scheme and design. In most instance, this will just mean editing the css that comes with the JavaScript plug-in.</li>
+                <br>
+
+                <li><b>Customization (20%):</b> Have an aspect of a page or the site that is customizable by the user, and have that user data saved to cookies for persistent use. Examples are: elements of stylesheets (color scheme, text size) the user can customize; ability to select and save data, products, options, etc.; customize a product through color, size, options choices; and other ideas. <span class="expand">Click here for examples.</span>
+                    <br>
+                    <ul class="examples" style="background-color:#069; padding:20px">
+                        <li>Saving stylesheet preferences into cookies: This could be that the page has multiple stylesheets, and the user picks one and scripting disables the others and a cookie entry is saved so that on each page reload it re-disables the proper ones. Or this could be that a user could have a gallery of background images for the page/site, and the user can preview and "save" their favorite (into a cookie). And on page load that image is flowed in as the background of the page/site.</li>
+                        <li>Customization of a layout or module: In a photo gallery this could be options to change the size of thumbnails and apply content filters. Or it could be that a page has a multiple layout options, and if the user switches to another page elements are animated around to form a different page layout.</li>
+                        <li>Customization of page data: If, for instance, the content of a page were stored in arrays (photos, people, products, etc.) and each item had a category or type or something like that, you could let users search or filter through the page data and rebuild the page dynamically (as the user interacts).</li>
+                        <li>Save favorites: In a photo gallery you could let users click on images, and it saves them to a "favorites" list, which is saved to a cookie so it can be retrieved. You could also let users compile a custom "bookmark" list that persists through cookie storage.</li>
+                        <li>Save shopping cart info: Saving product data to cookies can be relatively complicated unless you are comfortable with and can implemented advanced arrays or use JSON. But nevertheless on a product order page you could have a user's selections saved to cookies, so if they leave and come back their "selections" are reloaded. Simple saving products (say through array rows) is the easiest. Actually saving products AND quantities is more complicated. This is also one of the few instances that you might be able to fulfill two requirements (customization and medium or major routine) with one set of code.</li>
+                        <li>Customize product colors: By taking a graphic and breaking it down into multiple transparent PNGs, you can set up a layer structure that allows the user to "build" products such as t-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.).</li>
+                        <li>Other ideas? Pitch one to me and besides giving you feedback I might also add it to the "ideas" list here!</li>
+                    </ul><br>
+                </li>
+
+                <li><b>Major Routine (40%):</b> An original, hand-coded routine that has a fairly significant functionality that is core to a page or section of your web site. It can of course use jQuery as well as Javascript. but it is expected to have a fairly significant amount of Javascript logic (and often also conditional loops). (Note: It is best to get my approval on the details to make sure you fulfill this requirement. If what you pitch is too simple I'll help figure out how to expand it.) <span class="expand">Click here for examples.</span>
+                    <br>
+                    <ul class="examples" style="background-color:#069; padding:20px">
+                        <li>JSON dataset: Load and use a live JSON-based dataset and/or API in a meaningful way. Note: This might be only a Medium routine if fairly simple load and use data, or Major if more involved.</li>
+                        <li>Combine concepts: Combine a series of different concepts/functionality/modules from the class, in a relatively complicated way, into one integrated page/app.</li>
+                        <li>Custom built product/Order form: The product/order form needs to have a set amount of features: data validation, total calculation, compile a custom receipt / order summary. Best if the underlying "product" data (name, price, details) is abstracted into arrays (or JSON). You could also set up "drag and drop" ordering, where users drag products to a spot on the screen, and when they drop them there is updated the "cart" with that item added (and puts the product back in its proper place). More complex implementations could be having a live "shopping cart" on the side of the page that lists items and quantities as they add them, or keeping track of the cart through cookies (so if you leave and come back to the page the cart is still there/regenerated).</li>
+                        <li>Web page-based game: You could write an edutainment game that ties into your site topic in some way. Perhaps the user has to drag objects into place (U.S. states into their proper location in a country map, planets into their proper spots in the solar system, etc.). The jQuery UI plug-in adds easy to use "draggable" functionality to objects, and games can involve concepts/routines that detect object locations (versus where they belong), snap objects into place (if they are within X pixels of their target), detect object locations, etc.</li>
+                        <li>Other ideas? Pitch one to me and besides giving you feedback I might also add it to the "ideas" list here!</li>
+                    </ul>
+                    <br>
+                </li>
+
+                <li><b>Medium Routine (20%):</b> A scripting routine of medium complexity or an adaption of existing JavaScript/jQuery code with modifications/customization. Note: If this routine is based on you implementing an existing JavaScript/jQuery plug-in API then you need to have customized or integrated logic or added additional functionality to their code, and not simply implemented it as is. Examples of these are expanding a routine or concept from a class demo or assignment (like the order form), or implementing a plug-in and adding new functionality to it. <span class="expand">Click here for examples.</span>
+                    <br>
+                    <ul class="examples" style="background-color:#069; padding:20px">
+                        <li>Expand concept from an assignment: Many assignments from the course have ideas or functionality you might want to use in your project. But if you want to adapt one to fulfill this requirement you would need to expand the original code/routines, making it more complex or combining multiple concepts/assignment ideas into one.</li>
+                        <li>Slideshow: You could build an image slideshow (in your own code) where each image has multiple pieces of data (photographer, subject, caption). The UI should have next and previous buttons at a minimum. The module should also either have a slideshow option (with play and pause buttons), or have hyperlinks on the images, so that at any point in the slideshow if you click on the image a pop-up window comes up (specific to that image), or have some other additional element beyond the minimum. A more advanced slideshow could have an option for users to save their "favorite" images, and an option to display just their favorites in the slideshow. That part of the code could be "split off" and count as your project "customization" element. A very complex sideshow (with lots of different functionalities) could possibly be a MAJOR routine.</li>
+                        <li>Customize products: Like the example from the customize area in Customization above, except imagine there are many options for the product (different logos, different car options) the user can select (that are layered on top of the composite product image on the screen) and that, like an order, there is some kind of summary and/or total/calculation at the end.</li>
+                        <li>Expand a plug-in: Besides the gallery plug-in requirement in your project, you could also pick a different Javascript/jQuery plug-in to implement, and then use custom code to expand its core functionality.</li>
+                        <li>Other approaches to this requirement? Pitch one to me and besides giving you feedback I might also add it to the "ideas" list here!</li>
+                    </ul>
+                    <br>
+                </li>
+            </ol>
+            <br>
+
+            When you complete your group website project you must post it to your class Web space (and create a link to it from your assignment page) AND send an e-mail to the instructor and grader <b>(10%)</b>. This email will list out how you fulfilled EACH of the above requirements, including references to specific pages, AND list out which members of the team worked on specific aspects of each requirement. This e-mail should be important to you because your write up will not only confirm fulfilling each of the project requirements but lets you advocate for the quality and level of your work -- and how well your project displays your understanding and mastery of the concepts of the course. It is recommended the group use a shared doc (google doc, etc.) to collaboratively build/compile this information for whichever team member send the email. (Note that each member of your team will also complete a peer evaluation survey, which the instructor will draw upon in evaluating each member's contribution to the project and their project score.)<br>
+            <br>
+
+            Your summary email must contain:<br>
+            <br>
+
+            <ul>
+                <li>Subject line of <i>Group Final Website Project summary for Acad275 for &lt;SiteName&gt;.</i></li>
+                <li>Notes on your responsive design, which sizes/platforms did you design for, which pages/locations best show off the adaptive layouts. And LIST OF WHICH STUDENTS WORKED ON IT.</li>
+                <li>Notes on your interactive photo gallery and where it is located. And list of which student/s worked on it.</li>
+                <li>Notes on your customization, where it is located, and what it consists of. And list of which student/s worked on it.</li>
+                <li>Notes on your major routine, an explanation of the (scripting) content of the routine and where it is located. And list of which student/s worked on it.</li>
+                <li>Notes on your medium routine, an explanation of the (scripting) content of the routine and where it is located. And list of which student/s worked on it.</li>
+            </ul>
+            <br>
+
+        </div>
+
+        <script>
+            $(".expand").on("click", function(event){
+                $(this).next().next().slideToggle();
+            })
+        </script>
+
+    </body>
+</html>
