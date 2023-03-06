@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Chaining</title>
+        <meta charset="utf-8">
+        <meta name="description" content="jQuery Chaining">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .flexthing{
+                margin:10px;
+            }
+
+            .funkystyles{
+                background-color: blueviolet;
+                font-family:'Times New Roman', Times, serif;
+                color:chartreuse;
+                font-size: 32px;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 9: <span class="demo">DEMO</span></h3>
+            <h1>jQuery Chaining</h1>
+            <br><br>
+
+            <div class="section">
+                Many of jQuerys methods can be chained together into sequences that will play out in the order you determine. Each step in the sequence will play out over the duration provided (or the default duration, usually one second) before the next method in the chain begins. The box below will fade out over 2 seconds, wait another 2 seconds, then fade back in over half a second.<br>
+                <br>
+
+                <div class="interactive" id="chain1">
+                    Click here to activate a sequence.
+                </div>
+                <br>
+
+                <script>
+                    $("#chain1").click(function(){
+                        $(this).fadeOut(2000).delay(2000).fadeIn(500);
+                    });
+                </script>
+
+                <div class="code codeblock">
+                    $("#chain1").click(function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(this).fadeOut(2000).delay(2000).fadeIn(500);<br>
+                    });
+                </div>
+                <br>
+
+                Notice that after fadeOut() has been performed, the rest of the page moves up to fill in that space, as jQuery has set the display property of that element to none. As part of the chain, we can modify different components of the HTML, whether it be the content, the CSS, or the attributes that it uses. Below is an example of trying to fade out an element, change its CSS, and then fade it back in...<br>
+                <br>
+
+                <div class="interactive" id="chain2">
+                    Click here to activate a sequence.
+                </div>
+                <br>
+
+                <script>
+                    $("#chain2").click(function(){
+                        $(this).fadeOut(2000).css("background-color", "red").fadeIn(500);
+                    });
+                </script>
+
+                <div class="code codeblock">
+                    $("#chain2").click(function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(this).fadeOut(2000).css("background-color", "red").fadeIn(500);<br>
+                    });
+                </div>
+                <br>
+
+                Wait a minute, that's not what we expected to happen. Instead of it fading out and then changing the background color, the background color changes immediately and then it fades out. This is maybe counter-intuitive, but in jQuery some of the methods will not wait for the previous chain method to execute to completion before it gets executed. If we want to ensure that the CSS changes at exactly the time we would like, we need to incorporate a callback function into one of the methods to be specific that the code should execute at the end of that method.<br>
+                <br>
+
+                <div class="interactive" id="chain3">
+                    Click here to activate a sequence.
+                </div>
+                <br>
+
+                <script>
+                    $("#chain3").click(function(){
+                        $(this).fadeOut(2000, function(){
+                            $(this).css("background-color", "red");
+                        }).fadeIn(500);
+                    });
+                </script>
+
+                <div class="code codeblock">
+                    $("#chain3").click(function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(this).fadeOut(2000, function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).css("background-color", "red");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}).fadeIn(500);<br>
+                    });
+                </div>
+                <br>
+
+                Not only can we change the CSS of elements, but we can swap out attributes. What if we want to fade out, then switch out the URL for the image element below, then fade it back in?<br>
+                <br>
+
+                <img class="interactive" id="chain4" src="../week2/tacos2.jpg"><br>
+                <br>
+
+                <script>
+                    $("#chain4").click(function(){
+                        $(this).fadeOut(2000, function(){
+                            $(this).attr("src", "../week2/tacos9.jpg");
+                        }).fadeIn(500);
+                    });
+                </script>
+
+                <div class="code codeblock">
+                    $("#chain4").click(function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(this).fadeOut(2000, function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr("src", "../week2/tacos9.jpg");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}).fadeIn(500);<br>
+                    });
+                </div>
+                <br>
+
+                There are a number of great jQuery methods for animating the visual appearance of the HTML element, but we can customize the type of animation we would like to achieve using the animate() method. The power behind this method is that it can animate any number of properties simultaneously over a specified period of time. More details on this when we get to week 13.<br>
+                <br>
+
+                <div class="interactive" id="chain5" style="width: 200px; height: 100px">
+                    Click here to animate some CSS properties.
+                </div>
+
+                <script>
+                    $("#chain5").click(function(){
+                        $(this).animate({
+                            width: "95%",
+                            height: "300px",
+                            opacity: 0.5
+                        }, 2000);
+                    });
+                </script>
+                <br>
+
+                <div class="code codeblock">
+                    $("#chain5").click(function(){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;$(this).animate({<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: "95%",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: "300px",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.5<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}, 2000);<br>
+                    });
+                </div>
+                <br>
+
+            </div>
+        </div>
+
+
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://api.jquery.com/">Official jQuery Documentation</a></li>
+                <li><a href="https://api.jquery.com/category/manipulation/">Official jQuery Documentation: Manipulation</a></li>
+                <li><a href="https://www.w3schools.com/jquery/default.asp">W3Schools: jQuery Tutorial</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
