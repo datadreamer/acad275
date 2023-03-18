@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Strings</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Strings">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 11: <span class="demo">Demo</span></h3>
+            <h1>Strings</h1>
+            <br><br>
+
+            <div class="section">
+                <h3>String Basics</h3>
+
+                Strings are variable types that hold alphanumeric information. Strings are always defined by wrapping the value with quotation marks. Even a number can be treated as a string by wrapping it in quotation marks. Below are a number of examples of strings being declared and defined.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var stringA = "This is a whole sentence";
+var stringB = "word";
+var stringC = "123";</pre>
+</div>
+<br>
+
+                Strings can be concatenated by using the + (plus sign) operator, which is also used to perform addition on numbers.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var stringA = "Happy ";
+var stringB = "Birthday!";
+var stringC = stringA + stringB;
+// stringC will be assigned the value "Happy Birthday!"</pre>
+</div>
+<br>
+
+                One of the most useful properties of a string is its <span class="code">length</span> property, which will return the number of characters contained in the string.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var stringA = "This is a whole sentence";
+console.log(stringA.length);
+// this will print to the console the number 24.</pre>
+</div>
+<br>
+
+            </div>
+
+            <div class="section">
+                <h3>String Methods</h3>
+
+                Since strings are technically objects in JavaScript, they have both properties and methods that can be read from and used to manipulate the string. All string methods return a new string. They don't modify the original string.<br>
+                <br>
+
+                <ul>
+                    <li><span class="code">String.charAt(number)</span>: returns the character located at the position of the string given as an argument.</li>
+                    <li><span class="code">String.concat(string1, string2, ...)</span>: concatenates the argument strings onto the string using the method.</li>
+                    <li><span class="code">String.indexOf("substring")</span>: attempts to find a match to the substring given as an argument, and if found returns the position of the first character within the string. If no substring is found, it returns -1.</li>
+                    <li><span class="code">String.replace("original", "replacement")</span>: looks for a substring provided as the first argument, and when matched replaces it with the second argument.</li>
+                    <li><span class="code">String.replaceAll("original", "replacement")</span>: looks for every occurrances of a substring provided as the first argument, and when matched replaces it with the second argument.</li>
+                    <li><span class="code">String.slice(start, end)</span>: slices out a substring beginning at start position and finishing at end position (end position character is not included).</li>
+                    <li><span class="code">String.substring(start, end)</span>: works similarly to slice(), but you can't use negative values.</li>
+                    <li><span class="code">String.substr(start, length)</span>: works similarly to slice(), but the second value is the length of the substring and not the end position.</li>
+                    <li><span class="code">String.split(",")</span>: splits a string into an array using the provided delimiter.</li>            
+                    <li><span class="code">String.toUpperCase()</span>: converts the string to entirely uppercase letters.</li>
+                    <li><span class="code">String.toLowerCase()</span>: converts the string to entirely lowercase letters.</li>   
+                    <li><span class="code">String.trim()</span>: removes whitespace from both sides of a string.</li>
+                    <li><span class="code">String.trimStart()</span>: removes whitespace from the start of a string.</li>            
+                    <li><span class="code">String.trimEnd()</span>: removes whitespace from the end of a string.</li>                        
+                </ul>
+                <br>
+            </div>
+
+            <div class="section">
+                <h3>String Comparison</h3>
+
+                Strings can be compared against each other using the == (double equal sign) operator or the === (triple equal sign) operator. The double eual sign operator will check to see if the value is the same, whereas the triple equal sign operator will check to see if the value is the same AND the data type is the same.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var stringA = "password";
+if(stringA == "password"){
+    console.log("correct");
+} else {
+    console.log("access denied");
+}</pre>
+</div>
+<br>
+
+                It's important to remember that strings are case sensitive, so "Password" will not match with "password". If you want to ensure case-insensitivity when making a comparison of strings, then convert both of them to all upper case or all lower case so that case is consistent across all characters.<br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/js/js_arrays.asp">W3Schools: JavaScript Arrays</a></li>
+                <li><a href="https://www.w3schools.com/js/js_array_methods.asp">W3Schools: JavaScript Array Methods</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

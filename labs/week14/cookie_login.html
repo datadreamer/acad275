@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lab #28 - Cookie Login</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Cookie Login">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 14: <span class="lab">Lab #28</span></h3>
+            <h1>Cookie Login</h1>
+            <h3>DUE: Tuesday, 4/25 @ 5pm</h3>
+            <br><br>
+
+            You will be creating a page that has two different behaviors depending on the state of a cookie being set. When the user visits the page without the cookie being set, it will behave as a login page. When the user visits the page after the cookie has been set, it will behave as a welcome page.<br>
+            <br>
+
+            The <b>login</b> version of the page must contain:
+            <ol>
+                <li>A text input field for "username".</li>
+                <li>A password input field for "password".</li>
+                <li>A submit button.</li>
+                <li>A blue background (any shade).</li>
+            </ol>
+            <br>
+
+            When the user enters their information and hits the submit button, a JavaScript event should be triggered which:
+
+            <ol>
+                <li>Saves the username to a cookie called "username".</li>
+                <li>Checks to see if the password is correct (this should just be a hardcoded string in your JavaScript).</li>
+                <li>If the password is correct, set a cookie called "login" to "true".</li>
+                <li>If the password is incorrect, set a cookie called "login" to "false".</li>
+                <li>The page refreshes.</li>
+            </ol>
+            <br>
+
+            The <b>welcome</b> version of the page must contain:
+            <ul>
+                <li>If the "login" cookie is "true":
+                    <ol>
+                        <li>A green background (any shade).</li>
+                        <li>A positive message welcoming them to the site.</li>
+                        <li>A logout button, that when pressed will:
+                            <ul>
+                                <li>Clear the cookies for the site.</li>
+                                <li>Refresh the page returning the user to its login state.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li>If the "login" cookie is false:
+                    <ol>
+                        <li>Redisplay the login page.</li>
+                        <li>This time with an error message at the top saying access denied.</li>
+                        <li>Have a red background (any shade).</li>
+                    </ol>
+                </li>
+            </ul>
+                        
+                
+            <br>
+
+
+            <i>Upload your completed lab by the due date specified above and make sure that you add a working link to it on your class page, otherwise it will not be reviewed and you will not receive credit.</i><br>
+            <br>
+            
+
+        </div>
+
+    </body>
+</html>

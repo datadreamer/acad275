@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Loops</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Loops">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 11: <span class="demo">Demo</span></h3>
+            <h1>Loops</h1>
+            <br><br>
+
+            <div class="section">
+                <h2>for() loops</h2>
+
+                Loops are a way to do repetitive tasks over a fixed number of times, or to iterate over arrays to access each of the elements inside of them. There are a variety of ways to use loops, but the most commonly used (across many different programming languages) is the <span class="code">for()</span> loop:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+for(var i=0; i&lt;10; i++){
+    console.log(i);    
+}</pre>
+</div>
+<br>
+
+                The <span class="code">for()</span> loop begins with three JavaScript expressions as arguments within the parenthesis. The first argument is typically used to declare and define an iterator variable (in this case the variable named i). The second argument specified a comparator expression that will define the circumstances under which the iterator will be evaluated. If that second expression returns as true, then the code within the curly braces will execute. If it returns as false, the loop will end and the code following it will be executed. The third expression is used to modify the incrementing variable, in this case using the ++ operator to increase the value of i by 1 each iteration of the loop until the second expression returns as false. The result of the code above will print to the console the numbers 0 through 9.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = ["German Shepard", "Corgi", "Dachsund", "Shiba Inu"];
+for(var i=0; i&lt;dogs.length(); i++){
+    console.log(dogs[i]);    
+}</pre>
+</div>
+<br>
+
+                The <span class="code">for()</span> loop above creates an expression comparing the current value of the iterator variable to the length of an array. As it loops over the array elements it prints them out to the console using the iterator as the index for the current element in the array. We can simplify this further by using the for/of syntax to iterate over any iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = ["German Shepard", "Corgi", "Dachsund", "Shiba Inu"];
+for(var d of dogs){
+    console.log(d);    
+}</pre>
+</div>
+<br>
+                
+                Another alternative to this would be to use the <span class="code">forEach()</span> method of the array itself, which can be used to refer to a custom function that will be called for each iteration of the loop:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = ["German Shepard", "Corgi", "Dachsund", "Shiba Inu"];
+dogs.forEach(customFunction);
+function customFunction(value, index, array){
+    console.log(value);    
+}</pre>
+</div>
+<br>
+
+                The code above will produce the same results as the previous, just using a slightly different technique that is often preferred for iterating over array elements. We can also use <span class="code">for()</span> to iterate over the properties of an object. This is using the for/in syntax instead of for/of. It is important to understand that this can be used on arrays as well, but will not necessarily keep the index order in the sequence with which the array was populated. What gets returned is the key (or name of the property) contained within the object. This is used to access the value from the object in an associative way (ie: by name rather than index).<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dog = {name:"Fido", breed:"Dalmation", age:4, weight:75};
+for(var x in dog){
+    console.log(dog[x]);    
+}</pre>
+</div>
+<br>
+
+                So in the example above, x will be equal to "name", "breed", "age", and "weight" at different iterations of the loop, and not necessarily in that order. When we say dog["name"] it will return the value of the property "name" from the object variable dog.<br>
+                <br>
+
+                <h2>while() loops</h2>
+
+                The alternative to the various implementations of <span class="code">for()</span> loops is to use the <span class="code">while()</span> loop which is even simpler. It only takes a single expression to set up a condition under which the loop will continue:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var i=0;
+while(i&lt;10){
+    console.log(i);
+    i++;    
+}</pre>
+</div>
+<br>
+
+                The thing about while loops is that you must define your iterator before the loop begins, and you must ensure that you are incrementing the iterator inside of your loop, otherwise the loop will never end and this will crash your browser.<br>
+                <br>
+
+                <h2>break and continue</h2>
+
+                With both <span class="code">for()</span> and <span class="code">while()</span> loops we can execute functions to effectively end the loop sequence or skip to the next iteration of the loop. These two functions are <span class="code">break</span> and <span class="code">continue</span>:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = ["German Shepard", "Corgi", "Dachsund", "Shiba Inu"];
+for(var i=0; i&lt;dogs.length(); i++){
+    if(dogs[i] == "Dachsund"){
+        break;
+    }  
+}</pre>
+</div>
+<br>
+
+                In the example above, the loop iterates over the elements in the dogs array while checking each time to see if the value is equal to "Dachsund". If the condition is true, then the <span class="code">break</span> function is executed, effectively exiting the loop entirely and preventing any further iterations from executing. <span class="code">continue</span>, on the other hand, will allow the loop to skip over any remaining code inside of the loops curly braces, and move on to the next iteration.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = ["German Shepard", "Corgi", "Dachsund", "Shiba Inu"];
+var dogCount = 0;
+for(var i=0; i&lt;dogs.length(); i++){
+    if(dogs[i] == "Dachsund"){
+        continue;
+    }  
+    // any code down here will run unless the condition above is met and continue is executed.
+    dogCount++;
+}</pre>
+</div>
+<br>
+
+                In the example above, the dogCount variable will be incremented each index of the array except for when we reach Dachsund, the condition qualifies as true, the continue function is executed, and then the remainder of the code within the curly braces is skipped. dogCount will be equal to 3 after iterating over the 4 array elements.<br>
+                <br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="">W3Schools: for()</a></li>
+                <li><a href="">W3Schools: for/of</a></li>
+                <li><a href="">W3Schools: for/in</a></li>
+                <li><a href="">W3Schools: Array.forEach()</a></li>
+                <li><a href="">W3Schools: while()</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>

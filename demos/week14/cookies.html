@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cookies</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Cookies">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 14: <span class="demo">demo</span></h3>
+            <h1>Cookies</h1>
+            <br><br>
+
+            <div class="section">
+                Cookies are another method of being able to store variables within the browser. These are incredibly commonly used, and likely the oldest method to store local variables on the users computer. There's also a lot of international laws established about how cookies should or shouldn't be used and the options that web publishers should be providing to their users to opt-in or out of using cookies.<br>
+                <br>
+                Cookies are very simple to create, as they are not object oriented, but more like setting a single string of neatly formatted key/value pairs.<br>
+                <br>
+
+                <div class="code codeblock">
+                    document.cookie = "username=aaronsie";
+                </div>
+                <br>
+
+                The unique thing about cookies is that the developer can establish an expiration date when setting one:<br>
+                <br>
+
+                <div class="code codeblock">
+                    document.cookie = "username=aaronsie; expires=Mon, 1 May 2023 12:00:00 UTC";
+                </div>
+                <br>
+
+                We can set additional cookies by simply assigning them to <span class="code">document.cookie</span> again. The previous cookies won't be overwritten.<br>
+                <br>
+
+                <div class="code codeblock">
+                    document.cookie = "bgcolor=red; expires=Mon, 1 May 2023 12:00:00 UTC";
+                </div>
+                <br>
+
+                When we attempt to read from <span class="code">document.cookie</span> it will only return the key/value pairs of cookies that were set and not their experiation information or path.<br>
+                <br>
+
+                <div class="code codeblock">
+                    var c = document.cookie;<br>
+                    console.log(c);<br>
+                    // the output will be "username=aaronsie;bgcolor=red"
+                </div>
+                <br>
+
+                Of course we would then need to create a function to separate these key/value pairs and form a tidy object that we can access. Or, we can simply modernize our approach and look towards the js-cookie JavaScript library, which will allow us to set and retrieve cookies pretty much exactly like how we work with localStorage and sessionStorage.<br>
+                <br>
+
+                <ul>
+                    <li><span class="code">Cookies.set("name", "value")</span>: creates a cookie with a single key/value pair.</li>
+                    <li><span class="code">Cookies.set("name", "value", {expires: 7})</span>: creates a cookie that expires 7 days from its creation.</li>
+                    <li><span class="code">Cookies.get("name")</span>: returns the value of the key provided. If the key is not in the cookie, it will return undefined.</li>
+                    <li><span class="code">Cookies.get()</span>: returns an object with all visible cookies as key/value pairs.</li>
+                    <li><span class="code">Cookies.remove("name")</span>: deletes a cookie.</li>
+                </ul>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                
+            </ul>
+        </div>
+
+    </body>
+</html>
