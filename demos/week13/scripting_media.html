@@ -38,6 +38,8 @@
             <h1>Scripting Media</h1>
             <br><br>
 
+            <h2>Scripting Audio</h2>
+
             <audio id="nwa">
                 <source src="nwa.mp3" type="audio/mp3">
             </audio>
@@ -166,6 +168,147 @@ $(document).ready(function(){
 </div>
 <br>
 
+                <h2>Scripting Video</h2>
+
+                The same techniques we use to control a <span class="code">&lt;audio&gt;</span> element can be used to control a <span class="code">&lt;video&gt;</span> element.<br>
+                <br>
+
+                <video width="100%" id="myvideo">
+                    <source src="../week5/shia.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <br><br>
+
+                <div class="interactive">
+                    <div class="box" id="box6">play/pause</div><br>
+                    <input type="range" min="0" max="100" value="100" class="slider" id="videovolumeslider">
+                </div>
+                <br>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#box6").click(function(){
+                            var obj = document.querySelector("#myvideo");
+                            if(obj.paused){
+                                obj.play();
+                            } else {
+                                obj.pause();
+                            }
+                        });
+                        $("#videovolumeslider").on("input change", function(){
+                            var vol = $(this).val() * 0.01;
+                            $("#myvideo").prop("volume", vol);
+                        });
+                    });
+                </script>
+
+<div class="code codeblock"><pre>
+$(document).ready(function(){
+    $("#box6").click(function(){
+        var obj = document.querySelector("#myvideo");
+        if(obj.paused){
+            obj.play();
+        } else {
+            obj.pause();
+        }
+    });
+    $("#videovolumeslider").on("input change", function(){
+        var vol = $(this).val() * 0.01;
+        $("#myvideo").prop("volume", vol);
+    });
+});
+</pre>
+</div>
+<br>
+
+                <h2>Scripting YouTube Video</h2>
+
+                Dealing with a YouTube video embedded in an iFrame is a little bit different and involves having more of an understanding of the YouTube API. The example below loads a YouTube video using JavaScript, and when the user hits play it will begin a 6 second timer upon which point it will automatically be stopped.<br>
+                <br>
+
+                <div id="player"></div>
+                <br><br>
+
+                <script>
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var player;
+                    function onYouTubeIframeAPIReady() {
+                        player = new YT.Player('player', {
+                        width: '100%',
+                        videoId: 'Q_GFgmvF_eE',
+                        playerVars: {
+                            'playsinline': 1,
+                            'controls': 0
+                        },
+                        events: {
+                            'onReady': onPlayerReady,
+                            'onStateChange': onPlayerStateChange
+                        }
+                        });
+                    }
+
+                    function onPlayerReady(event) {
+                        event.target.playVideo();
+                    }
+
+                    var done = false;
+                    function onPlayerStateChange(event) {
+                        if (event.data == YT.PlayerState.PLAYING && !done) {
+                        setTimeout(stopVideo, 6000);
+                        done = true;
+                        }
+                    }
+                    function stopVideo() {
+                        player.stopVideo();
+                        done = false;
+                    }
+                </script>
+
+<div class="code codeblock"><pre>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+    width: '100%',
+    videoId: 'Q_GFgmvF_eE',
+    playerVars: {
+        'playsinline': 1,
+        'controls': 0
+    },
+    events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+    }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo, 6000);
+    done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+    done = false;
+}
+</pre>
+</div>
+<br>
+
             </div>
 
         </div>
@@ -176,8 +319,8 @@ $(document).ready(function(){
             <h2>Resources</h2>
 
             <ul>
-                <li><a href="https://jqueryui.com/">jQuery UI Library</a></li>
-                <li><a href="https://www.w3schools.com/jquery/eff_animate.asp">W3Schools: jQuery animate()</a></li>
+                <li><a href="https://www.w3schools.com/tags/ref_av_dom.asp">W3Schools: HTML Audio/Video DOM Reference</a></li>
+                <li><a href="https://developers.google.com/youtube/iframe_api_reference">Youtube iFrame Player API</a></li>
             </ul>
         </div>
 
