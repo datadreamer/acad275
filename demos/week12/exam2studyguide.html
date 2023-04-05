@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Exam Study Guide</title>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript Exam Study Guide">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+
+            /* Relative Positioning related styles */
+            .colorbox{
+                width:100px;
+                height:100px;
+                float:left;
+                border:1px solid #fff;
+            }
+
+            /* Fixed Positioning related styles */
+            #fixeddiv{
+                position:fixed;
+                bottom:0px;
+                left:0px;
+                background-color:#333;
+                width: 80%;
+                padding:20px 10% 40px 10%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 12: <span class="demo">Demo</span></h3>
+            <h1>JavaScript Exam Study Guide</h1>
+            <br/><br/>
+
+            In preparing for the WRITTEN exam I would suggest:<br>
+            <br>
+            <ul>
+                <li> Review the <em><strong>Study Guide</strong></em> below to make sure you are familiar with all relevant concepts and functionality we have covered this semester. Any areas that you are unsure of review the original lectures.</li>
+                <li> Be prepared to illustrate your knowledge of Javascript.</li>
+                <li> Be prepared to illustrate your knowledge of jQuery.</li>
+                <li> Reviewing your past assignments, labs, etc. may have some use. The written exam involves writing some code.</li>
+            </ul>
+            <br>
+
+            In preparing for the PRACTICAL exam I would suggest:<br>
+            <br>
+            <ul>
+                <li> Review the <em><strong>Study Guide</strong></em> below.</li>
+                <li> Review your past assignments, labs and demos/resources.</li>
+                <li> Note that on the practical exam you can use ANY combination of Javascript and jQuery and WILL be able to reference your past work and webdev notes and samples, as well as third party references such as W3Schools, Mozilla, and even Stack Overflow.</li>
+            </ul>
+
+            <br>
+            <h3><em>Written Examination</em></h3>
+
+            <ul>
+                <li> Questions can be true/false, multiple choice, short fill-in, longer code writing, or narrative descriptions/explanations:<br><br> 	
+<pre class="code codeblock">
+To find a character within a string you would use 
+which of the following methods: 
+A) charAt B) indexOf  C) substring  D) findChar  
+E) None of the above
+
+The regular expression that represents all occurrences 
+of commas in a string is:  ___________
+
+What does an array loop do? (short answer)
+</pre>
+                    
+            <br>
+            <li> Write a short set of code:<br>
+            <br>
+<pre class="code codeblock">
+Above are two parallel arrays. 
+Write below the code that would loop through the arrays, 
+pulling out the value from the second array that matches 
+the data from variable "userinput" from the first array.
+</pre>
+      
+            <br>
+            <li> Analyze/explain code functionality or theory:<br><br>
+<pre class="code codeblock">
+Above is a fairly standard "for" loop. Explain what it is doing.
+</pre>
+            
+            <br>
+            <li>Debug:<br><br>
+<pre class="code codeblock">
+Find the errors in a supplied line of code.
+</pre>          
+            
+            </ul>
+
+            <br>
+            <h3><em>Practical Examination</em></h3>
+
+            <ul>
+                <li> You will be given instructions on building a page that fulfills certain functionalities. You must put together the page to implement the goals of the exam. If applicable you will also be provided a screenshot of what the page will look like.</li>
+                <li> On the Practical Exam you CAN use a combination of Javascript and jQuery.</li>
+                <li> Like most class assignments, the key is to work through the page requirements step-by-step. It is suggested that you first plan out the routine using JavaScript comments, and then fill in the code/functionality. That way if you run out of time or forget how to do something you can get <em>partial</em> credit for certain routines/functionalities.</li>
+                <li> Even if you are not able to complete the exam (to produce a fully functional page that operates as instructed) you will be given partial credit for all of your work. So make sure you complete as much as possible.</li>
+                <li> To prepare for this exam, review your past labs and assignments and the "Functionality" part of the <em><strong>Study Guide</strong></em> below.</li>
+                <li> You will have a CHOICE of two practical exams so that you can try to target (or avoid) a particular area of scripting, such as object manipulation and/or data. Partial examples of past practical exam area:
+                    <ul>
+                        <li> <em>Customize page:</em> User selects images and inputs values to customize a page/div.</li>
+                        <li> <em>Number games</em>: UI and basic game mechanics for number games. </li>
+                        <li> <em>Array data</em>: Output array data into page, search through array data, take user-entered data and add to arrays.</li>
+                        <li> <em>Calculations</em>: A) Output and create averages of sales data, B) Write scripting for order form.</li>
+                    </ul>
+                Based on the above, what are some related concepts (per topic)?
+                </li>
+            </ul>
+
+            <br>
+            <h2>JavaScript and jQuery Review</h2>
+
+
+            <h3><strong><em>Review: Locating an object</em></strong> </h3>
+            <ul>
+            <li>In both JS and jQuery, before manipulating an object you first have to &quot;find&quot;/target it.</li>
+            <li><em><strong>Javascript:</strong></em> You can locate/target any object through using a css selector with the document.querySelector() method. For instance, the examples below target the body, an object with an ID of "container", and the first object with a class of "thumbnail" (but <em>not</em> all thumbnails):<br><br>
+<pre class="code codeblock">
+document.querySelector("body")
+document.querySelector("#container")
+document.querySelector(".thumbnail")</pre>
+            </li>
+
+            <br>
+            <div class="rightbox">Reminder: In order to use jQuery you have to LOAD the jQuery library/code</div>
+
+            <li> <em><strong>jQuery:</strong></em> In jQuery we can also "find" an object through css selectors, we just do it through the default $() method, or jQuery(). Like the Javascript examples, the code examples below target the body, #container and <em>all</em> .thumbnail objects.<br><br>
+<pre class="code codeblock">
+$("body")
+$("#container)
+$(".thumbnail")</pre>
+                </li>
+            </ul>
+
+            <h3><strong><em>Review: Adding Event Triggers to objects</em></strong> </h3>
+            <ul>
+            <li>Instead of executing code right away, you bind an event to an object (the users clicks on it, mouseovers, etc.), and then inside that event create a temporary, unnamed function with the code.</li>
+            <li><em><strong>Javascript:</strong></em> We add/bind events to objects with the <strong>addEventListener()</strong> method. The method is added to an object, and then inside the method is the function with the code to be executed. For examples:<br><br>
+<pre class="code codeblock">
+document.querySelector("#box1").addEventListener("click", function(){
+    // code to be run when someone clicks on #box1
+};</pre>
+            </li>
+            
+            <br>
+            <li> <em><strong>jQuery:</strong></em> The <strong>on()</strong> command in jQuery acts just like addEventListener() in Javascript, allowing us to add an event to an object, and then have an (unnamed) function with code be run when that event occurs on the object.<br><br>
+<pre class="code codeblock">
+$("#box1").on("click", function(){
+    // code to be executed when the user clicks on #box1
+});</pre>
+                <br>
+                </li>
+            </ul>
+
+
+
+            <h3><em>Review: "this" object</em></h3>
+            <ul>
+            <li><strong>this</strong> can be used inside an event-triggered code to reference/represent the object that was triggered (that user clicked, moused, etc.).</li>
+            <li> <em><strong>Javascript:</strong></em> Use this inside a function inside an addEventListener() block. For instance:<br><br>
+            
+<pre class="code codeblock">
+document.querySelector("#text1").addEventListener("change", function(){
+    alert("You changed the value of the textbox to " + this.value);
+});</pre>  	  
+                <br>
+                </li>
+            <li><em><strong>jQuery:</strong></em> Operates the same, as a reference to the triggered object inside an on() event block. The main distinction is that since jQuery binds will often cover a series of objects, it represents just the one triggered. So for instance, in the example below the bind applies to all anchor tags (a), but when triggered this only represents the exact one triggered.<br><br>
+<pre class="code codeblock">
+$("a").on("click", function(){
+    alert("You just clicked a link and are going to " + this.attr("href"));
+});</pre> 
+                <br>
+                </li>
+            </ul>
+
+
+            <h3><em>Editing properties of objects</em></h3>
+            <ul>
+                <li> You can edit the html (tag) attributes of objects, the css/style properties of objects, and the html contents of divs... through Javascript and jQuery.</li>
+
+            <div class="rightbox">Note: Only 'official' html tag attributes are accessible directly off a JS object reference. If you want to access attributes that are made up (such as a caption attribute for photos), you use the <strong>.getAttribute()</strong> method... which can access any attribute of a tag, whether it is an official/OKed attribute or not. 
+                </div>
+                    <li>	<em><strong>JavaScript:</strong></em> Offical html properties of objects are directly off the object, such as obj.src. Style properties are under a sub-object named <strong>.style</strong>, and the html content of a div/container is represented by <strong>.innerHTML</strong>. <br><br>
+<pre class="code codeblock">
+document.querySelector("#pic1").src="dent.jpg";
+document.querySelector("body").style.color="red";
+document.querySelector("#box1").innerHTML = "This is the new div content.";</pre>
+            <br>
+
+            <div class="rightbox">
+            Note: attr() or css() with only one argument is used to "read" the value, and with two is used to "set" the value.
+                </div>
+            <li>jQuery: The attr() method accesses html object attributes and  the css() method reads/sets css/style attributes. And the html() method sets the html content of a container/div.<br><br>
+<pre class="code codeblock">
+$("#pic1").attr("src", "dent.jpg");
+$("body").css("color", "red");
+$("#box1").html("This is the new div content.");</pre> 
+           
+            <br>
+            <li> <em>Style properties names in  Javascript:</em> Javascript does not allow/support object names with dashes/hyphens in them, so common css/style properties such as background-color would not be valid. So all multi-word style properties have alternative names in JS. You basically remove each dash and Upper Cap each subsequent word ("camel"-case).</li>
+                <ul>
+                
+                <li>So some common Javascript versions of CSS properties are:
+                    <ul>
+                    <li> color</li>
+                    <li> fontSize </li>
+                    <li> fontFamily </li>
+                    <li> fontWeight </li>	
+                    <li> fontStyle </li>
+                    <li> textTransform </li>
+                    <li> textAlign </li>
+                    <li> textIndent </li>
+                    <li> lineHeight </li>
+                    <li> backgroundColor </li>
+                    <li> backgroundImage </li>
+                    <li>visibility</li>
+                    <li>left</li>	
+                    <li>top</li>
+                <li>zIndex</li>
+                </ul>
+                </ul>
+            
+            </ul>
+
+            <br>
+
+            <h3><em>Variables, named functions, conditional logic</em></h3>
+            <p>Variables can be created exactly the same in Javascript and jQuery. And once you "load" jQuery into a page you can alternate/switch between JS and jQ on different lines if you choose (but do NOT put object-specific regular Javascript and jQuery in the same line).</p>
+
+            <p>
+                Similarly, you set up functions exactly the same in Javascript vs jQuery. <em>Remember, jQuery is written in Javascript.</em> And you can mix JS and jQ in different lines of a function.</p>
+                <p>
+                    And finally, like variables and naming functions, there is no special jQuery <em>version</em> of conditional logic. You use the same syntax to set up "conditions" regardless of whether you will have Javascript, jQuery or both inside of the logic branch.
+                </p>
+                    
+            <h3><em>Additional examples of JS versus jQ:</em></h3>
+            <ul> 
+                <li> Read the css "background-color" property in Javascript: &nbsp; &nbsp; <em>let bg = document.querySelector("#instructions").style.backgroundColor</em></li>
+                <li> Set the css "background-color" of #instructions to yellow in Javascript: &nbsp; &nbsp; <em>document.querySelector('#instructions').style.backgroundColor = 'yellow</em>'</li>
+                <li> Read the css "background-color" property in jQuery: &nbsp; &nbsp; <em>let lh = $('#instructions").css("background-color")</em></li>
+                <li> Set the css "background-color" of #instructions to yellow in jQuery: &nbsp; &nbsp; <em>$('#instructions").css("background-color", 'yellow')</em></li>
+            </ul>    
+            <br>
+
+
+
+            <h2>JavaScript and jQuery Concept Reference and Study Guide</h2>
+
+
+            <h3><em>Fundamental Javascript Concepts:</em></h3>
+
+            <ul>
+            <li> <em><strong>Styles:</strong></em> CSS Properties define aspects of objects. When writing in HTML, use style blocks and property names are like "background-color" with declarations such as "width: 200px". When manipulating in JS, property names are like "backgroundColor" and declarations such as "width='200px'". When manipulating with jQuery use .css(). You should already be familiar with CSS and HTML. For the JS and jQuery you can review <em>Editing style properties</em> and the CSS block in <em>Query review and JS</em></li>
+            <li> <em><strong>Objects:</strong></em> Generally created with HTML tags. Often have UNIQUE "id" properties. If you can "locate" an object with Javascript, you can then read a property, write/change a property, or otherwise manipulate it.	See <em>Intro to programming and JS</em></li> 
+            <li> <em><strong>Variables:</strong></em> Can store (read and write) data such as strings, numbers, objects, functions.<br><br>
+
+<pre class="code codeblock">let favcolor = "red";
+let favnumber = 77;
+let img2 = document.querySelector('#image2');</pre>
+
+            <br>
+            </li>
+            <li> <em><strong>Methods:</strong></em> Functionality or "mini-programs" already built into the language. Call/activate them by name. ALWAYS call with parenthesis. Sometimes call "off" an object.</li> 
+            <li> <em><strong>Functions:</strong></em> "Mini-programs" written by YOU that are called/run by name. Can set up with arguments (so that data is passed INTO them when called). Always define AND call them with parentheses.<br><br>
+
+<pre class="code codeblock"><em>// Simple function with NO parameters that ALWAYS changes page to red</em>
+    let go_red = function(){
+        document.querySelector(&quot;body&quot;).style.backgroundColor = 'red';    
+    }
+    
+/<em>/ call/activate with</em>
+    go_red();
+    
+
+<em>// Function with ONE parameter, color to change page to</em>
+    function change_bg (newcolor){
+        document.querySelector(&quot;body&quot;).style.backgroundColor = newcolor;    
+    }
+    
+<em>// call/activate with</em>
+    change_bg('teal');
+    
+    
+<em>// Function with TWO parameters, ID of image to change and new src</em>
+    function change_image (imageID, newSRC){
+        document.querySelector(&quot;#&quot; + imageID).src = newSRC;
+    }
+    
+<em>// call/activate with</em>
+    change_image('image2', 'image3.jpg');</pre>
+
+
+
+            <br>
+            <li> <em><strong>"if" and conditional logic:</strong></em> Write a condition/expression that if "true" the following set of code is run. Can have else if and else clauses.<br><br>
+
+
+
+<pre class="code codeblock">if(favcolor == "red") {
+    alert('i like the color red too!');
+}
+
+if(document.querySelector('#emailbox').value.indexOf('usc.edu') != -1) {
+    alert('Go Trojans!');
+}
+    
+if(your_age >= 18) {
+    alert('You can vote in the U.S.!');
+}</pre>
+
+            <br>
+            </li>
+
+            <li> <em><strong>Arrays:</strong></em> More complex type of variable that can store multiple rows of data (rather than just one piece). Created by a command such as "var favcolors = new Array".<br><br>
+
+                
+<pre class="code codeblock"><em>// Simple/single array</em>
+let favcolors = new Array();
+favcolors[0] = "red";
+favcolors[1] = "pink";
+favcolors[2] = "yellow";
+favcolors[3] = "purple";
+favcolors[4] = "teal";
+<em>// also</em> / or   
+let favcolors = [];
+favcolors.push("red");
+favcolors.push("pink");
+favcolors.push("yellow");
+favcolors.push("purple");
+favcolors.push("teal");
+<em>also</em>   
+let favcolors = ["red", "pink", "yellow", "purple", "teal"];
+
+<em>// Parallel arrays</em>
+let imagepath = new Array;		let	imagedescr = new Array;
+imagepath[0] = "sign1.jpg"		imagedesc[0] = "stop sign";
+imagepath[1] = "sign2.jpg"		imagedesc[1] = "caution sign";
+imagepath[2] = "sign3.jpg"		imagedesc[2] = "yield sign";
+imagepath[3] = "sign4.jpg"		imagedesc[3] = "speed limit sign";</pre>
+
+
+            <br>
+            </li>
+
+            <li> <em><strong>Dynamic Documents:</strong></em> Populating containers (divs, body) with new content by new innertHTML (in JS) or using the html() method (in jQuery).<br><br>
+
+
+<pre class="code codeblock"><em>// Javascript innertHTML property of containers</em>
+&lt;div id="box1"&gt;&lt;/div&gt;
+&lt;script&gt;
+    document.querySelector('#box1').innerHTML = 'new content for div';
+&lt;/script&gt;
+
+<em>// jQuery html() function</em>
+$('#box1').html('new content for div');</pre>
+
+            <br>
+            </li>
+
+            <li> <em><strong>"for" and Conditional Loops:</strong></em> Loop/repeat a set of code based on defined conditions.<br><br>
+
+<pre class="code codeblock">//simple for loop with alert
+for(let i=0;i&lt;9;i++){
+    alert('Current number is ' + i);
+}</pre>
+
+            <br>
+            </li>
+            
+            <li> <em><strong>Data Validation:</strong></em> Use methods such as indexOf() to determine if data matches desired content and/or formats.
+            See <em>indexOf, data validation</em>.</li>
+
+            <li> <em><strong>Data Transformation:</strong></em> Use methods such as charAt(), substring(), and replace() and regular expressions to modify data into different formats or content. See portions of <em>Loops, charAt, substring, replace</em>.</li>
+
+            <li> <em><strong>Array loops:</strong></em> Building code that "loops" around the data of an array, such as to build dynamic page content. <a href="javascript://" class="sample">(sample code)</a><br><br>
+
+<pre class="code codeblock">let newhtml = "";
+for(let i=0;i&lt;dogimages.length;i++){
+newhtml += "&lt;img src='" + dogimages[i] + "'> ";
+}
+document.querySelector("#content").innerHTML += newhtml;</pre>
+
+            <br>
+            <li> <em><strong>Searching through arrays:</strong></em> Using if clauses inside a for loop, parse through array data to find/match desired information. 
+            </li>
+
+            </ul>
+
+            <br><br>
+            <h3><em>Fundamental jQuery Concepts:</em></h3>
+
+            <ul>
+
+            <li> Load library and starter/ready block<br><br>
+<pre class="code codeblock">&lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+
+});
+&lt;/script&gt;</pre>
+            <br>
+            </li>
+
+            <li>Targeting objects through selectors</li>
+
+            <li> (document), (this) and (window) objects</li>
+
+            <li> Using on() to delay code based on an event/action on an object<br><br>
+
+<pre class="code codeblock">$('#button2').on("click", function(){
+    // do something when button is clicked
+});</pre>
+
+            <br>
+
+            </li>
+
+            <li> Basic jQ object methods like show and hide, toggle, fadeIn and fadeOut, slideDown and slideUp, etc. And using delay() to "pause" between those simple object animations.</li>
+
+            <li> Altering objects with jQ methods like html(), css() and attr()<br><br>
+
+
+
+<pre class="code codeblock">$('#image2').attr("src". "image3.jpg");
+$('body').css('background-color', 'red');
+$('#box2').html('new div content');</pre>
+            <br>
+            </li>
+
+            <li> Chaining multiple commands off one object.</li>
+
+            <li> Using Javascript structural commands (if statements, for loops, variables, arrays and functions) inside jQuery.</li>
+
+            </ul>
+
+            &nbsp;
+
+            <strong>Review of Functionality you should be familiar with (in Javascript and jQuery):</strong>
+
+            <ul>
+
+            <li>Detect user interaction (with objects) <br><br>
+
+
+
+<pre class="code codeblock">
+&lt;input type="button" id=&quot;button1&quot;&gt;</pre>
+<br>
+
+                <em>in Javascript</em><br><br>
+<pre class="code codeblock">document.querySelector("#button1").addEventListener("click", function(){
+    // JS to execute when user clicks on #button1
+})</pre>
+
+            <br>
+            <em>in jQuery</em><br><br>
+<pre class="code codeblock">$("#button1").on("click", function(){
+    // jQuery to run when user clicks on #button1
+});</pre>
+
+            <br>
+            </li>
+            
+            <li>Manipulate objects through their html/tag attributes and style properties <a href="javascript://" class="sample">(sample code)</a>
+
+
+
+                <em>Javascript</em><br><br>
+<pre class="code codeblock">document.querySelector('#image1').src = 'image2.jpg';
+document.querySelector(&quot;body&quot;).style.backgroundColor='red';
+document.querySelector('#box2').style.width = '200px';</pre><br>
+<em>jQuery</em><br><br>
+<pre class="code codeblock">$("#image1").attr("src", "image2.jpg");
+$("body").css("background-color", "red");
+$("#box2".css("width", "200pox");</pre><br>
+
+            </li>
+            
+            <li>Store data/objects in variables
+
+
+                <em>Javascript</em><br><br>
+<pre class="code codeblock">let favcolor = "red";
+let favnumber = 77;
+let img2 = document.querySelector('#image2');</pre><br>
+<em>jQuery</em><br><br>
+<pre class="code codeblock">let favcolor = "red";
+let favnumber = 77;
+let img2 = $("#image2");</pre><br>
+
+            </li>
+            
+            <li> Store data in arrays/parallel arrays and randomly pick out information, Use/output all data, and/or Match and extract one set of data
+
+            </li>
+            
+            <li> Use data to dynamically create items on a page or edit objects</li>
+            
+            <li> Create a "workflow" of events on a page</li>
+            
+            <li> Through logic have a page operate or react differently based on user interaction and/or data</li>
+
+            <li> Validate and/or change user data</li>
+
+            </ul>
+
+            &nbsp;<br>
+            <strong>Material NOT on the exam</strong>: You will not be responsible on the exam for:
+            <ul>
+                <li> <em>animate()</em>: The jQuery animate() command</li>
+                <li> <em>Prop-value maps</em>: Concepts and syntax of creating "property": "value" maps of data.</li>
+                <li> <em>Scripting media</em>: jQ or Javascript media commands and properties</li> 
+                <li> <em>Syncronizing elements</em>: Complex object sequences.</li>
+            </ul>
+            <br>
+
+
+
+            <h2>Javascript  Review Guide (by former class assistant Anupam):</h2>
+                
+            <br>
+            
+            <iframe width="100%" height="600" src="Javascript_review_anupam.pdf"></iframe>
+            <br><br>
+            
+
+            <h2>jQuery Review Guide (by former class assistant Anupam):</h2>
+            <br>
+            
+            <iframe width="100%" height="600" src="Jquery_review_anupam.pdf"></iframe>
+            <br><br>
+            
+
+            <h2>Handy Student Review Guide (by former class assistant Hal Pan):</h2>
+            <br>
+            
+            <iframe width="100%" height="600" src="ACAD276_%20JQuery_Javascript_Review_2019.pdf"></iframe>  
+                    
+
+
+
+
+        </div>
+
+    </body>
+</html>
