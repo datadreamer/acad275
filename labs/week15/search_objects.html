@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lab #29 - Search Array of Objects</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Search Array of Objects">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 15: <span class="lab">Lab #29</span></h3>
+            <h1>Search Array of Objects</h1>
+            <h3>DUE: Thursday, 4/27 @ 5pm</h3>
+            <br><br>
+
+            Using <a href="films.json">this array of objects holding movie information</a>, create an input field to allow the user to search on multiple properties. Copy the entire contents of the file into your lab page within the script area.<br>
+            <br>
+
+            The page must contain:
+            <ol>
+                <li>A text input field to enter a search query.</li>
+                <li>A drop-down menu listing properties that results will be sorted by.</li>
+                <li>An empty div in which search results will be written to with the id "results".</li>
+            </ol>
+            <br>
+
+            The behavior of your script should be as follows:
+            <ul>
+                <li>A change event should be added to the text input field to be triggered each time a key is pressed.</li>
+                <li>When the change event occurs, loop over the array of films and compare all of the properties in the array of film object data using a single if statement connecting expressions with OR || operators.</li>
+                <li>When a match is found, add a copy of the object instance into a new array of matches.</li>
+                <li>At the end of the loop over all of the film data, sort the array of matches by the user selected property from the drop-down menu.</li>
+                <li>After sorting the array of matches, output them to the "results" div by looping over the matches array.</li>
+                <li>Make sure to nicely format the output so that each match is on its own line and the user is able to see all of the properties of the data.</li>
+            </ul>
+            <br>
+            
+
+
+            <i>Upload your completed lab by the due date specified above and make sure that you add a working link to it on your class page, otherwise it will not be reviewed and you will not receive credit.</i><br>
+            <br>
+            
+
+        </div>
+
+    </body>
+</html>
