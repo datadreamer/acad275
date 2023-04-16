@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Objects</title>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript Objects">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 15: <span class="demo">Demo</span></h3>
+            <h1>JavaScript Objects</h1>
+            <br><br>
+
+            <div class="section">
+                <h2>Object Basics</h2>
+                We've already seen a couple examples of creating basic JavaScript objects in our previous demos. We can start our objects as empty or with prepopulated properties using the curly brace syntax. Below are examples of creating an empty object, an object with a single property, or an object with multiple properties.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dog = {};
+var dog = {name:"Fido"};
+var dog = {name:"Fido", breed:"Dalmation"};</pre>
+</div>
+<br>
+
+                It's important to remember that when creating multiple key:value pairs in your JavaScript object, that you separate them using a comma. We can also add new properties to our object after it has been created using two different techniques:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+dog.color = "Brown";
+dog["color"] = "Brown";</pre>
+</div>
+<br>
+
+                Likewise, we can read properties from our object using two different techniques:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogColor = dog.color;
+var dogColor = dog["color"];</pre>
+</div>
+<br>
+
+                In addition to properties, objects can also have methods (functions that are contained by the object). The object below has a method called "getBMI" which takes the object property for weight and divides it by the object property for height and returns that value to where the method gets called.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dog = {
+    name: "Fido",
+    breed: "Dalmation",
+    weight: "55",
+    height: "23",
+    getBMI: function(){
+        return this.weight / this.height^2;
+    }
+};
+
+var dogBMI = dog.getBMI();
+console.log(dogBMI);    // this outputs the value 0.10396975425
+</pre>
+</div>
+<br>
+
+                You will notice that spaces and line breaks within the object do not have an impact on its functionality. We have been using the "this" keyword with a lot of our early JavaScript and jQuery code, and that always refers to an object. When "this" is used inside of an object method, it is referring to the specific instance of that object.<br>
+                <br> 
+
+                As we saw in week 11, we can use <span class="code">for()</span> to iterate over the properties of an object. This is using the for/in syntax instead of for/of. What gets returned is the key (or name of the property) contained within the object. This is used to access the value from the object in an associative way (ie: by name of the property rather than numeric index).<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dog = {name:"Fido", breed:"Dalmation", age:4, weight:55};
+for(var x in dog){
+    console.log(dog[x]);    
+}</pre>
+</div>
+<br>
+
+                <h2>Arrays of Objects</h2>
+
+                Previously we have used the parallel arrays technique to be able to associate multiple properties with a single data entry. The alternative, and preferred technique, would be to store all of the various properties inside of a single object instance, and then have a single array that contains multiple instances of the object with different values. Below is an array with multiple dog objects being added to it.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = [];
+dogs.push({name:"Fido", breed:"Dalmation", age:4, weight:55});
+dogs.push({name:"Wishbone", breed:"Jack Russel Terrier", age:7, weight:32});
+dogs.push({name:"Stella", breed:"McNab", age:12, weight:45});
+dogs.push({name:"Scooby", breed:"Doberman", age:8, weight:124});
+dogs.push({name:"Lassie", breed:"Rough Collie", age:15, weight:53});</pre>
+</div>
+<br>
+
+                In order to loop over this array of objects, we can use the for/of technique.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+for(var d of dogs){
+    console.log(d.name);
+}</pre>
+</div>
+<br>
+
+                The resulting output in the console will appear like this:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+Fido
+Wishbone
+Stella
+Scooby
+Lassie</pre>
+</div>
+<br> 
+
+                <h2>Sorting Arrays</h2>
+
+                Since our previous use of arrays was utilizing the parallel arrays technique, we didn't want to sort them as that would cause them to no longer be parallel and we would lose the association between values across our arrays. Let's look at how sorting works first on basic arrays using the <span class="code">sort()</span> method.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogNames = ["Fido", "Wishbone", "Stella", "Scooby", "Lassie"];
+dogNames.sort();
+for(var name of dogNames){
+    console.log(name);
+}</pre>
+</div>
+<br> 
+
+                The default behavior of the <span class="code">sort()</span> method is to put array elements in ascending alphabetical order. The resulting output in the console will appear like this:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+Fido
+Lassie
+Scooby
+Stella
+Wishbone</pre>
+</div>
+<br> 
+
+                If we want to switch the order so that it is descending aphabetically, then we can use the <span class="code">array.reverse()</span> method.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+Wishbone
+Stella
+Scooby
+Lassie
+Fido</pre>
+</div>
+<br> 
+
+                What if we had an array of numbers, such as the weight of the dogs from above.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogWeights = [55, 32, 45, 124, 53];
+dogWeights.sort();
+for(var weight of dogWeights){
+    console.log(weight);
+}</pre>
+</div>
+<br> 
+
+                The resulting output in the console may be unexpected, as even though this array is populated with nothing but numbers, it still is going to treat the numbers as alphanumeric characters:<br>
+                <br>
+                
+<div class="code codeblock"><pre>
+124
+32
+45
+53
+55</pre>
+</div>
+<br> 
+
+                In order to ensure that we are sorting numerically, we need to make a compare function that we can provide to the <span class="code">sort()</span> method as an argument.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+function numSort(a, b){
+    return a - b;
+}
+
+var dogWeights = [55, 32, 45, 124, 53];
+dogWeights.sort(numSort);
+for(var weight of dogWeights){
+    console.log(weight);
+}</pre>
+</div>
+<br> 
+
+                This time the order of the numbers comes out as we would expect:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+32
+45
+53
+55
+124</pre>
+</div>
+<br> 
+
+
+                <h2>Sorting Arrays of Objects by Property</h2>
+
+                Just like how we need to make a compare function to make it clear to the <span class="code">sort()</span> method to sort by numbers, we can make compare functions to ensure that we are sorting based on specific properties that each object instance in the array contains. Let's try doing an alphabetical sort by dog name first.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = [];
+dogs.push({name:"Fido", breed:"Dalmation", age:4, weight:55});
+dogs.push({name:"Wishbone", breed:"Jack Russel Terrier", age:7, weight:32});
+dogs.push({name:"Stella", breed:"McNab", age:12, weight:45});
+dogs.push({name:"Scooby", breed:"Doberman", age:8, weight:124});
+dogs.push({name:"Lassie", breed:"Rough Collie", age:15, weight:53});
+
+function nameSort(a, b){
+    var x = a.name.toLowerCase();
+    var y = b.name.toLowerCase();
+    if(x &lt; y){
+        return -1;
+    } else if(x > y){
+        return 1;
+    }
+    return 0;
+}
+
+dogs.sort(nameSort);
+for(var d of dogs){
+    console.log(d.name);
+}</pre>
+</div>
+<br>
+
+                Sorting by a numeric property is even easier. Let's try sorting the same array of objects by the weight property.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+function weightSort(a, b){
+    return a.weight - b.weight;
+}
+
+dogs.sort(weightSort);
+for(var d of dogs){
+    console.log(d.weight);
+}</pre>
+</div>
+<br>
+
+                Our array of objects is now sorted by weight and the output in the console appears as below:<br>
+                <br>
+
+<div class="code codeblock"><pre>
+32
+45
+53
+55
+124</pre>
+</div>
+<br> 
+
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/js/js_objects.asp">W3Schools: JavaScript Objects</a></li>
+                <li><a href="https://www.w3schools.com/js/js_object_definition.asp">W3Schools: JavaScript Object Definition</a></li>
+                <li><a href="https://www.w3schools.com/js/js_object_properties.asp">W3Schools: JavaScript Object Properties</a></li>
+                <li><a href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools: JavaScript Sorting Arrays</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
