@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Objects</title>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript Objects">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../site.css" rel="stylesheet" type="text/css">
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <style>
+            .interactive{
+                background-color: #069;
+                padding: 10px;
+            }
+
+            .interactive img{
+                width: 100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h3 class="week">Week 15: <span class="demo">Demo</span></h3>
+            <h1>JavaScript Classes</h1>
+            <br><br>
+
+            <div class="section">
+                <h2>Class Basics</h2>
+                Clases are a way of doing object oriented programming in JavaScript. They help streamline the object creation process and ensure consistency in properties and methods across your object instances. Below is an example of defining an empty class named Dog and creating an instance of that class as a variable.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+class Dog{
+    constructor(){
+
+    }
+}
+
+var dog = new Dog()</pre>
+</div>
+<br>
+
+                To really make this class useful, we need to pass in some values as arguments for the constructor, which is a function that runs once when the class instance is created. We also want to store those values as properties by using the "this" syntax.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+class Dog{
+    constructor(n, b, a, w){
+        this.name = n;
+        this.breed = b;
+        this.age = a;
+        this.weight = w;
+    }
+}
+
+var dog = new Dog("Fido", "Dalmation", 4, 55);
+console.log(dog.name);  // this outputs Fido</pre>
+</div>
+<br>
+               
+            We can use the class to create instances of objects with different values, but they all have the same structure (meaning properties and methods are consistent across all instances).<br>
+            <br>
+
+<div class="code codeblock"><pre>
+var dog1 = new Dog("Fido", "Dalmation", 4, 55);
+var dog2 = new Dog("Wishbone", "Jack Russel Terrier", 7, 32);
+var dog3 = new Dog("Stella", "McNab", 12, 45);
+var dog4 = new Dog("Scooby", "Great Dane", 8, 124);
+var dog5 = new Dog("Lassie", "Rough Collie", 15, 53);
+console.log(dog3.name);  // this outputs Stella</pre>
+</div>
+<br>
+
+                If we're going to make multiple instances of the same class, we might as well store them in an array.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+var dogs = []
+dogs.push(new Dog("Fido", "Dalmation", 4, 55));
+dogs.push(new Dog("Wishbone", "Jack Russel Terrier", 7, 32));
+dogs.push(new Dog("Stella", "McNab", 12, 45));
+dogs.push(new Dog("Scooby", "Great Dane", 8, 124));
+dogs.push(new Dog("Lassie", "Rough Collie", 15, 53));
+console.log(dogs[3].name);  // this outputs Stella</pre>
+</div>
+<br>
+
+                <h2>Class Methods</h2>
+
+                In addition to properties, we can add methods to our class which are functions that can be called to manipulate properties of the object or perform operations and return results.<br>
+                <br>
+
+<div class="code codeblock"><pre>
+class Dog{
+    constructor(n, b, a, w, h){
+        this.name = n;
+        this.breed = b;
+        this.age = a;
+        this.weight = w;
+        this.height = h;
+    }
+
+    getBMI(){
+        return this.weight / this.height^2;
+    }
+}
+
+var dog = new Dog("Fido", "Dalmation", 4, 55, 23);
+var dogBMI = dog.getBMI();
+console.log(dogBMI);    // this outputs the value 0.10396975425</pre>
+</div>
+<br>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="section resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://www.w3schools.com/js/js_classes.asp">W3Schools: JavaScript Classes</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
